@@ -134,3 +134,5 @@ make
 # CLion
 .idea
 cmake-build-debug
+note.txt
+secret
