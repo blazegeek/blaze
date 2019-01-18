@@ -4,7 +4,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 from test_framework.mininode import *
-from test_framework.test_framework import DashTestFramework
+from test_framework.test_framework import GeekCashTestFramework
 from test_framework.util import *
 from time import *
 
@@ -12,7 +12,7 @@ from time import *
 InstantSendTest -- test InstantSend functionality (prevent doublespend for unconfirmed transactions)
 '''
 
-class InstantSendTest(DashTestFramework):
+class InstantSendTest(GeekCashTestFramework):
     def __init__(self):
         super().__init__(14, 10, [])
         # set sender,  receiver,  isolated nodes

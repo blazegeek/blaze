@@ -4,15 +4,16 @@ todo.txt
 reset-files.bash
 
 *.tar.gz
+*.zip
 
 *.exe
-src/dash
-src/dashd
-src/dash-cli
-src/dash-tx
-src/test/test_dash
-src/qt/test/test_dash-qt
-src/bench/bench_dash
+src/geekcash
+src/geekcashd
+src/geekcash-cli
+src/geekcash-tx
+src/test/test_geekcash
+src/qt/test/test_geekcash-qt
+src/bench/bench_geekcash
 
 # autoreconf
 Makefile.in
@@ -35,8 +36,8 @@ config.log
 config.status
 configure
 libtool
-src/config/dash-config.h
-src/config/dash-config.h.in
+src/config/geekcash-config.h
+src/config/geekcash-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -81,12 +82,12 @@ libconftest.dylib*
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-dash-qt
-Dash-Qt.app
+geekcash-qt
+GeekCash-Qt.app
 
 # Unit-tests
 Makefile.test
-dash-qt_test
+geekcash-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -100,7 +101,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_dash.coverage/
+test_geekcash.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -118,15 +119,15 @@ qa/cache/*
 .autotools
 /doc/doxygen/
 
-libdashconsensus.pc
+libgeekcashconsensus.pc
 contrib/devtools/split-debug.sh
-src/qt/dash-qt.bash
+src/qt/geekcash-qt.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
-dash-cli
-dashd
-dash-qt
+geekcash-cli
+geekcashd
+geekcash-qt
 make
 
 /docker/bin

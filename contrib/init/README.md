@@ -1,11 +1,11 @@
 Sample configuration files for:
 
-SystemD: dashd.service
-Upstart: dashd.conf
-OpenRC:  dashd.openrc
-         dashd.openrcconf
-CentOS:  dashd.init
-OS X:    org.dash.dashd.plist
+SystemD: geekcashd.service
+Upstart: geekcashd.conf
+OpenRC:  geekcashd.openrc
+         geekcashd.openrcconf
+CentOS:  geekcashd.init
+OS X:    org.geekcash.geekcashd.plist
 
 have been made available to assist packagers in creating node packages here.
 

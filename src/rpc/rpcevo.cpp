@@ -1,4 +1,5 @@
 // Copyright (c) 2018 The Dash Core developers
+// Copyright (c) 2018-2019 The GeekCash developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -30,7 +31,7 @@ extern UniValue signrawtransaction(const JSONRPCRequest& request);
 extern UniValue sendrawtransaction(const JSONRPCRequest& request);
 #endif//ENABLE_WALLET
 
-// Allows to specify Dash address or priv key. In case of Dash address, the priv key is taken from the wallet
+// Allows to specify GeekCash address or priv key. In case of GeekCash address, the priv key is taken from the wallet
 static CKey ParsePrivKey(const std::string &strKeyOrAddress, bool allowAddresses = true) {
     CBitcoinAddress address;
     if (allowAddresses && address.SetString(strKeyOrAddress) && address.IsValid()) {
@@ -225,13 +226,13 @@ void protx_register_fund_help()
 {
     throw std::runtime_error(
             "protx register_fund \"collateralAddress\" \"ipAndPort\" \"ownerAddress\" \"operatorPubKey\" \"votingAddress\" operatorReward \"payoutAddress\" ( \"fundAddress\" )\n"
-            "\nCreates, funds and sends a ProTx to the network. The resulting transaction will move 1000 Dash\n"
+            "\nCreates, funds and sends a ProTx to the network. The resulting transaction will move 100K GEEK\n"
             "to the address specified by collateralAddress and will then function as the collateral of your\n"
             "masternode.\n"
             "A few of the limitations you see in the arguments are temporary and might be lifted after DIP3\n"
             "is fully deployed.\n"
             "\nArguments:\n"
-            "1. \"collateralAddress\"   (string, required) The dash address to send the collateral to.\n"
+            "1. \"collateralAddress\"   (string, required) The geekcash address to send the collateral to.\n"
             "                         Must be a P2PKH address.\n"
             "2. \"ipAndPort\"           (string, required) IP and port in the form \"IP:PORT\".\n"
             "                         Must be unique on the network. Can be set to 0, which will require a ProUpServTx afterwards.\n"
@@ -245,7 +246,7 @@ void protx_register_fund_help()
             "                         If set to an empty string, ownerAddress will be used.\n"
             "6. \"operatorReward\"      (numeric, required) The fraction in % to share with the operator. The value must be\n"
             "                         between 0.00 and 100.00.\n"
-            "7. \"payoutAddress\"       (string, required) The dash address to use for masternode reward payments.\n"
+            "7. \"payoutAddress\"       (string, required) The geekcash address to use for masternode reward payments.\n"
             "8. \"fundAddress\"         (string, optional) If specified wallet will only use coins from this address to fund ProTx.\n"
             "                         If not specified, payoutAddress is the one that is going to be used.\n"
             "                         The private key belonging to this address must be known in your wallet.\n"
@@ -400,7 +401,7 @@ UniValue protx_register(const JSONRPCRequest& request)
     if (request.params.size() > paramIdx + 6) {
         fundAddress = CBitcoinAddress(request.params[paramIdx + 6].get_str());
         if (!fundAddress.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Dash address: ") + request.params[paramIdx + 6].get_str());
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid GeekCash address: ") + request.params[paramIdx + 6].get_str());
     }
 
     FundSpecialTx(tx, ptx, fundAddress.Get());
@@ -555,7 +556,7 @@ UniValue protx_update_service(const JSONRPCRequest& request)
     if (request.params.size() >= 6) {
         CBitcoinAddress feeSourceAddress = CBitcoinAddress(request.params[5].get_str());
         if (!feeSourceAddress.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Dash address: ") + request.params[5].get_str());
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid GeekCash address: ") + request.params[5].get_str());
         feeSource = feeSourceAddress.Get();
     } else {
         if (ptx.scriptOperatorPayout != CScript()) {
@@ -590,7 +591,7 @@ void protx_update_registrar_help()
             "3. \"votingAddress\"       (string, required) The voting key address. The private key does not have to be known by your wallet.\n"
             "                         It has to match the private key which is later used when voting on proposals.\n"
             "                         If set to an empty string, the last on-chain voting key of the masternode will be used.\n"
-            "4. \"payoutAddress\"       (string, required) The dash address to use for masternode reward payments\n"
+            "4. \"payoutAddress\"       (string, required) The geekcash address to use for masternode reward payments\n"
             "                         If set to an empty string, the last on-chain payout address of the masternode will be used.\n"
             "5. \"feeSourceAddress\"    (string, optional) If specified wallet will only use coins from this address to fund ProTx.\n"
             "                         If not specified, payoutAddress is the one that is going to be used.\n"
@@ -647,7 +648,7 @@ UniValue protx_update_registrar(const JSONRPCRequest& request)
     if (request.params.size() > 5) {
         feeSourceAddress = CBitcoinAddress(request.params[5].get_str());
         if (!feeSourceAddress.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Dash address: ") + request.params[5].get_str());
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid GeekCash address: ") + request.params[5].get_str());
     }
 
     FundSpecialTx(tx, ptx, feeSourceAddress.Get());
@@ -714,7 +715,7 @@ UniValue protx_revoke(const JSONRPCRequest& request)
     if (request.params.size() > 4) {
         CBitcoinAddress feeSourceAddress = CBitcoinAddress(request.params[4].get_str());
         if (!feeSourceAddress.IsValid())
-            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid Dash address: ") + request.params[4].get_str());
+            throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, std::string("Invalid GeekCash address: ") + request.params[4].get_str());
         FundSpecialTx(tx, ptx, feeSourceAddress.Get());
     } else if (dmn->pdmnState->scriptOperatorPayout != CScript()) {
         // Using funds from previousely specified operator payout address

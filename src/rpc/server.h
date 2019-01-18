@@ -143,7 +143,7 @@ public:
 };
 
 /**
- * Dash RPC command dispatcher.
+ * GeekCash RPC command dispatcher.
  */
 class CRPCTable
 {

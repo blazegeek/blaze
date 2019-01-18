@@ -1,4 +1,5 @@
 // Copyright (c) 2014-2018 The Dash Core developers
+// Copyright (c) 2018-2019 The GeekCash developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -21,7 +22,7 @@ static const int MIN_PRIVATESEND_AMOUNT = 2;
 static const int MIN_PRIVATESEND_LIQUIDITY = 0;
 static const int MAX_PRIVATESEND_SESSIONS = 10;
 static const int MAX_PRIVATESEND_ROUNDS = 16;
-static const int MAX_PRIVATESEND_AMOUNT = MAX_MONEY / COIN;
+static const int MAX_PRIVATESEND_AMOUNT = 10000000; //MAX_MONEY / COIN;
 static const int MAX_PRIVATESEND_LIQUIDITY = 100;
 static const int DEFAULT_PRIVATESEND_SESSIONS = 4;
 static const int DEFAULT_PRIVATESEND_ROUNDS = 4;

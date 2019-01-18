@@ -1,6 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
+// Copyright (c) 2018-2019 The GeekCash developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -350,18 +351,18 @@ public:
         fBIP9CheckMasternodesUpgraded = true;
         consensus.fLLMQAllowDummyCommitments = false;
 
-        // checkpointData = (CCheckpointData) {
-        //     boost::assign::map_list_of
-        //     (  0, uint256S("0x000000770449f1cc84ded578976538e6bd55e133b6a8f8cbadd3d9870cae5144"))
+        checkpointData = (CCheckpointData) {
+            boost::assign::map_list_of
+            (  0, uint256S("0x000000770449f1cc84ded578976538e6bd55e133b6a8f8cbadd3d9870cae5144"))
             
-        // };
+        };
 
-        // chainTxData = ChainTxData{
-        //     1541738255, // * UNIX timestamp of last known number of transactions
-        //     1,    // * total number of transactions between genesis and that timestamp
-        //                 //   (the tx=... number in the SetBestChain debug.log lines)
-        //     0.1         // * estimated number of transactions per second after that timestamp
-        // };
+        chainTxData = ChainTxData{
+            1547796139, // * UNIX timestamp of last known number of transactions
+            1,    // * total number of transactions between genesis and that timestamp
+                        //   (the tx=... number in the SetBestChain debug.log lines)
+            0.1         // * estimated number of transactions per second after that timestamp
+        };
     }
 };
 static CMainParams mainParams;
