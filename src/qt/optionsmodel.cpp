@@ -79,17 +79,21 @@ void OptionsModel::Init(bool resetSettings)
         settings.setValue("nDisplayUnit", BitcoinUnits::GEEK);
     nDisplayUnit = settings.value("nDisplayUnit").toInt();
 
+    // if (!settings.contains("strThirdPartyTxUrls"))
+    //     settings.setValue("strThirdPartyTxUrls", "");
+    // strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "").toString();
+
     if (!settings.contains("strThirdPartyTxUrls"))
-        settings.setValue("strThirdPartyTxUrls", "");
-    strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "").toString();
+        settings.setValue("strThirdPartyTxUrls", "https://explorer.geekcash.org/tx/%s");
+    strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "https://explorer.geekcash.org/tx/%s").toString();
 
     if (!settings.contains("theme"))
         settings.setValue("theme", "");
 
 #ifdef ENABLE_WALLET
     if (!settings.contains("fCoinControlFeatures"))
-        settings.setValue("fCoinControlFeatures", false);
-    fCoinControlFeatures = settings.value("fCoinControlFeatures", false).toBool();
+        settings.setValue("fCoinControlFeatures", true);
+    fCoinControlFeatures = settings.value("fCoinControlFeatures", true).toBool();
 
     if (!settings.contains("digits"))
         settings.setValue("digits", "2");
