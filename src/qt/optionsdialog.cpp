@@ -92,13 +92,14 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     }
     
     /* Theme selector */
-    ui->theme->addItem(QString("GEEK-light"), QVariant("light"));
-    ui->theme->addItem(QString("GEEK-light-hires"), QVariant("light-hires"));
-    ui->theme->addItem(QString("GEEK-light-retro"), QVariant("light-retro"));
-    ui->theme->addItem(QString("GEEK-light-hires-retro"), QVariant("light-hires-retro"));
-    ui->theme->addItem(QString("GEEK-blue"), QVariant("drkblue"));
-    ui->theme->addItem(QString("GEEK-Crownium"), QVariant("crownium"));
-    ui->theme->addItem(QString("GEEK-traditional"), QVariant("trad"));
+    ui->theme->addItem(QString("GEEK-default"), QVariant("light"));
+    // ui->theme->addItem(QString("GEEK-light"), QVariant("light"));
+    // ui->theme->addItem(QString("GEEK-light-hires"), QVariant("light-hires"));
+    // ui->theme->addItem(QString("GEEK-light-retro"), QVariant("light-retro"));
+    // ui->theme->addItem(QString("GEEK-light-hires-retro"), QVariant("light-hires-retro"));
+    // ui->theme->addItem(QString("GEEK-blue"), QVariant("drkblue"));
+    // ui->theme->addItem(QString("GEEK-Crownium"), QVariant("crownium"));
+    // ui->theme->addItem(QString("GEEK-traditional"), QVariant("trad"));
     
     /* Language selector */
     QDir translations(":translations");
