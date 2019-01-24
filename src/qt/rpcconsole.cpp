@@ -425,6 +425,7 @@ RPCConsole::RPCConsole(const PlatformStyle *_platformStyle, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::RPCConsole),
     clientModel(0),
+    
     historyPtr(0),
     platformStyle(_platformStyle),
     peersTableContextMenu(0),
@@ -435,6 +436,8 @@ RPCConsole::RPCConsole(const PlatformStyle *_platformStyle, QWidget *parent) :
     GUIUtil::restoreWindowGeometry("nRPCConsoleWindow", this->size(), this);
 
     ui->openDebugLogfileButton->setToolTip(ui->openDebugLogfileButton->toolTip().arg(tr(PACKAGE_NAME)));
+    
+    this->setStyleSheet(GUIUtil::loadStyleSheet());    
 
     QString theme = GUIUtil::getThemeName();
     if (platformStyle->getImagesOnButtons()) {
@@ -470,6 +473,7 @@ RPCConsole::RPCConsole(const PlatformStyle *_platformStyle, QWidget *parent) :
     std::string walletPath = GetDataDir().string();
     walletPath += QDir::separator().toLatin1() + GetArg("-wallet", "wallet.dat");
     ui->wallet_path->setText(QString::fromStdString(walletPath));
+    
 #else
     ui->label_berkeleyDBVersion->hide();
     ui->berkeleyDBVersion->hide();
@@ -811,10 +815,10 @@ void RPCConsole::clear(bool clearHistory)
                 "table { }"
                 "td.time { color: #808080; font-size: %2; padding-top: 3px; } "
                 "td.message { font-family: %1; font-size: %2; white-space:pre-wrap; } "
-                "td.cmd-request { color: #006060; } "
+                "td.cmd-request { color: #3e8ef7; } "
                 "td.cmd-error { color: red; } "
                 ".secwarning { color: red; }"
-                "b { color: #006060; } "
+                "b { color: #3e8ef7; } "
             ).arg(fixedFontInfo.family(), QString("%1pt").arg(consoleFontSize))
         );
 
@@ -1287,3 +1291,16 @@ void RPCConsole::setTabFocus(enum TabTypes tabType)
 {
     ui->tabWidget->setCurrentIndex(tabType);
 }
+
+
+// void RPCConsole::setModel(WalletModel *_model)
+// {
+//     this->model = _model;
+
+//     if(_model && _model->getOptionsModel() && _model->getAddressTableModel())
+//     {
+//         updateView();
+//         updateLabelLocked();
+//         RPCConsole::updateLabels(_model, this);
+//     }
+// }
