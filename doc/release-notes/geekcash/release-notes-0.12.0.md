@@ -8,7 +8,7 @@ GeekCash version 0.12.0 is now available from:
 
 Please report bugs using the issue tracker at github:
 
-  https://github.com/geekcashpay/geekcash/issues
+  https://github.com/geekcash/geek/issues
 
 
 How to Upgrade

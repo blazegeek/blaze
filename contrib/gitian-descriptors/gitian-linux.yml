@@ -31,7 +31,7 @@ packages:
 - "python3"
 - "libxkbcommon0"
 remotes:
-- "url": "https://github.com/geekcashpay/geekcash.git"
+- "url": "https://github.com/geekcash/geek.git"
   "dir": "geekcash"
 files: []
 script: |

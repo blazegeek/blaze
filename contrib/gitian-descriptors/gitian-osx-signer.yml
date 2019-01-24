@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/geekcashpay/geekcash-detached-sigs.git"
+- "url": "https://github.com/geekcash/geek-detached-sigs.git"
   "dir": "signature"
 files:
 - "geekcash-osx-unsigned.tar.gz"

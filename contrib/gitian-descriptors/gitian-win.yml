@@ -25,7 +25,7 @@ packages:
 - "python3"
 - "rename"
 remotes:
-- "url": "https://github.com/geekcashpay/geekcash.git"
+- "url": "https://github.com/geekcash/geek.git"
   "dir": "geekcash"
 files: []
 script: |

@@ -30,7 +30,7 @@ packages:
 - "python3-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/geekcashpay/geekcash.git"
+- "url": "https://github.com/geekcash/geek.git"
   "dir": "geekcash"
 files:
 - "MacOSX10.11.sdk.tar.gz"

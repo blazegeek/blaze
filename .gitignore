@@ -137,3 +137,4 @@ make
 cmake-build-debug
 note.txt
 secret
+*.bak

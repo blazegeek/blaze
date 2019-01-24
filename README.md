@@ -1,7 +1,7 @@
 GeekCash staging tree 0.13.0
 ===============================
 
-`master:` [![Build Status](https://travis-ci.org/geekcashpay/geekcash.svg?branch=master)](https://travis-ci.org/geekcashpay/geekcash) `develop:` [![Build Status](https://travis-ci.org/geekcashpay/geekcash.svg?branch=develop)](https://travis-ci.org/geekcashpay/geekcash/branches)
+`master:` [![Build Status](https://travis-ci.org/geekcash/geek.svg?branch=master)](https://travis-ci.org/geekcash/geek) `develop:` [![Build Status](https://travis-ci.org/geekcash/geek.svg?branch=develop)](https://travis-ci.org/geekcash/geek/branches)
 
 https://www.geekcash.org
 
@@ -29,7 +29,7 @@ Development Process
 -------------------
 
 The `master` branch is meant to be stable. Development is normally done in separate branches.
-[Tags](https://github.com/geekcashpay/geekcash/tags) are created to indicate new official,
+[Tags](https://github.com/geekcash/geek/tags) are created to indicate new official,
 stable release versions of GeekCash.
 
 The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).

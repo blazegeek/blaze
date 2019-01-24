@@ -27,8 +27,8 @@ Build-Depends: debhelper,
  libzmq3-dev
 Standards-Version: 3.9.2
 Homepage: https://www.geekcash.org/
-Vcs-Git: git://github.com/geekcashpay/geekcash.git
-Vcs-Browser: https://github.com/geekcashpay/geekcash
+Vcs-Git: git://github.com/geekcash/geek.git
+Vcs-Browser: https://github.com/geekcash/geek
 
 Package: geekcashd
 Architecture: any
