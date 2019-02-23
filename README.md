@@ -1,77 +1,14 @@
-GeekCash staging tree 0.13.0
-===============================
-
-`master:` [![Build Status](https://travis-ci.org/geekcash/geek.svg?branch=master)](https://travis-ci.org/geekcash/geek) `develop:` [![Build Status](https://travis-ci.org/geekcash/geek.svg?branch=develop)](https://travis-ci.org/geekcash/geek/branches)
-
-https://www.geekcash.org
-
-
 What is GeekCash?
 ----------------
 
-GeekCash is an experimental digital currency that enables anonymous, instant
-payments to anyone, anywhere in the world. GeekCash uses peer-to-peer technology
-to operate with no central authority: managing transactions and issuing money
-are carried out collectively by the network. GeekCash is the name of the open
-source software which enables the use of this currency.
+[![](https://i.imgur.com/zYCRmQN.png "GeekCash")](https://geekcash.org)
 
-For more information, as well as an immediately useable, binary version of
-the GeekCash software, see https://www.geekcash.org/get-geekcash/.
+[GeekCash](https://geekcash.org) is a new digital currency, based on Bitcoin and Dash, that enables anonymous, instant payments to anyone, anywhere in the world. GeekCash uses peer-to-peer technology to operate with no central authority: managing transactions and issuing money are carried out collectively by the network. Exactly, GeekCash is a community governance, cooperation and growth to decentralized economy. 
 
+In the future, the GeekCash is used to transfer money and pay in an ecosystem consisting of 6 projects. Some projects have been researched for 4 years. In there, the social network project will be deployed as soon as possible, the remaining secret projects will be gradually opened...
 
-License
--------
+With solid foundations prepared beforehand, GeekCash have ambitious plans for the future. 
 
-GeekCash is released under the terms of the MIT license. See [COPYING](COPYING) for more
-information or see https://opensource.org/licenses/MIT.
+Work hard and be Geek!
 
-Development Process
--------------------
-
-The `master` branch is meant to be stable. Development is normally done in separate branches.
-[Tags](https://github.com/geekcash/geek/tags) are created to indicate new official,
-stable release versions of GeekCash.
-
-The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
-
-Testing
--------
-
-Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test on short notice. Please be patient and help out by testing
-other people's pull requests, and remember this is a security-critical project where any mistake might cost people
-lots of money.
-
-### Automated Testing
-
-Developers are strongly encouraged to write [unit tests](src/test/README.md) for new code, and to
-submit new unit tests for old code. Unit tests can be compiled and run
-(assuming they weren't disabled in configure) with: `make check`. Further details on running
-and extending unit tests can be found in [/src/test/README.md](/src/test/README.md).
-
-There are also [regression and integration tests](/qa) of the RPC interface, written
-in Python, that are run automatically on the build server.
-These tests can be run (if the [test dependencies](/qa) are installed) with: `qa/pull-tester/rpc-tests.py`
-
-The Travis CI system makes sure that every pull request is built for Windows, Linux, and OS X, and that unit/sanity tests are run automatically.
-
-### Manual Quality Assurance (QA) Testing
-
-Changes should be tested by somebody other than the developer who wrote the
-code. This is especially important for large or high-risk changes. It is useful
-to add a test plan to the pull request description if testing the changes is
-not straightforward.
-
-Translations
-------------
-
-Changes to translations as well as new translations can be submitted to
-[GeekCash's Transifex page](https://www.transifex.com/projects/p/geekcash/).
-
-Translations are periodically pulled from Transifex and merged into the git repository. See the
-[translation process](doc/translation_process.md) for details on how this works.
-
-**Important**: We do not accept translation changes as GitHub pull requests because the next
-pull from Transifex would automatically overwrite them again.
-
-Translators should also follow the [forum](https://www.geekcash.org/forum/topic/geekcash-worldwide-collaboration.88/).
+More info: [GeekCash.org](https://geekcash.org) | [Discord](https://discord.gg/TMyvV8D) | [Youtube](https://www.youtube.com/geekcash) | [Twitter](https://twitter.com/GeekCash) | [Telegram](https://t.me/geekcash) | [Facebook](https://www.facebook.com/geekcash.org)

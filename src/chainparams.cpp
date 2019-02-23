@@ -194,7 +194,7 @@ public:
         consensus.nGovernanceFilterElements = 20000;
         consensus.nMasternodeMinimumConfirmations = 15;
         consensus.BIP34Height = 1;
-        consensus.BIP34Hash = uint256S("0x000000770449f1cc84ded578976538e6bd55e133b6a8f8cbadd3d9870cae5144");
+        consensus.BIP34Hash = uint256S("0x000001c800f8dd4695bc5f30711c876552f444fbaade6d344f30e05105fcc852");
         consensus.BIP65Height = 1; // 00000000000076d8fcea02ec0963de4abfd01e771fec0863f960c2c64fe6f357
         consensus.BIP66Height = 1; // 00000000000b1fa2dfa312863570e13fae9ca7b5566cb27e55422620b469aefa
         consensus.DIP0001Height = 1;
@@ -213,35 +213,35 @@ public:
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1547596800; // January 16, 2019
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1579132800; // January 16, 2020
-
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1547856000; // Jan 19, 2019
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1579392000; // Jan 20, 2020
+        
         // Deployment of DIP0001
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1547596800; // January 16, 2019
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 1579132800; // January 16, 2020
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1547856000; // Jan 19, 2019
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 1579392000; // Jan 19, 2020
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // Deployment of BIP147
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].bit = 2;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 1547596800; // January 16, 2019
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 1579132800; // January 16, 2020
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 1547856000; // Jan 19, 2019
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 1579392000; // Jan 19, 2020
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 3226; // 80% of 4032
 
         // Deployment of DIP0003
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].bit = 3;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nStartTime = 1547596800; // Jan 1st, 2019
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nTimeout = 1579132800; // January 16, 2020
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nStartTime = 1557360000; // May 9, 2019
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nTimeout = 1588982400; // May 9, 2020
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nWindowSize = 4032;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000000000000"); // 967800
+        consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000000c6a97b4"); // 101
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x000000000000000000000000000000000000000000000000000000000000000"); // 967800
+        consensus.defaultAssumeValid = uint256S("0x000000ba64e036fa26c9f697f2618ddd43dd7b034cafaf6b19558b23752a9c96"); // 101
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -256,63 +256,63 @@ public:
         nDefaultPort = 6889;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1547796139, 429840, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1550651536, 2725325, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000000770449f1cc84ded578976538e6bd55e133b6a8f8cbadd3d9870cae5144"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000d586e0fd3a2700d656be5fc7076bdd22cfbb3c1de83b61a5f0524fb6bba"));
         assert(genesis.hashMerkleRoot == uint256S("0x6d87016979d2f369dcb5fc3a5c284be1a316790cbaabfcce403d24da4b49b210"));
 
 
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns01.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns02.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns03.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns04.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns05.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns06.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns07.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns08.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns09.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns10.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns11.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns12.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns13.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns14.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns15.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns16.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns17.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns18.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns19.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns20.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns21.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns22.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns23.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns24.geekcash.org"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.org", "ns25.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns01.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns02.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns03.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns04.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns05.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns06.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns07.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns08.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns09.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns10.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns11.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns12.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns13.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns14.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns15.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns16.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns17.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns18.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns19.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns20.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns21.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns22.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns23.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns24.geekcash.org"));
+        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns25.geekcash.org"));
         
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns01.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns02.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns03.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns04.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns05.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns06.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns07.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns08.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns09.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns10.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns11.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns12.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns13.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns14.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns15.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns16.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns17.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns18.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns19.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns20.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns21.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns22.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns23.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns24.geekcash.net"));
-        // vSeeds.push_back(CDNSSeedData("geekcash.net", "ns25.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns01.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns02.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns03.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns04.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns05.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns06.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns07.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns08.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns09.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns10.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns11.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns12.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns13.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns14.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns15.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns16.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns17.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns18.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns19.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns20.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns21.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns22.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns23.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns24.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns25.geekcash.net"));
 
        // GeekCash addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
@@ -353,13 +353,14 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  0, uint256S("0x000000770449f1cc84ded578976538e6bd55e133b6a8f8cbadd3d9870cae5144"))
+            (  0, uint256S("0x00000d586e0fd3a2700d656be5fc7076bdd22cfbb3c1de83b61a5f0524fb6bba"))
+            (  100, uint256S("0x000000ba64e036fa26c9f697f2618ddd43dd7b034cafaf6b19558b23752a9c96"))            
             
         };
 
         chainTxData = ChainTxData{
-            1547796139, // * UNIX timestamp of last known number of transactions
-            1,    // * total number of transactions between genesis and that timestamp
+            1550725301, // * UNIX timestamp of last known number of transactions
+            101,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.1         // * estimated number of transactions per second after that timestamp
         };
@@ -393,7 +394,7 @@ public:
         consensus.BIP34Hash = uint256S("0x");
         consensus.BIP65Height = 1; // 0000039cf01242c7f921dcb4806a5994bc003b48c1973ae0c89b67809c2bb2ab
         consensus.BIP66Height = 1; // 0000002acdd29a14583540cb72e1c5cc83783560e38fa7081495d474fe1671f7
-        consensus.DIP0001Height = 1;
+        consensus.DIP0001Height = 10;
         consensus.powLimit = uint256S("00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
         consensus.nPowTargetTimespan = 24 * 60 * 60; // GeekCash: 1 day
         consensus.nPowTargetSpacing = 2.5 * 60; // GeekCash: 2.5 minutes
@@ -401,34 +402,36 @@ public:
         consensus.fPowNoRetargeting = false;
         consensus.nPowKGWHeight = 1; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
         consensus.nPowDGWHeight = 1;
-        consensus.nRuleChangeActivationThreshold = 1512; // 75% for testchains
-        consensus.nMinerConfirmationWindow = 2016; // nPowTargetTimespan / nPowTargetSpacing
+        consensus.nRuleChangeActivationThreshold = 432; // 75% for testchains
+        consensus.nMinerConfirmationWindow = 576; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nStartTime = 1199145601; // January 1, 2008
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].nTimeout = 1230767999; // December 31, 2008
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1547596800; // Dec 13th, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1549032900; // Dec 13th, 2018
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1579132800; // Dec 13th, 2019
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nWindowSize = 100;
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nThreshold = 50; // 50% of 100
 
         // Deployment of DIP0001
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].bit = 1;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1547596800; // Dec 13th, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nStartTime = 1549119300; // Dec 13th, 2018
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 1579132800; // Dec 13th, 2019
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nWindowSize = 100;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 50; // 50% of 100
 
         // Deployment of BIP147
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].bit = 2;
-        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 1547596800; // Dec 13th, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nStartTime = 1549205700; // Dec 13th, 2018
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nTimeout = 1579132800; // Dec 13th, 2019
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nWindowSize = 100;
         consensus.vDeployments[Consensus::DEPLOYMENT_BIP147].nThreshold = 50; // 50% of 100
 
         // Deployment of DIP0003
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].bit = 3;
-        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nStartTime = 1547596800; // Dec 13th, 2018
+        consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nStartTime = 1549292100; // Dec 13th, 2018
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nTimeout = 1579132800; // Dec 13th, 2019
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nWindowSize = 100;
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nThreshold = 50; // 50% of 100
@@ -447,9 +450,9 @@ public:
         nDefaultPort = 16889;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1547796139, 429840, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1549022900, 871116, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000000770449f1cc84ded578976538e6bd55e133b6a8f8cbadd3d9870cae5144"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000002a73a8756b49134a0ca05dc9b50486d0ba36905c83bb23818474e40e7f3"));
         assert(genesis.hashMerkleRoot == uint256S("0x6d87016979d2f369dcb5fc3a5c284be1a316790cbaabfcce403d24da4b49b210"));
 
         vFixedSeeds.clear();
@@ -592,9 +595,9 @@ public:
         nDefaultPort = 16889;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1547796139, 429840, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1549022900, 871116, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("000000770449f1cc84ded578976538e6bd55e133b6a8f8cbadd3d9870cae5144"));
+        assert(consensus.hashGenesisBlock == uint256S("000002a73a8756b49134a0ca05dc9b50486d0ba36905c83bb23818474e40e7f3"));
         assert(genesis.hashMerkleRoot == uint256S("6d87016979d2f369dcb5fc3a5c284be1a316790cbaabfcce403d24da4b49b210"));
 
         devnetGenesis = FindDevNetGenesisBlock(consensus, genesis, 50 * COIN);
@@ -728,19 +731,19 @@ public:
         nDefaultPort = 19994;
         nPruneAfterHeight = 1000;
 
-        // genesis = CreateGenesisBlock(1547796139, 429840, 0x207fffff, 1, 50 * COIN);
+        // genesis = CreateGenesisBlock(1549022900, 871116, 0x207fffff, 1, 50 * COIN);
         // consensus.hashGenesisBlock = genesis.GetHash();
         
         // assert(consensus.hashGenesisBlock == uint256S("0x00000599f7218e76bbb3c21a8c5046a555b1e50b7753ca185f79177c48744973"));
         // assert(genesis.hashMerkleRoot == uint256S("0x6d87016979d2f369dcb5fc3a5c284be1a316790cbaabfcce403d24da4b49b210"));
 
-        genesis = CreateGenesisBlock(1547796139, 429840, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1548144246, 315000, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        printf("-----regtest\n");
-        printf("genesis hash: %s\n", consensus.hashGenesisBlock.ToString().c_str());
-        printf("root hash: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-        printf("%s\n", genesis.ToString().c_str());
-        assert(consensus.hashGenesisBlock == uint256S("0x8320a2cae89082b0e5a7b28561808f024a458c21af78835271ce7e6a3187e5d8"));
+        // printf("-----regtest\n");
+        // printf("genesis hash: %s\n", consensus.hashGenesisBlock.ToString().c_str());
+        // printf("root hash: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+        // printf("%s\n", genesis.ToString().c_str());
+        assert(consensus.hashGenesisBlock == uint256S("0x82d08b9e2bf3ee6883b4bd8552eec8a48ad229ff2c0e08ba05c77a8564ae06cb"));
         assert(genesis.hashMerkleRoot == uint256S("0x6d87016979d2f369dcb5fc3a5c284be1a316790cbaabfcce403d24da4b49b210"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.

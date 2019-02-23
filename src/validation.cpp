@@ -1149,10 +1149,10 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
 
     if(nPrevHeight > 20220800) return 0;
 
-    // First 100 blocks transfer addresses
-    CAmount nSubsidyBase = nPrevHeight > 100? 500 : 8500000;  
+    // First 100 blocks transfer to addresses of old chain (hardfork at block 400K)
+    CAmount nSubsidyBase = nPrevHeight > 100? 500 : 8550000;
 
-    // yearly decline of production by ~1% per 3 months, projected ~18M coins max by year 2050+.
+    // Decline of production by ~1% per 3 months, projected ~3.6B coins max by year 2115+.
     for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
         nSubsidyBase -= nSubsidyBase * 0.01;
     }
@@ -1174,7 +1174,7 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
 CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
 {
     CAmount target = blockValue * 0.8;
-    CAmount ret = blockValue * 0.5 + (nHeight * 0.00005 * COIN);
+    CAmount ret = blockValue * 0.5 + (nHeight * 0.0001 * COIN);
     return ret > target ? target : ret;
 }
 
@@ -3295,19 +3295,23 @@ bool ContextualCheckBlockHeader(const CBlockHeader& block, CValidationState& sta
 {
     const int nHeight = pindexPrev == NULL ? 0 : pindexPrev->nHeight + 1;
     // Check proof of work
-    if(Params().NetworkIDString() == CBaseChainParams::MAIN && nHeight <= 68589){
-        // architecture issues with DGW v1 and v2)
-        unsigned int nBitsNext = GetNextWorkRequired(pindexPrev, &block, consensusParams);
-        double n1 = ConvertBitsToDouble(block.nBits);
-        double n2 = ConvertBitsToDouble(nBitsNext);
+    // if(Params().NetworkIDString() == CBaseChainParams::MAIN && nHeight <= 68589){
+    //     // architecture issues with DGW v1 and v2)
+    //     unsigned int nBitsNext = GetNextWorkRequired(pindexPrev, &block, consensusParams);
+    //     double n1 = ConvertBitsToDouble(block.nBits);
+    //     double n2 = ConvertBitsToDouble(nBitsNext);
 
-        if (abs(n1-n2) > n1*0.5)
-            return state.DoS(100, error("%s : incorrect proof of work (DGW pre-fork) - %f %f %f at %d", __func__, abs(n1-n2), n1, n2, nHeight),
-                            REJECT_INVALID, "bad-diffbits");
-    } else {
-        if (block.nBits != GetNextWorkRequired(pindexPrev, &block, consensusParams))
+    //     if (abs(n1-n2) > n1*0.5)
+    //         return state.DoS(100, error("%s : incorrect proof of work (DGW pre-fork) - %f %f %f at %d", __func__, abs(n1-n2), n1, n2, nHeight),
+    //                         REJECT_INVALID, "bad-diffbits");
+    // } else {
+    //     if (block.nBits != GetNextWorkRequired(pindexPrev, &block, consensusParams))
+    //         return state.DoS(100, false, REJECT_INVALID, "bad-diffbits", false, strprintf("incorrect proof of work at %d", nHeight));
+    // }
+
+     // Check proof of work
+    if (block.nBits != GetNextWorkRequired(pindexPrev, &block, consensusParams))
             return state.DoS(100, false, REJECT_INVALID, "bad-diffbits", false, strprintf("incorrect proof of work at %d", nHeight));
-    }
 
     // Check timestamp against prev
     if (block.GetBlockTime() <= pindexPrev->GetMedianTimePast())
