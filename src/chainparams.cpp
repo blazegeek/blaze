@@ -262,57 +262,8 @@ public:
         assert(genesis.hashMerkleRoot == uint256S("0x6d87016979d2f369dcb5fc3a5c284be1a316790cbaabfcce403d24da4b49b210"));
 
 
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns01.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns02.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns03.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns04.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns05.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns06.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns07.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns08.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns09.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns10.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns11.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns12.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns13.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns14.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns15.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns16.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns17.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns18.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns19.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns20.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns21.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns22.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns23.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns24.geekcash.org"));
-        vSeeds.push_back(CDNSSeedData("geekcash.org", "ns25.geekcash.org"));
-        
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns01.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns02.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns03.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns04.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns05.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns06.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns07.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns08.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns09.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns10.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns11.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns12.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns13.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns14.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns15.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns16.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns17.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns18.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns19.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns20.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns21.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns22.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns23.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns24.geekcash.net"));
-        vSeeds.push_back(CDNSSeedData("geekcash.net", "ns25.geekcash.net"));
+        vSeeds.push_back(CDNSSeedData("blazegeek.com", "99.242.34.16"));
+        vSeeds.push_back(CDNSSeedData("blazegeek.com", "99.243.184.186"));
 
        // GeekCash addresses start with 'G'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
