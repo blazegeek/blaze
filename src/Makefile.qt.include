@@ -9,27 +9,7 @@ EXTRA_LIBRARIES += qt/libgeekcashqt.a
 
 # geekcash qt core #
 QT_TS = \
-  qt/locale/geekcash_ar.ts \
-  qt/locale/geekcash_bg.ts \
-  qt/locale/geekcash_de.ts \
-  qt/locale/geekcash_en.ts \
-  qt/locale/geekcash_es.ts \
-  qt/locale/geekcash_fi.ts \
-  qt/locale/geekcash_fr.ts \
-  qt/locale/geekcash_it.ts \
-  qt/locale/geekcash_ja.ts \
-  qt/locale/geekcash_ko.ts \
-  qt/locale/geekcash_nl.ts \
-  qt/locale/geekcash_pl.ts \
-  qt/locale/geekcash_pt.ts \
-  qt/locale/geekcash_ru.ts \
-  qt/locale/geekcash_sk.ts \
-  qt/locale/geekcash_sv.ts \
-  qt/locale/geekcash_th.ts \
-  qt/locale/geekcash_tr.ts \
-  qt/locale/geekcash_vi.ts \
-  qt/locale/geekcash_zh_CN.ts \
-  qt/locale/geekcash_zh_TW.ts
+  qt/locale/geekcash_en.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
