@@ -262,6 +262,7 @@ public:
 		assert(genesis.hashMerkleRoot == uint256S("0x6d87016979d2f369dcb5fc3a5c284be1a316790cbaabfcce403d24da4b49b210"));
 
 
+		vSeeds.push_back(CDNSSeedData("blazegeek.com", "geeknode00.blazegeek.com"));
 		vSeeds.push_back(CDNSSeedData("blazegeek.com", "geeknode01.blazegeek.com"));
 		vSeeds.push_back(CDNSSeedData("blazegeek.com", "geeknode02.blazegeek.com"));
 

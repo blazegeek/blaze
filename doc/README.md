@@ -1,4 +1,4 @@
-GeekCash 1.3.0.3
+GeekCash 1.3.0
 =====================
 
 This is the un-official reference wallet for GeekCash digital currency and comprises the backbone of the GeekCash peer-to-peer network. You can [build it yourself](#building) using the guides below.

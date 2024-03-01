@@ -1,4 +1,4 @@
-GeekCash 1.3.0.3
+GeekCash 1.3.0
 =====================
 
 Intro
