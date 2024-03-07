@@ -1,4 +1,4 @@
-GeekCash 0.13.0
+GeekCash 1.3.0
 =====================
 
 Intro
@@ -19,5 +19,5 @@ depending on the speed of your computer and network connection, the synchronizat
 process can take anywhere from a few hours to a day or more.
 
 See the GeekCash documentation at:
-  https://docs.geekcash.org
+  https://www.blazegeek.com
 for more help and information.

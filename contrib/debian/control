@@ -1,8 +1,8 @@
 Source: geekcash
 Section: utils
 Priority: optional
-Maintainer: Holger Schinzel <holger@geekcash.org>
-Uploaders: Holger Schinzel <holger@geekcash.org>
+Maintainer: unknown
+Uploaders: unknown
 Build-Depends: debhelper,
  devscripts,
  automake,
@@ -26,9 +26,9 @@ Build-Depends: debhelper,
  python,
  libzmq3-dev
 Standards-Version: 3.9.2
-Homepage: https://www.geekcash.org/
-Vcs-Git: git://github.com/geekcash/geek.git
-Vcs-Browser: https://github.com/geekcash/geek
+Homepage: https://www.blazegeek.com
+Vcs-Git: git://github.com/blazegeek/geek.git
+Vcs-Browser: https://github.com/blazegeek/geek
 
 Package: geekcashd
 Architecture: any

@@ -25,17 +25,8 @@ Build Tools and Keys
 Contains files used to package geekcashd/geekcash-qt
 for Debian-based Linux systems. If you compile geekcashd/geekcash-qt yourself, there are some useful files here.
 
-### [Gitian-descriptors](/contrib/gitian-descriptors) ###
-Notes on getting Gitian builds up and running using KVM.
-
-### [Gitian-keys](/contrib/gitian-keys)
-PGP keys used for signing Bitcoin Core [Gitian release](/doc/release-process.md) results.
-
 ### [MacDeploy](/contrib/macdeploy) ###
 Scripts and notes for Mac builds. 
-
-### [Gitian-build](/contrib/gitian-build.py) ###
-Script for running full Gitian builds.
 
 Test and Verify Tools 
 ---------------------

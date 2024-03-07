@@ -2,9 +2,7 @@
 
 This issue tracker is only for technical issues related to GeekCash.
 
-General GeekCash questions and/or support requests and are best directed to the [GeekCashpay Reddit](https://www.reddit.com/r/geekcashpay/).
-
-To report critical security issues, email infosec@geekcash.org instead of creating Github issues.
+To report critical security issues, email blazegeek@blazegeek.com instead of creating Github issues.
 
 ### Describe the issue
 

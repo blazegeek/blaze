@@ -1,7 +1,7 @@
-GeekCash 0.13.0
+GeekCash 1.3.0
 =====================
 
-This is the official reference wallet for GeekCash digital currency and comprises the backbone of the GeekCash peer-to-peer network. You can [download GeekCash](https://www.geekcash.org/downloads/) or [build it yourself](#building) using the guides below.
+This is the un-official reference wallet for GeekCash digital currency and comprises the backbone of the GeekCash peer-to-peer network. You can [build it yourself](#building) using the guides below.
 
 Running
 ---------------------
@@ -24,10 +24,7 @@ Drag GeekCash-Qt to your applications folder, and then run GeekCash-Qt.
 
 ### Need Help?
 
-* See the [GeekCash documentation](https://docs.geekcash.org)
-for help and more information.
-* Ask for help on [GeekCash Nation Discord](http://geekcashchat.org)
-* Ask for help on the [GeekCash Forum](https://geekcash.org/forum)
+* Visit [blazegeek](https://www.blazegeek.com) for more information.
 
 Building
 ---------------------
@@ -37,7 +34,6 @@ The following are developer notes on how to build GeekCash on your native platfo
 - [Unix Build Notes](build-unix.md)
 - [Windows Build Notes](build-windows.md)
 - [OpenBSD Build Notes](build-openbsd.md)
-- [Gitian Building Guide](gitian-building.md)
 
 Development
 ---------------------
@@ -55,10 +51,6 @@ The GeekCash repo's [root README](/README.md) contains relevant information on t
 - [BIPS](bips.md)
 - [Dnsseed Policy](dnsseed-policy.md)
 - [Benchmarking](benchmarking.md)
-
-### Resources
-* Discuss on the [GeekCash Forum](https://geekcash.org/forum), in the Development & Technical Discussion board.
-* Discuss on [GeekCash Nation Discord](http://geekcashchat.org)
 
 ### Miscellaneous
 - [Assets Attribution](assets-attribution.md)

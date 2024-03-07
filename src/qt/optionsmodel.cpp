@@ -84,8 +84,8 @@ void OptionsModel::Init(bool resetSettings)
     // strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "").toString();
 
     if (!settings.contains("strThirdPartyTxUrls"))
-        settings.setValue("strThirdPartyTxUrls", "https://explorer.geekcash.org/tx/%s");
-    strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "https://explorer.geekcash.org/tx/%s").toString();
+        settings.setValue("strThirdPartyTxUrls", "https://explorer.blazegeek.com/tx/%s");
+    strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "https://explorer.blazegeek.com/tx/%s").toString();
 
     if (!settings.contains("theme"))
         settings.setValue("theme", "");

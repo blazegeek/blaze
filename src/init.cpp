@@ -649,8 +649,8 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/geekcash/geek>";
-    const std::string URL_WEBSITE = "<https://geekcash.org>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/blazegeek/geek>";
+    const std::string URL_WEBSITE = "<https://www.blazegeek.com>";
 
     return CopyrightHolders(_("Copyright (C)"), 2018, COPYRIGHT_YEAR) + "\n" +
            "\n" +
@@ -1666,7 +1666,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     }
 
     if((!fLiteMode && fTxIndex == false)
-       && chainparams.NetworkIDString() != CBaseChainParams::REGTEST) { // TODO remove this when pruning is fixed. See https://github.com/geekcash/geek/pull/1817 and https://github.com/geekcash/geek/pull/1743
+       && chainparams.NetworkIDString() != CBaseChainParams::REGTEST) { // TODO remove this when pruning is fixed.
         return InitError(_("Transaction index can't be disabled in full mode. Either start with -litemode command line switch or enable transaction index."));
     }
 

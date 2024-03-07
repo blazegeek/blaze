@@ -18,10 +18,6 @@ RUN apt-get update && apt-get install -y \
 # Python stuff
 RUN pip3 install pyzmq # really needed?
 
-# geekcash_hash
-RUN git clone https://github.com/geekcash/geek_hash
-RUN cd geekcash_hash && python3 setup.py install
-
 ARG USER_ID=1000
 ARG GROUP_ID=1000
 
