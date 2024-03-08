@@ -262,9 +262,9 @@ public:
 		assert(genesis.hashMerkleRoot == uint256S("0x6d87016979d2f369dcb5fc3a5c284be1a316790cbaabfcce403d24da4b49b210"));
 
 
-		vSeeds.push_back(CDNSSeedData("blazegeek.com", "geeknode00.blazegeek.com"));
-		vSeeds.push_back(CDNSSeedData("blazegeek.com", "geeknode01.blazegeek.com"));
-		vSeeds.push_back(CDNSSeedData("blazegeek.com", "geeknode02.blazegeek.com"));
+		vSeeds.push_back(CDNSSeedData("blazegeek.com", "explorer.blazegeek.com")); //geeknode01: 147.182.156.59
+		vSeeds.push_back(CDNSSeedData("blazegeek.com", "masternode.blazegeek.com")); //geeknode02: 142.93.122.222
+		vSeeds.push_back(CDNSSeedData("blazegeek.com", "dev.blazegeek.com")); //geeknode00: 99.243.184.186
 
 	   // GeekCash addresses start with 'G'
 		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
