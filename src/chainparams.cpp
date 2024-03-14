@@ -78,8 +78,8 @@ static CBlock CreateDevNetGenesisBlock(const uint256 &prevBlockHash, const std::
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-	const char* pszTimestamp = "GeekCash - Don't work for weekends, work for our goals.";
-	const CScript genesisOutputScript = CScript() << ParseHex("04716b72451310faf205414ebb80650e286573e6554a290a1280d1955d772c6ea602d033f1f76fbd099bacba8156af85428a0197c0a3d6f0a79f8bb575c4c16751") << OP_CHECKSIG;
+	const char* pszTimestamp = "Dive in and GEEK!";
+	const CScript genesisOutputScript = CScript() << ParseHex("04381ab20c1c3967d78a0e57d41499e7b1aaa31149f2767f33fb56dd76abaa1e49838f6f66e3ea41fd863169f9791a4ce6b82811739482f547c98e379aa0c1f3cb") << OP_CHECKSIG;
 	return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
 
@@ -238,7 +238,7 @@ public:
 		consensus.vDeployments[Consensus::DEPLOYMENT_DIP0003].nThreshold = 3226; // 80% of 4032
 
 		// The best chain should have at least this much work.
-		consensus.nMinimumChainWork = uint256S("0x000000000000000000000000000000000000000000000000000000000c6a97b4"); // 101
+		consensus.nMinimumChainWork = uint256S("0x00"); // uint256S("0x000000000000000000000000000000000000000000000000000000000c6a97b4"); // 101
 
 		// By default assume that the signatures in ancestors of this block are valid.
 		consensus.defaultAssumeValid = uint256S("0x000000ba64e036fa26c9f697f2618ddd43dd7b034cafaf6b19558b23752a9c96"); // 101
@@ -248,33 +248,33 @@ public:
 		 * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
 		 * a large 32-bit integer with any alignment.
 		 */
-		pchMessageStart[0] = 0xb8;
-		pchMessageStart[1] = 0x6c;
-		pchMessageStart[2] = 0x6b;
-		pchMessageStart[3] = 0xb8;
-		vAlertPubKey = ParseHex("049a57e861057265b593ab35ab8f6e4862303b086879d6680fd203f69ceab4d0e643a8862b5ae779d8ddf37ccea3c543b8e394aa75e1df2a23eec16475beda7a07");
-		nDefaultPort = 6889;
+		pchMessageStart[0] = 0xb4;
+		pchMessageStart[1] = 0xbb;
+		pchMessageStart[2] = 0xab;
+		pchMessageStart[3] = 0xbc;
+		vAlertPubKey = ParseHex("043e2024709225addadbf19d7f46a8d43e94a309e7679ccdbab85ab561c3366fccc1e3b96bb64594e9d41dc67a0f80d318ca2759d6850ee80ba52bdd8681d9f770");
+		nDefaultPort = 5190;
 		nPruneAfterHeight = 100000;
 
-		genesis = CreateGenesisBlock(1550651536, 2725325, 0x1e0ffff0, 1, 50 * COIN);
+		genesis = CreateGenesisBlock(1710500000, 84298, 0x1e0ffff0, 1, 1000 * COIN);
 		consensus.hashGenesisBlock = genesis.GetHash();
-		assert(consensus.hashGenesisBlock == uint256S("0x00000d586e0fd3a2700d656be5fc7076bdd22cfbb3c1de83b61a5f0524fb6bba"));
-		assert(genesis.hashMerkleRoot == uint256S("0x6d87016979d2f369dcb5fc3a5c284be1a316790cbaabfcce403d24da4b49b210"));
+		assert(consensus.hashGenesisBlock == uint256S("0x00000a7009920012e4e7c9e05f9d28061fdcbf0f821b0787be481e1845f07aa1"));
+		assert(genesis.hashMerkleRoot == uint256S("0x0a4b141461197460a86302ac1d1b17f688a4982d867b415d3fd3d30fa1b309b4"));
 
 
 		vSeeds.push_back(CDNSSeedData("blazegeek.com", "explorer.blazegeek.com")); //geeknode01: 147.182.156.59
 		vSeeds.push_back(CDNSSeedData("blazegeek.com", "masternode.blazegeek.com")); //geeknode02: 142.93.122.222
 		vSeeds.push_back(CDNSSeedData("blazegeek.com", "dev.blazegeek.com")); //geeknode00: 99.243.184.186
 
-	   // GeekCash addresses start with 'G'
-		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
-		// GeekCash script addresses start with '7'
-		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19); //76
-		// GeekCash private keys start with '7' or 'X'
-		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,204);
-		// GeekCash BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
+	   // Blaze addresses start with 'b'
+		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,85);
+		// Blaze script addresses start with 'k'
+		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
+		// Blaze private keys start with 'S'
+		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,63);
+		// Blaze BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
 		base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
-		// GeekCash BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
+		// Blaze BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
 		base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
 		// GeekCash BIP44 coin type is '5'
@@ -287,7 +287,7 @@ public:
 		consensus.llmqs[Consensus::LLMQ_400_60] = llmq400_60;
 		consensus.llmqs[Consensus::LLMQ_400_85] = llmq400_85;
 
-		fMiningRequiresPeers = true;
+		fMiningRequiresPeers = false;
 		fDefaultConsistencyChecks = false;
 		fRequireStandard = true;
 		fRequireRoutableExternalIP = true;
@@ -300,14 +300,12 @@ public:
 
 		vSporkAddresses = {"GVsnnCjpqh7hWM9CfXNsKVrfuiJud7yViM"};
 		nMinSporkKeys = 1;
-		fBIP9CheckMasternodesUpgraded = true;
+		fBIP9CheckMasternodesUpgraded = false;
 		consensus.fLLMQAllowDummyCommitments = false;
 
 		checkpointData = (CCheckpointData) {
 			boost::assign::map_list_of
-			(  0, uint256S("0x00000d586e0fd3a2700d656be5fc7076bdd22cfbb3c1de83b61a5f0524fb6bba"))
-			(  100, uint256S("0x000000ba64e036fa26c9f697f2618ddd43dd7b034cafaf6b19558b23752a9c96"))
-
+			(  0, uint256S("0x00000a7009920012e4e7c9e05f9d28061fdcbf0f821b0787be481e1845f07aa1"))
 		};
 
 		chainTxData = ChainTxData{
@@ -394,18 +392,18 @@ public:
 		// By default assume that the signatures in ancestors of this block are valid.
 		consensus.defaultAssumeValid = uint256S("0x"); // 4000
 
-		pchMessageStart[0] = 0xce;
-		pchMessageStart[1] = 0xe2;
-		pchMessageStart[2] = 0xca;
-		pchMessageStart[3] = 0xff;
-		vAlertPubKey = ParseHex("04ae93efe06fc650fc894bec5d48929878fd7224db7894a6b4f3ef702ae5b38f32538777d64b9139ec547e6aef1cef3329c4174822777382c1baad0541234ab717");
-		nDefaultPort = 16889;
+		pchMessageStart[0] = 0xcb;
+		pchMessageStart[1] = 0xba;
+		pchMessageStart[2] = 0xbb;
+		pchMessageStart[3] = 0xb4;
+		vAlertPubKey = ParseHex("048c9d7fb9d9cda05c9f7cb363828bcd4416fbc8c8f71375175f229931f7e2c24b36f066005c6728b28a889b18c3444a09091467ed9d438d8a3394cdf9a83736a9");
+		nDefaultPort = 15190;
 		nPruneAfterHeight = 1000;
 
-		genesis = CreateGenesisBlock(1549022900, 871116, 0x1e0ffff0, 1, 50 * COIN);
+		genesis = CreateGenesisBlock(1710499999, 1321194, 0x1e0ffff0, 1, 1000 * COIN);
 		consensus.hashGenesisBlock = genesis.GetHash();
-		assert(consensus.hashGenesisBlock == uint256S("0x000002a73a8756b49134a0ca05dc9b50486d0ba36905c83bb23818474e40e7f3"));
-		assert(genesis.hashMerkleRoot == uint256S("0x6d87016979d2f369dcb5fc3a5c284be1a316790cbaabfcce403d24da4b49b210"));
+		assert(consensus.hashGenesisBlock == uint256S("0x00000b4e899e583809eda5c87064ce1ba3b7128c70f579e40eb36abcad5f954c"));
+		assert(genesis.hashMerkleRoot == uint256S("0x0a4b141461197460a86302ac1d1b17f688a4982d867b415d3fd3d30fa1b309b4"));
 
 		vFixedSeeds.clear();
 		vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -415,15 +413,15 @@ public:
 		vSeeds.push_back(CDNSSeedData("testnet.geekcash.net",  "ns01.testnet.geekcash.net"));
 		vSeeds.push_back(CDNSSeedData("testnet.geekcash.net",  "ns02.testnet.geekcash.net"));
 
-		// GeekCash addresses start with 'G'
-		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
-		// GeekCash script addresses start with '7'
-		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19); //76
-		// GeekCash private keys start with '7' or 'X'
-		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,204);
-		// Testnet GeekCash BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+	   // Blaze addresses start with 'b'
+		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,85);
+		// Blaze script addresses start with 'k'
+		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
+		// Blaze private keys start with 'S'
+		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,63);
+		// Blaze Testnet BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
 		base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-		// Testnet GeekCash BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+		// Blaze Testnet BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
 		base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
 		// Testnet GeekCash BIP44 coin type is '1' (All coin's testnet default)
@@ -434,7 +432,7 @@ public:
 		consensus.llmqs[Consensus::LLMQ_400_60] = llmq400_60;
 		consensus.llmqs[Consensus::LLMQ_400_85] = llmq400_85;
 
-		fMiningRequiresPeers = true;
+		fMiningRequiresPeers = false;
 		fDefaultConsistencyChecks = false;
 		fRequireStandard = false;
 		fRequireRoutableExternalIP = true;
@@ -447,7 +445,7 @@ public:
 
 		vSporkAddresses = {"GVsnnCjpqh7hWM9CfXNsKVrfuiJud7yViM"};
 		nMinSporkKeys = 1;
-		fBIP9CheckMasternodesUpgraded = true;
+		fBIP9CheckMasternodesUpgraded = false;
 		consensus.fLLMQAllowDummyCommitments = true;
 
 		// checkpointData = (CCheckpointData) {
@@ -539,18 +537,18 @@ public:
 		// By default assume that the signatures in ancestors of this block are valid.
 		consensus.defaultAssumeValid = uint256S("0x000000000000000000000000000000000000000000000000000000000000000");
 
-		pchMessageStart[0] = 0xe2;
-		pchMessageStart[1] = 0xca;
-		pchMessageStart[2] = 0xff;
-		pchMessageStart[3] = 0xce;
-		vAlertPubKey = ParseHex("04225279035dd81280fa9d6f9fcd64b84fb8bd371c6e2c06e3de1138866662bf8dc8b599724d852492821c24d84aadad0a654a0a0b44dc5d8af71e1a463a8a4c6b");
-		nDefaultPort = 16889;
+		pchMessageStart[0] = 0xcb;
+		pchMessageStart[1] = 0xba;
+		pchMessageStart[2] = 0xbb;
+		pchMessageStart[3] = 0xb4;
+		vAlertPubKey = ParseHex("0429324e3dcbeaeddab2d377b4e29576f1c42bfe2dec7a3b5c98976fbc84f9d44091698817a522a497b6005dafb7b80a8a15c5618dd146f24dc5dcdcdf34f0fe41");
+		nDefaultPort = 15190;
 		nPruneAfterHeight = 1000;
 
-		genesis = CreateGenesisBlock(1549022900, 871116, 0x207fffff, 1, 50 * COIN);
+		genesis = CreateGenesisBlock(1710500001, 2233306, 0x207fffff, 1, 1000 * COIN);
 		consensus.hashGenesisBlock = genesis.GetHash();
-		assert(consensus.hashGenesisBlock == uint256S("000002a73a8756b49134a0ca05dc9b50486d0ba36905c83bb23818474e40e7f3"));
-		assert(genesis.hashMerkleRoot == uint256S("6d87016979d2f369dcb5fc3a5c284be1a316790cbaabfcce403d24da4b49b210"));
+		assert(consensus.hashGenesisBlock == uint256S("000004e3e3afd4a0bf2b95a181f13735d8438fe107b7121d0d61b3ba395ecba4"));
+		assert(genesis.hashMerkleRoot == uint256S("0a4b141461197460a86302ac1d1b17f688a4982d867b415d3fd3d30fa1b309b4"));
 
 		devnetGenesis = FindDevNetGenesisBlock(consensus, genesis, 50 * COIN);
 		consensus.hashDevnetGenesisBlock = devnetGenesis.GetHash();
@@ -560,15 +558,15 @@ public:
 		vSeeds.push_back(CDNSSeedData("dev.geekcash.net",  "ns01.dev.geekcash.net"));
 		vSeeds.push_back(CDNSSeedData("dev.geekcash.net",  "ns02.dev.geekcash.net"));
 
-		// GeekCash addresses start with 'G'
-		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
-		// GeekCash script addresses start with '7'
-		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19); //76
-		// GeekCash private keys start with '7' or 'X'
-		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,204);
-		// Testnet GeekCash BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+	   // Blaze addresses start with 'b'
+		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,85);
+		// Blaze script addresses start with 'k'
+		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
+		// Blaze private keys start with 'S'
+		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,63);
+		// Blaze Devnet BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
 		base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-		// Testnet GeekCash BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+		// Blaze Devnet BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
 		base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
 		// Testnet GeekCash BIP44 coin type is '1' (All coin's testnet default)
@@ -579,7 +577,7 @@ public:
 		consensus.llmqs[Consensus::LLMQ_400_60] = llmq400_60;
 		consensus.llmqs[Consensus::LLMQ_400_85] = llmq400_85;
 
-		fMiningRequiresPeers = true;
+		fMiningRequiresPeers = false;
 		fDefaultConsistencyChecks = false;
 		fRequireStandard = false;
 		fMineBlocksOnDemand = false;
@@ -676,11 +674,11 @@ public:
 		// By default assume that the signatures in ancestors of this block are valid.
 		consensus.defaultAssumeValid = uint256S("0x00");
 
-		pchMessageStart[0] = 0xfc;
-		pchMessageStart[1] = 0xc1;
-		pchMessageStart[2] = 0xb7;
-		pchMessageStart[3] = 0xdc;
-		nDefaultPort = 19994;
+		pchMessageStart[0] = 0xff;
+		pchMessageStart[1] = 0xbb;
+		pchMessageStart[2] = 0xbb;
+		pchMessageStart[3] = 0xcb;
+		nDefaultPort = 25190;
 		nPruneAfterHeight = 1000;
 
 		// genesis = CreateGenesisBlock(1549022900, 871116, 0x207fffff, 1, 50 * COIN);
@@ -689,14 +687,14 @@ public:
 		// assert(consensus.hashGenesisBlock == uint256S("0x00000599f7218e76bbb3c21a8c5046a555b1e50b7753ca185f79177c48744973"));
 		// assert(genesis.hashMerkleRoot == uint256S("0x6d87016979d2f369dcb5fc3a5c284be1a316790cbaabfcce403d24da4b49b210"));
 
-		genesis = CreateGenesisBlock(1548144246, 315000, 0x207fffff, 1, 50 * COIN);
+		genesis = CreateGenesisBlock(1710499998, 774698, 0x207fffff, 1, 1000 * COIN);
 		consensus.hashGenesisBlock = genesis.GetHash();
 		// printf("-----regtest\n");
 		// printf("genesis hash: %s\n", consensus.hashGenesisBlock.ToString().c_str());
 		// printf("root hash: %s\n", genesis.hashMerkleRoot.ToString().c_str());
 		// printf("%s\n", genesis.ToString().c_str());
-		assert(consensus.hashGenesisBlock == uint256S("0x82d08b9e2bf3ee6883b4bd8552eec8a48ad229ff2c0e08ba05c77a8564ae06cb"));
-		assert(genesis.hashMerkleRoot == uint256S("0x6d87016979d2f369dcb5fc3a5c284be1a316790cbaabfcce403d24da4b49b210"));
+		assert(consensus.hashGenesisBlock == uint256S("0x00000a36e7e6eb73ea99238bb4442a6551703ab25b8dd81b2b73e5bdf6a8d526"));
+		assert(genesis.hashMerkleRoot == uint256S("0x0a4b141461197460a86302ac1d1b17f688a4982d867b415d3fd3d30fa1b309b4"));
 
 		vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
 		vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -729,15 +727,15 @@ public:
 		//     0
 		// };
 
-		// GeekCash addresses start with 'G'
-		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38);
-		// GeekCash script addresses start with '7'
-		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19); //76
-		// GeekCash private keys start with '7' or 'X'
-		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,204);
-		// Regtest GeekCash BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+	   // Blaze addresses start with 'b'
+		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,85);
+		// Blaze script addresses start with 'k'
+		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
+		// Blaze private keys start with 'S'
+		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,63);
+		// Blaze RegTest BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
 		base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-		// Regtest GeekCash BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+		// Blaze RegTest BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
 		base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
 		// Regtest GeekCash BIP44 coin type is '1' (All coin's testnet default)
