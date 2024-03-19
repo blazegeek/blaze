@@ -1145,12 +1145,11 @@ NOTE:   unlike bitcoin we are using PREVIOUS block height here,
 */
 CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params& consensusParams, bool fSuperblockPartOnly)
 {    
-
-
-    if(nPrevHeight > 20220800) return 0;
+    if(nPrevHeight > 1000000000) return 0;
 
     // First 100 blocks transfer to addresses of old chain (hardfork at block 400K)
-    CAmount nSubsidyBase = nPrevHeight > 100? 500 : 8550000;
+    //CAmount nSubsidyBase = nPrevHeight > 100? 500 : 8550000;
+    CAmount nSubsidyBase = 1000;
 
     // Decline of production by ~1% per 3 months, projected ~3.6B coins max by year 2115+.
     for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {

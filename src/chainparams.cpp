@@ -194,7 +194,7 @@ public:
 		consensus.nGovernanceFilterElements = 20000;
 		consensus.nMasternodeMinimumConfirmations = 15;
 		consensus.BIP34Height = 1;
-		consensus.BIP34Hash = uint256S("0x000001c800f8dd4695bc5f30711c876552f444fbaade6d344f30e05105fcc852");
+		consensus.BIP34Hash = uint256S("0x00000b4481f80f01dd59de3bb0bb3cee06c187e289d8168f5d5b5e2bbf56d149");
 		consensus.BIP65Height = 1; // 00000000000076d8fcea02ec0963de4abfd01e771fec0863f960c2c64fe6f357
 		consensus.BIP66Height = 1; // 00000000000b1fa2dfa312863570e13fae9ca7b5566cb27e55422620b469aefa
 		consensus.DIP0001Height = 1;
@@ -256,10 +256,10 @@ public:
 		nDefaultPort = 5190;
 		nPruneAfterHeight = 100000;
 
-		genesis = CreateGenesisBlock(1710706800, 51863, 0x1e0ffff0, 1, 1000 * COIN);
+		genesis = CreateGenesisBlock(1710706800, 1327548, 0x1e0ffff0, 1, 1000 * COIN);
 		consensus.hashGenesisBlock = genesis.GetHash();
-		assert(consensus.hashGenesisBlock == uint256S("0x0000029ac02b1c0d59dc66c4930c3ae3d897a9cc0166c050bbcf4d443e9f5546"));
-		assert(genesis.hashMerkleRoot == uint256S("0xe6d77acfd2cf472158167d1038e5e08d0cbd0872160be840e39fca0e062ec18e"));
+		assert(consensus.hashGenesisBlock == uint256S("0x00000b4481f80f01dd59de3bb0bb3cee06c187e289d8168f5d5b5e2bbf56d149"));
+		assert(genesis.hashMerkleRoot == uint256S("0xafa40b920f60bc567f654f9620721556d1612f94c544d2a5c9a1e914b3a6255e"));
 
 
 		vSeeds.push_back(CDNSSeedData("blazegeek.com", "explorer.blazegeek.com")); //geeknode01: 147.182.156.59
@@ -305,17 +305,18 @@ public:
 
 		checkpointData = (CCheckpointData) {
 			boost::assign::map_list_of
-			(  0, uint256S("0x0000029ac02b1c0d59dc66c4930c3ae3d897a9cc0166c050bbcf4d443e9f5546"))
+			(  0, uint256S("0x00000b4481f80f01dd59de3bb0bb3cee06c187e289d8168f5d5b5e2bbf56d149"))
 		};
 
-		chainTxData = ChainTxData{
-			1550725301, // * UNIX timestamp of last known number of transactions
-			101,    // * total number of transactions between genesis and that timestamp
-						//   (the tx=... number in the SetBestChain debug.log lines)
-			0.1         // * estimated number of transactions per second after that timestamp
-		};
+		//chainTxData = ChainTxData{
+		//	1550725301, // * UNIX timestamp of last known number of transactions
+		//	101,    // * total number of transactions between genesis and that timestamp
+		//				//   (the tx=... number in the SetBestChain debug.log lines)
+		//	0.1         // * estimated number of transactions per second after that timestamp
+		//};
 	}
 };
+
 static CMainParams mainParams;
 
 /**
@@ -400,10 +401,10 @@ public:
 		nDefaultPort = 15190;
 		nPruneAfterHeight = 1000;
 
-		genesis = CreateGenesisBlock(1710706500, 3654093, 0x1e0ffff0, 1, 1000 * COIN);
+		genesis = CreateGenesisBlock(1710706500, 4306049, 0x1e0ffff0, 1, 1000 * COIN);
 		consensus.hashGenesisBlock = genesis.GetHash();
-		assert(consensus.hashGenesisBlock == uint256S("x000000d079ebe5ea7b458e6cbe8ed055d4318d30daceb15974d6ef3e3d967a43f"));
-		assert(genesis.hashMerkleRoot == uint256S("0xe6d77acfd2cf472158167d1038e5e08d0cbd0872160be840e39fca0e062ec18e"));
+		assert(consensus.hashGenesisBlock == uint256S("0x000002118ed46dbfb70c512f381362e96ca2902e92316b786d3a076af010cd37"));
+		assert(genesis.hashMerkleRoot == uint256S("0xafa40b920f60bc567f654f9620721556d1612f94c544d2a5c9a1e914b3a6255e"));
 
 		vFixedSeeds.clear();
 		vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
@@ -447,22 +448,9 @@ public:
 		fBIP9CheckMasternodesUpgraded = false;
 		consensus.fLLMQAllowDummyCommitments = true;
 
-		// checkpointData = (CCheckpointData) {
-		//     boost::assign::map_list_of
-		//     (    261, uint256S("0x00000c26026d0815a7e2ce4fa270775f61403c040647ff2c3091f99e894a4618"))
-		//     (   1999, uint256S("0x00000052e538d27fa53693efe6fb6892a0c1d26c0235f599171c48a3cce553b1"))
-		//     (   2999, uint256S("0x0000024bc3f4f4cb30d29827c13d921ad77d2c6072e586c7f60d83c2722cdcc5"))
-		// };
-
-		// chainTxData = ChainTxData{
-		//     1544707462, // * UNIX timestamp of last known number of transactions
-		//     4100,       // * total number of transactions between genesis and that timestamp
-		//                 //   (the tx=... number in the SetBestChain debug.log lines)
-		//     0.01        // * estimated number of transactions per second after that timestamp
-		// };
-
 	}
 };
+
 static CTestNetParams testNetParams;
 
 /**
@@ -490,7 +478,7 @@ public:
 		consensus.BIP34Height = 1; // BIP34 activated immediately on devnet
 		consensus.BIP65Height = 1; // BIP65 activated immediately on devnet
 		consensus.BIP66Height = 1; // BIP66 activated immediately on devnet
-		consensus.DIP0001Height = 2; // DIP0001 activated immediately on devnet
+		consensus.DIP0001Height = 1; // DIP0001 activated immediately on devnet
 		consensus.powLimit = uint256S("0x7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
 		consensus.nPowTargetTimespan = 24 * 60 * 60; // GeekCash: 1 day
 		consensus.nPowTargetSpacing = 2.5 * 60; // GeekCash: 2.5 minutes
@@ -546,8 +534,8 @@ public:
 
 		genesis = CreateGenesisBlock(1710706200, 1896248, 0x207fffff, 1, 1000 * COIN);
 		consensus.hashGenesisBlock = genesis.GetHash();
-		assert(consensus.hashGenesisBlock == uint256S("0x000007911c313c01fdcba7026d2c2630565c0715a6d68e65505d79f1e07802d8"));
-		assert(genesis.hashMerkleRoot == uint256S("0xe6d77acfd2cf472158167d1038e5e08d0cbd0872160be840e39fca0e062ec18e"));
+		assert(consensus.hashGenesisBlock == uint256S("0x000001abb33bf728258dd53384ca07b341e79d774fa46f8ada0fdf462796da21"));
+		assert(genesis.hashMerkleRoot == uint256S("0xafa40b920f60bc567f654f9620721556d1612f94c544d2a5c9a1e914b3a6255e"));
 
 		devnetGenesis = FindDevNetGenesisBlock(consensus, genesis, 50 * COIN);
 		consensus.hashDevnetGenesisBlock = devnetGenesis.GetHash();
@@ -590,18 +578,6 @@ public:
 		// devnets are started with no blocks and no MN, so we can't check for upgraded MN (as there are none)
 		fBIP9CheckMasternodesUpgraded = false;
 		consensus.fLLMQAllowDummyCommitments = true;
-
-		// checkpointData = (CCheckpointData) {
-		//     boost::assign::map_list_of
-		//     (      0, uint256S("0x000008ca1832a4baf228eb1553c03d3a2c8e02399550dd6ea8d65cec3ef23d2e"))
-		//     (      1, devnetGenesis.GetHash())
-		// };
-
-		// chainTxData = ChainTxData{
-		//     devnetGenesis.GetBlockTime(), // * UNIX timestamp of devnet genesis block
-		//     2,                            // * we only have 2 coinbase transactions when a devnet is started up
-		//     0.01                          // * estimated number of transactions per second
-		// };
 	}
 
 	void UpdateSubsidyAndDiffParams(int nMinimumDifficultyBlocks, int nHighSubsidyBlocks, int nHighSubsidyFactor)
@@ -682,14 +658,14 @@ public:
 		// genesis = CreateGenesisBlock(1549022900, 871116, 0x207fffff, 1, 50 * COIN);
 		// consensus.hashGenesisBlock = genesis.GetHash();
 
-		genesis = CreateGenesisBlock(1710705900, 560458, 0x207fffff, 1, 1000 * COIN);
+		genesis = CreateGenesisBlock(1710705900, 417036, 0x207fffff, 1, 1000 * COIN);
 		consensus.hashGenesisBlock = genesis.GetHash();
 		// printf("-----regtest\n");
 		// printf("genesis hash: %s\n", consensus.hashGenesisBlock.ToString().c_str());
 		// printf("root hash: %s\n", genesis.hashMerkleRoot.ToString().c_str());
 		// printf("%s\n", genesis.ToString().c_str());
-		assert(consensus.hashGenesisBlock == uint256S("0x000009349151cae27ff6d9b5851a493ad0cd575a561698eb746d6f7106f00831"));
-		assert(genesis.hashMerkleRoot == uint256S("0xe6d77acfd2cf472158167d1038e5e08d0cbd0872160be840e39fca0e062ec18e"));
+		assert(consensus.hashGenesisBlock == uint256S("0x0000059c796214ccb7a4da449afcb3226b07a34878429824c4695f4986f43610"));
+		assert(genesis.hashMerkleRoot == uint256S("0xafa40b920f60bc567f654f9620721556d1612f94c544d2a5c9a1e914b3a6255e"));
 
 		vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
 		vSeeds.clear();      //!< Regtest mode doesn't have any DNS seeds.
@@ -704,23 +680,11 @@ public:
 
 		nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
 
-		// privKey: cP4EKFyJsHT39LDqgdcB43Y3YXjNyjb5Fuas1GQSeAtjnZWmZEQK
 		vSporkAddresses = {"BDuxWTtMfAyGcGjbgBPSqN53L3Fzkj3zew"};
 		nMinSporkKeys = 1;
 		// regtest usually has no masternodes in most tests, so don't check for upgraged MNs
 		fBIP9CheckMasternodesUpgraded = false;
 		consensus.fLLMQAllowDummyCommitments = true;
-
-		// checkpointData = (CCheckpointData){
-		//     boost::assign::map_list_of
-		//     ( 0, uint256S("0x000008ca1832a4baf228eb1553c03d3a2c8e02399550dd6ea8d65cec3ef23d2e"))
-		// };
-
-		// chainTxData = ChainTxData{
-		//     0,
-		//     0,
-		//     0
-		// };
 
 	   // Blaze addresses start with 'B'
 		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
