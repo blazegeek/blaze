@@ -52,7 +52,6 @@ public:
         SECRET_KEY,     // BIP16
         EXT_PUBLIC_KEY, // BIP32
         EXT_SECRET_KEY, // BIP32
-
         MAX_BASE58_TYPES
     };
 

@@ -161,19 +161,7 @@ static Consensus::LLMQParams llmq400_85 = {
 		.dkgMiningWindowEnd = 48, // give it a larger mining window to make sure it is mined
 };
 
-
-/**
- * Main network
- */
-/**
- * What makes a good checkpoint block?
- * + Is surrounded by blocks with reasonable timestamps
- *   (no blocks before with a timestamp after, none after with
- *    timestamp before)
- * + Contains no strange transactions
- */
-
-
+// MAINNET
 class CMainParams : public CChainParams {
 public:
 	CMainParams() {
@@ -266,12 +254,13 @@ public:
 		vSeeds.push_back(CDNSSeedData("blazegeek.com", "masternode.blazegeek.com")); //geeknode02: 142.93.122.222
 		vSeeds.push_back(CDNSSeedData("blazegeek.com", "dev.blazegeek.com")); //geeknode00: 99.243.184.186
 
-	   // Blaze addresses start with 'B'
-		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
+	  // Blaze mainnet addresses start with 'geek1'
+		//base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25); //0x19
+		base58Prefixes[PUBKEY_ADDRESS] = {0x42,0x76,0xf1,0xe7};
 		// Blaze script addresses start with 'k'
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
-		// Blaze private keys start with '6'
-		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,195);
+		// Blaze private keys start with 'S'
+		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,171); //0xAB
 		// Blaze BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
 		base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
 		// Blaze BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
@@ -298,7 +287,7 @@ public:
 		nPoolMaxTransactions = 3;
 		nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-		vSporkAddresses = {"BDuxWTtMfAyGcGjbgBPSqN53L3Fzkj3zew"};
+		vSporkAddresses = {"geek1RJqQpuCcJ57ZqskQCeDv8VVUyPphauoDM"};
 		nMinSporkKeys = 1;
 		fBIP9CheckMasternodesUpgraded = false;
 		consensus.fLLMQAllowDummyCommitments = false;
@@ -316,12 +305,9 @@ public:
 		//};
 	}
 };
-
 static CMainParams mainParams;
 
-/**
- * Testnet (v3)
- */
+// TESTNET
 class CTestNetParams : public CChainParams {
 public:
 	CTestNetParams() {
@@ -413,12 +399,13 @@ public:
 		// nodes with support for servicebits filtering should be at the top
 		vSeeds.push_back(CDNSSeedData("blazegeek.com",  "dev.blazegeek.com"));
 
-	   // Blaze addresses start with 'B'
-		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
+	  // Blaze Testnet addresses start with 'test'
+		//base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
+		base58Prefixes[PUBKEY_ADDRESS] = {0x01,0x7e,0x2d,0x59};
 		// Blaze script addresses start with 'k'
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
-		// Blaze private keys start with '6'
-		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,195);
+		// Blaze private keys start with 'S'
+		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,171); //0xAB
 		// Blaze Testnet BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
 		base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
 		// Blaze Testnet BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
@@ -443,19 +430,16 @@ public:
 		nPoolMaxTransactions = 3;
 		nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
 
-		vSporkAddresses = {"BDuxWTtMfAyGcGjbgBPSqN53L3Fzkj3zew"};
+		vSporkAddresses = {"testWFVh2CnNjtnNmN6oxQsfKZoQS11qUcEdr"};
 		nMinSporkKeys = 1;
 		fBIP9CheckMasternodesUpgraded = false;
 		consensus.fLLMQAllowDummyCommitments = true;
 
 	}
 };
-
 static CTestNetParams testNetParams;
 
-/**
- * Devnet
- */
+// DEVNET
 class CDevNetParams : public CChainParams {
 public:
 	CDevNetParams() {
@@ -544,12 +528,13 @@ public:
 		vSeeds.clear();
 		vSeeds.push_back(CDNSSeedData("blazegeek.com",  "dev.blazegeek.com"));
 
-	   // Blaze addresses start with 'B'
-		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
+	  // Blaze Devnet addresses start with 'test'
+		//base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
+		base58Prefixes[PUBKEY_ADDRESS] = {0x01,0x7e,0x2d,0x59};
 		// Blaze script addresses start with 'k'
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
-		// Blaze private keys start with '6'
-		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,195);
+		// Blaze private keys start with 'S'
+		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,171); //0xAB
 		// Blaze Devnet BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
 		base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
 		// Blaze Devnet BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
@@ -573,7 +558,7 @@ public:
 		nPoolMaxTransactions = 3;
 		nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
 
-		vSporkAddresses = {"BDuxWTtMfAyGcGjbgBPSqN53L3Fzkj3zew"};
+		vSporkAddresses = {"testgVV8SumVwAAN5z9UNmBFMs6e43jServ6w"};
 		nMinSporkKeys = 1;
 		// devnets are started with no blocks and no MN, so we can't check for upgraded MN (as there are none)
 		fBIP9CheckMasternodesUpgraded = false;
@@ -589,10 +574,7 @@ public:
 };
 static CDevNetParams *devNetParams;
 
-
-/**
- * Regression test
- */
+// REGTEST
 class CRegTestParams : public CChainParams {
 public:
 	CRegTestParams() {
@@ -680,18 +662,19 @@ public:
 
 		nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
 
-		vSporkAddresses = {"BDuxWTtMfAyGcGjbgBPSqN53L3Fzkj3zew"};
+		vSporkAddresses = {"testWFVh2CnNjtnNmN6oxQsfKZoQS11qUcEdr"};
 		nMinSporkKeys = 1;
 		// regtest usually has no masternodes in most tests, so don't check for upgraged MNs
 		fBIP9CheckMasternodesUpgraded = false;
 		consensus.fLLMQAllowDummyCommitments = true;
 
-	   // Blaze addresses start with 'B'
-		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
+	  // Blaze RegTest addresses start with 'test'
+		//base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
+		base58Prefixes[PUBKEY_ADDRESS] = {0x01,0x7e,0x2d,0x59};
 		// Blaze script addresses start with 'k'
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
-		// Blaze private keys start with '6'
-		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,195);
+		// Blaze private keys start with 'S'
+		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,171); //0xAB
 		// Blaze RegTest BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
 		base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
 		// Blaze RegTest BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
