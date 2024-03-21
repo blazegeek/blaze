@@ -260,7 +260,7 @@ public:
 		// Blaze script addresses start with 'k'
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
 		// Blaze private keys start with 'S'
-		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,174); //0xAE
+		base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1,174); //0xAE
 		// Blaze BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
 		base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
 		// Blaze BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
@@ -400,7 +400,7 @@ public:
 		vSeeds.push_back(CDNSSeedData("blazegeek.com",  "dev.blazegeek.com"));
 
 	  // Blaze Testnet addresses start with 't'
-		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,128); 0x80
+		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,128); //0x80
 		//base58Prefixes[PUBKEY_ADDRESS] = {0x01,0x7e,0x2d,0x59};
 		// Blaze script addresses start with 'k'
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
@@ -529,7 +529,7 @@ public:
 		vSeeds.push_back(CDNSSeedData("blazegeek.com",  "dev.blazegeek.com"));
 
 	  // Blaze Devnet addresses start with 't'
-		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,128);
+		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,128); //0x80
 		//se58Prefixes[PUBKEY_ADDRESS] = {0x01,0x7e,0x2d,0x59};
 		// Blaze script addresses start with 'k'
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
@@ -669,7 +669,7 @@ public:
 		consensus.fLLMQAllowDummyCommitments = true;
 
 	  // Blaze RegTest addresses start with 't'
-		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,128);
+		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,128); //0x80
 		//base58Prefixes[PUBKEY_ADDRESS] = {0x01,0x7e,0x2d,0x59};
 		// Blaze script addresses start with 'k'
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
