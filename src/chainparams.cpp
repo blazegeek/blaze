@@ -254,13 +254,13 @@ public:
 		vSeeds.push_back(CDNSSeedData("blazegeek.com", "masternode.blazegeek.com")); //geeknode02: 142.93.122.222
 		vSeeds.push_back(CDNSSeedData("blazegeek.com", "dev.blazegeek.com")); //geeknode00: 99.243.184.186
 
-	  // Blaze mainnet addresses start with 'geek1'
-		//base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25); //0x19
-		base58Prefixes[PUBKEY_ADDRESS] = {0x42,0x76,0xf1,0xe7};
+	  // Blaze mainnet addresses start with 'G'
+		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,38); //0x26
+		//base58Prefixes[PUBKEY_ADDRESS] = list_of(0x42)(0x76)(0xf1)(0xe7).convert_to_container<std::vector<unsigned char> >();
 		// Blaze script addresses start with 'k'
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
 		// Blaze private keys start with 'S'
-		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,171); //0xAB
+		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,174); //0xAE
 		// Blaze BIP32 pubkeys start with 'xpub' (Bitcoin defaults)
 		base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
 		// Blaze BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
@@ -287,7 +287,7 @@ public:
 		nPoolMaxTransactions = 3;
 		nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
 
-		vSporkAddresses = {"geek1RJqQpuCcJ57ZqskQCeDv8VVUyPphauoDM"};
+		vSporkAddresses = {"GTJoJsm6tWzfEuYizdib8zcGWbcG34UPpM"};
 		nMinSporkKeys = 1;
 		fBIP9CheckMasternodesUpgraded = false;
 		consensus.fLLMQAllowDummyCommitments = false;
@@ -399,13 +399,13 @@ public:
 		// nodes with support for servicebits filtering should be at the top
 		vSeeds.push_back(CDNSSeedData("blazegeek.com",  "dev.blazegeek.com"));
 
-	  // Blaze Testnet addresses start with 'test'
-		//base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
-		base58Prefixes[PUBKEY_ADDRESS] = {0x01,0x7e,0x2d,0x59};
+	  // Blaze Testnet addresses start with 't'
+		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,128); 0x80
+		//base58Prefixes[PUBKEY_ADDRESS] = {0x01,0x7e,0x2d,0x59};
 		// Blaze script addresses start with 'k'
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
 		// Blaze private keys start with 'S'
-		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,171); //0xAB
+		base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,174); //0xAE
 		// Blaze Testnet BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
 		base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
 		// Blaze Testnet BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
@@ -430,7 +430,7 @@ public:
 		nPoolMaxTransactions = 3;
 		nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
 
-		vSporkAddresses = {"testWFVh2CnNjtnNmN6oxQsfKZoQS11qUcEdr"};
+		vSporkAddresses = {"tdBGp2igrcczdiT7MWq4e8jUdZGV6QifQv"};
 		nMinSporkKeys = 1;
 		fBIP9CheckMasternodesUpgraded = false;
 		consensus.fLLMQAllowDummyCommitments = true;
@@ -528,9 +528,9 @@ public:
 		vSeeds.clear();
 		vSeeds.push_back(CDNSSeedData("blazegeek.com",  "dev.blazegeek.com"));
 
-	  // Blaze Devnet addresses start with 'test'
-		//base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
-		base58Prefixes[PUBKEY_ADDRESS] = {0x01,0x7e,0x2d,0x59};
+	  // Blaze Devnet addresses start with 't'
+		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,128);
+		//se58Prefixes[PUBKEY_ADDRESS] = {0x01,0x7e,0x2d,0x59};
 		// Blaze script addresses start with 'k'
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
 		// Blaze private keys start with 'S'
@@ -558,7 +558,7 @@ public:
 		nPoolMaxTransactions = 3;
 		nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
 
-		vSporkAddresses = {"testgVV8SumVwAAN5z9UNmBFMs6e43jServ6w"};
+		vSporkAddresses = {"toRGFTRfyotNd35A1wBNEB2msBKCmJxy4d"};
 		nMinSporkKeys = 1;
 		// devnets are started with no blocks and no MN, so we can't check for upgraded MN (as there are none)
 		fBIP9CheckMasternodesUpgraded = false;
@@ -662,15 +662,15 @@ public:
 
 		nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
 
-		vSporkAddresses = {"testWFVh2CnNjtnNmN6oxQsfKZoQS11qUcEdr"};
+		vSporkAddresses = {"tdBGp2igrcczdiT7MWq4e8jUdZGV6QifQv"};
 		nMinSporkKeys = 1;
 		// regtest usually has no masternodes in most tests, so don't check for upgraged MNs
 		fBIP9CheckMasternodesUpgraded = false;
 		consensus.fLLMQAllowDummyCommitments = true;
 
-	  // Blaze RegTest addresses start with 'test'
-		//base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
-		base58Prefixes[PUBKEY_ADDRESS] = {0x01,0x7e,0x2d,0x59};
+	  // Blaze RegTest addresses start with 't'
+		base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,128);
+		//base58Prefixes[PUBKEY_ADDRESS] = {0x01,0x7e,0x2d,0x59};
 		// Blaze script addresses start with 'k'
 		base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,107); //76
 		// Blaze private keys start with 'S'
