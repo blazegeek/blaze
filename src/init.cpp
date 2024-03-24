@@ -1439,6 +1439,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
             threadGroup.create_thread(&ThreadScriptCheck);
     }
 
+    /*
     std::vector<std::string> vSporkAddresses;
     if (mapMultiArgs.count("-sporkaddr")) {
         vSporkAddresses = mapMultiArgs.at("-sporkaddr");
@@ -1462,6 +1463,7 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
             return InitError(_("Unable to sign spork message, wrong key?"));
         }
     }
+    */
 
     // Start the lightweight task scheduler thread
     CScheduler::Function serviceLoop = boost::bind(&CScheduler::serviceQueue, &scheduler);
