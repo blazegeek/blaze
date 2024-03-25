@@ -159,9 +159,10 @@ BITCOIN_QT_H = \
   qt/winshutdownmonitor.h
 
 RES_ICONS = \
-  qt/res/icons/bitcoin.ico \
-  qt/res/icons/bitcoin_testnet.ico \
-  qt/res/icons/bitcoin.png \
+  qt/res/icons/geekcash.ico \
+  qt/res/icons/geekcash_testnet.ico \
+  qt/res/icons/geekcash.png \
+  qt/res/icons/geekcash_testnet.png \
   qt/res/icons/chevron.png \
   qt/res/icons/warning.png \
   qt/res/icons/light/add.png \
