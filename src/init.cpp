@@ -1456,7 +1456,6 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
         return InitError(_("Invalid minimum number of spork signers specified with -minsporkkeys"));
     }
 
-
     if (IsArgSet("-sporkkey")) { // spork priv key
         if (!sporkManager.SetPrivKey(GetArg("-sporkkey", ""))) {
             return InitError(_("Unable to sign spork message, wrong key?"));
