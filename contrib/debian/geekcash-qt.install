@@ -1,6 +1,3 @@
 usr/local/bin/geekcash-qt usr/bin
-share/pixmaps/geekcash32.xpm usr/share/pixmaps
-share/pixmaps/geekcash16.xpm usr/share/pixmaps
-share/pixmaps/geekcash128.png usr/share/pixmaps
 debian/geekcash-qt.desktop usr/share/applications
 debian/geekcash-qt.protocol usr/share/kde4/services/

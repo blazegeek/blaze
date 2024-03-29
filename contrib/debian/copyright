@@ -7,8 +7,7 @@ Source: https://github.com/bitcoin/bitcoin
 Files: *
 Copyright: 2009-2017, Bitcoin Core Developers
 License: Expat
-Comment: The Bitcoin Core Developers encompasses the current developers listed on bitcoin.org,
-         as well as the numerous contributors to the project.
+Comment: The Bitcoin Core Developers encompasses the current developers listed on bitcoin.org, as well as the numerous contributors to the project.
 
 Files: debian/*
 Copyright: 2010-2011, Jonas Smedegaard <dr@jones.dk>
@@ -80,7 +79,6 @@ Comment: Modifications of Stephan Hutchings Typicons
 Files: src/qt/res/icons/about.png
        src/qt/res/icons/bitcoin.*
        share/pixmaps/bitcoin*
-       src/qt/res/src/bitcoin.svg
 Copyright: Bitboy, Jonas Schnelli
 License: public-domain
 Comment: Site: https://bitcointalk.org/?topic=1756.0
