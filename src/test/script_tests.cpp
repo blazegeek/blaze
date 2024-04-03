@@ -12,7 +12,7 @@
 #include "script/sign.h"
 #include "util.h"
 #include "utilstrencodings.h"
-#include "test/test_geekcash.h"
+#include "test/test_blaze.h"
 
 #if defined(HAVE_CONSENSUS_LIB)
 #include "script/blazeconsensus.h"

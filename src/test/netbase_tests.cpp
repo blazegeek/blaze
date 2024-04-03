@@ -5,7 +5,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "netbase.h"
-#include "test/test_geekcash.h"
+#include "test/test_blaze.h"
 
 #include <string>
 

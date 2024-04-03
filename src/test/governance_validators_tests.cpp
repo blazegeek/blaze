@@ -7,7 +7,7 @@
 #include "data/proposals_valid.json.h"
 #include "data/proposals_invalid.json.h"
 
-#include "test/test_geekcash.h"
+#include "test/test_blaze.h"
 
 #include <iostream>
 #include <fstream>

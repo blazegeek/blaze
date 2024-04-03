@@ -3,7 +3,7 @@
 
 #include "cachemultimap.h"
 
-#include "test/test_geekcash.h"
+#include "test/test_blaze.h"
 
 #include <algorithm>
 #include <iostream>

@@ -8,7 +8,7 @@
 #include "key.h"
 #include "util.h"
 #include "utilstrencodings.h"
-#include "test/test_geekcash.h"
+#include "test/test_blaze.h"
 #include "bip39.h"
 
 #include <boost/test/unit_test.hpp>

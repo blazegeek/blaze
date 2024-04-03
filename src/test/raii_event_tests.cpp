@@ -12,7 +12,7 @@
 
 #include "support/events.h"
 
-#include "test/test_geekcash.h"
+#include "test/test_blaze.h"
 
 #include <vector>
 

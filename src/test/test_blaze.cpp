@@ -4,7 +4,7 @@
 
 #define BOOST_TEST_MODULE GeekCash Test Suite
 
-#include "test_geekcash.h"
+#include "test_blaze.h"
 
 #include "chainparams.h"
 #include "consensus/consensus.h"
