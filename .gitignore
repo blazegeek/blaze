@@ -7,13 +7,13 @@ reset-files.bash
 *.zip
 
 *.exe
-src/geekcash
-src/geekcashd
+src/blaze
+src/blazed
 src/blaze-cli
 src/blaze-tx
 src/test/blaze
 src/qt/test/test_blaze-qt
-src/bench/bench_geekcash
+src/bench/bench_blaze
 
 # autoreconf
 Makefile.in
@@ -126,7 +126,7 @@ qa/pull-tester/tests-config.sh
 
 #development symlinks
 blaze-cli
-geekcashd
+blazed
 blaze-qt
 make
 

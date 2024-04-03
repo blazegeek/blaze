@@ -5,23 +5,23 @@
 if [ -d "/var/lib/geekcash/.geekcash" ]; then
 	BITCOIND_DEFAULT_DATADIR="/var/lib/geekcash/.geekcash"
 else
-	BITCOIND_DEFAULT_DATADIR="/var/lib/geekcashd"
+	BITCOIND_DEFAULT_DATADIR="/var/lib/blazed"
 fi
 
 BITCOIND_CONFIGFILE=${BITCOIND_CONFIGFILE:-/etc/blaze/blaze.conf}
-BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/geekcashd}
-BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/geekcashd.pid}
+BITCOIND_PIDDIR=${BITCOIND_PIDDIR:-/var/run/blazed}
+BITCOIND_PIDFILE=${BITCOIND_PIDFILE:-${BITCOIND_PIDDIR}/blazed.pid}
 BITCOIND_DATADIR=${BITCOIND_DATADIR:-${BITCOIND_DEFAULT_DATADIR}}
 BITCOIND_USER=${BITCOIND_USER:-${BITCOIN_USER:-geekcash}}
 BITCOIND_GROUP=${BITCOIND_GROUP:-geekcash}
-BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/geekcashd}
+BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/blazed}
 BITCOIND_NICE=${BITCOIND_NICE:-${NICELEVEL:-0}}
 BITCOIND_OPTS="${BITCOIND_OPTS:-${BITCOIN_OPTS}}"
 
 name="GeekCash Daemon"
 description="GeekCash cryptocurrency P2P network daemon"
 
-command="/usr/bin/geekcashd"
+command="/usr/bin/blazed"
 command_args="-pid=\"${BITCOIND_PIDFILE}\" \
 		-conf=\"${BITCOIND_CONFIGFILE}\" \
 		-datadir=\"${BITCOIND_DATADIR}\" \
@@ -71,7 +71,7 @@ checkconfig()
 {
 	if ! grep -qs '^rpcpassword=' "${BITCOIND_CONFIGFILE}" ; then
 		eerror ""
-		eerror "ERROR: You must set a secure rpcpassword to run geekcashd."
+		eerror "ERROR: You must set a secure rpcpassword to run blazed."
 		eerror "The setting must appear in ${BITCOIND_CONFIGFILE}"
 		eerror ""
 		eerror "This password is security critical to securing wallets "

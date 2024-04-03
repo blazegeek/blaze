@@ -5,9 +5,9 @@ and tests weren't explicitly disabled.
 
 After configuring, they can be run with `make check`.
 
-To run the geekcashd tests manually, launch `src/test/test_blaze`.
+To run the blazed tests manually, launch `src/test/test_blaze`.
 
-To add more geekcashd tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
+To add more blazed tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
 .cpp files in the `test/` directory or add new .cpp files that
 implement new BOOST_AUTO_TEST_SUITE sections.
 

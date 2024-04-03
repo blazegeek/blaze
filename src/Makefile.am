@@ -69,7 +69,7 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += geekcashd
+  bin_PROGRAMS += blazed
 endif
 
 if BUILD_BITCOIN_UTILS
@@ -477,17 +477,17 @@ libblaze_cli_a_SOURCES = \
 nodist_libblaze_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# geekcashd binary #
-geekcashd_SOURCES = blazed.cpp
-geekcashd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-geekcashd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-geekcashd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# blazed binary #
+blazed_SOURCES = blazed.cpp
+blazed_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+blazed_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+blazed_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-geekcashd_SOURCES += blazed-res.rc
+blazed_SOURCES += blazed-res.rc
 endif
 
-geekcashd_LDADD = \
+blazed_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -500,7 +500,7 @@ geekcashd_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-geekcashd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(BLS_LIBS)
+blazed_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(BLS_LIBS)
 
 # blaze-cli binary #
 blaze_cli_SOURCES = blaze-cli.cpp

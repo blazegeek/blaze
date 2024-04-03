@@ -33,7 +33,7 @@ Follow the instructions in [build-generic](build-generic.md)
 Running
 -------
 
-GeekCash is now available at `./src/geekcashd`
+GeekCash is now available at `./src/blazed`
 
 Before running, it's recommended you create an RPC configuration file.
 
@@ -41,7 +41,7 @@ Before running, it's recommended you create an RPC configuration file.
 
     chmod 600 "/Users/${USER}/Library/Application Support/Blaze/blaze.conf"
 
-The first time you run geekcashd, it will start downloading the blockchain. This process could take several hours.
+The first time you run blazed, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
@@ -50,7 +50,7 @@ You can monitor the download process by looking at the debug.log file:
 Other commands:
 -------
 
-    ./src/geekcashd -daemon # Starts the geekcash daemon.
+    ./src/blazed -daemon # Starts the geekcash daemon.
     ./src/blaze-cli --help # Outputs a list of command-line options.
     ./src/blaze-cli help # Outputs a list of RPC commands when the daemon is running.
 

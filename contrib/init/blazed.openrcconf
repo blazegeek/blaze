@@ -1,25 +1,25 @@
-# /etc/conf.d/geekcashd: config file for /etc/init.d/geekcashd
+# /etc/conf.d/blazed: config file for /etc/init.d/blazed
 
 # Config file location
 #BITCOIND_CONFIGFILE="/etc/blaze/blaze.conf"
 
 # What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
-#BITCOIND_PIDDIR="/var/run/geekcashd"
+#BITCOIND_PIDDIR="/var/run/blazed"
 
 # What filename to give the pidfile
-#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/geekcashd.pid"
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/blazed.pid"
 
-# Where to write geekcashd data (be mindful that the blockchain is large)
-#BITCOIND_DATADIR="/var/lib/geekcashd"
+# Where to write blazed data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/blazed"
 
-# User and group to own geekcashd process
+# User and group to own blazed process
 #BITCOIND_USER="geekcash"
 #BITCOIND_GROUP="geekcash"
 
-# Path to geekcashd executable
-#BITCOIND_BIN="/usr/bin/geekcashd"
+# Path to blazed executable
+#BITCOIND_BIN="/usr/bin/blazed"
 
-# Nice value to run geekcashd under
+# Nice value to run blazed under
 #BITCOIND_NICE=0
 
 # Additional options (avoid -conf and -datadir, use flags above)

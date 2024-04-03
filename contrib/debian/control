@@ -30,7 +30,7 @@ Homepage: https://www.blazegeek.com
 Vcs-Git: git://github.com/blazegeek/geek.git
 Vcs-Browser: https://github.com/blazegeek/geek
 
-Package: geekcashd
+Package: blazed
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
@@ -40,7 +40,7 @@ Description: peer-to-peer network based digital currency - daemon
  and issuing money are carried out collectively by the network. GeekCash
  is the name of the open source software which enables the use of this currency.
  .
- This package provides the daemon, geekcashd, and the CLI tool
+ This package provides the daemon, blazed, and the CLI tool
  blaze-cli to interact with the daemon.
 
 Package: blaze-qt

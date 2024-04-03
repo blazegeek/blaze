@@ -123,7 +123,7 @@ bool fLiteMode = false;
 int nWalletBackups = 10;
 
 const char * const BITCOIN_CONF_FILENAME = "blaze.conf";
-const char * const BITCOIN_PID_FILENAME = "geekcashd.pid";
+const char * const BITCOIN_PID_FILENAME = "blazed.pid";
 
 CCriticalSection cs_args;
 std::map<std::string, std::string> mapArgs;

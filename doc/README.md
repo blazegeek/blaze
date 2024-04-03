@@ -12,7 +12,7 @@ The following are some helpful notes on how to run GeekCash on your native platf
 Unpack the files into a directory and run:
 
 - `bin/blaze-qt` (GUI) or
-- `bin/geekcashd` (headless)
+- `bin/blazed` (headless)
 
 ### Windows
 

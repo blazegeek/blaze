@@ -1,36 +1,36 @@
 #!/bin/bash
 #
-#  geekcashd The GeekCash server.
+#  blazed The GeekCash server.
 #
 #
 # chkconfig: 345 80 20
-# description: geekcashd
-# processname: geekcashd
+# description: blazed
+# processname: blazed
 #
 
 # Source function library.
 . /etc/init.d/functions
 
-# you can override defaults in /etc/sysconfig/geekcashd, see below
-if [ -f /etc/sysconfig/geekcashd ]; then
-        . /etc/sysconfig/geekcashd
+# you can override defaults in /etc/sysconfig/blazed, see below
+if [ -f /etc/sysconfig/blazed ]; then
+        . /etc/sysconfig/blazed
 fi
 
 RETVAL=0
 
-prog=geekcashd
-# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/geekcashd
-lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/geekcashd}
+prog=blazed
+# you can override the lockfile via BITCOIND_LOCKFILE in /etc/sysconfig/blazed
+lockfile=${BITCOIND_LOCKFILE-/var/lock/subsys/blazed}
 
-# geekcashd defaults to /usr/bin/geekcashd, override with BITCOIND_BIN
-geekcashd=${BITCOIND_BIN-/usr/bin/geekcashd}
+# blazed defaults to /usr/bin/blazed, override with BITCOIND_BIN
+blazed=${BITCOIND_BIN-/usr/bin/blazed}
 
-# geekcashd opts default to -disablewallet, override with BITCOIND_OPTS
-geekcashd_opts=${BITCOIND_OPTS--disablewallet}
+# blazed opts default to -disablewallet, override with BITCOIND_OPTS
+blazed_opts=${BITCOIND_OPTS--disablewallet}
 
 start() {
     echo -n $"Starting $prog: "
-    daemon $DAEMONOPTS $geekcashd $geekcashd_opts
+    daemon $DAEMONOPTS $blazed $blazed_opts
     RETVAL=$?
     echo
     [ $RETVAL -eq 0 ] && touch $lockfile
