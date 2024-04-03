@@ -119,7 +119,7 @@ qa/cache/*
 .autotools
 /doc/doxygen/
 
-libgeekcashconsensus.pc
+libblazeconsensus.pc
 contrib/devtools/split-debug.sh
 src/qt/geekcash-qt.bash
 qa/pull-tester/tests-config.sh

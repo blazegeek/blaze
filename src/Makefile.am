@@ -41,7 +41,7 @@ if ENABLE_ZMQ
 LIBBITCOIN_ZMQ=libgeekcash_zmq.a
 endif
 if BUILD_BITCOIN_LIBS
-LIBBITCOINCONSENSUS=libgeekcashconsensus.la
+LIBBITCOINCONSENSUS=libblazeconsensus.la
 endif
 if ENABLE_WALLET
 LIBBITCOIN_WALLET=libgeekcash_wallet.a
@@ -395,7 +395,7 @@ libgeekcash_consensus_a_SOURCES = \
   primitives/transaction.h \
   pubkey.cpp \
   pubkey.h \
-  script/geekcashconsensus.cpp \
+  script/blazeconsensus.cpp \
   script/interpreter.cpp \
   script/interpreter.h \
   script/script.cpp \
@@ -541,19 +541,19 @@ geekcash_tx_LDADD = \
 geekcash_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS) $(BLS_LIBS)
 #
 
-# geekcashconsensus library #
+# blazeconsensus library #
 if BUILD_BITCOIN_LIBS
-include_HEADERS = script/geekcashconsensus.h
-libgeekcashconsensus_la_SOURCES = $(crypto_libgeekcash_crypto_a_SOURCES) $(libgeekcash_consensus_a_SOURCES)
+include_HEADERS = script/blazeconsensus.h
+libblazeconsensus_la_SOURCES = $(crypto_libblaze_crypto_a_SOURCES) $(libblaze_consensus_a_SOURCES)
 
 if GLIBC_BACK_COMPAT
-  libgeekcashconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libblazeconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libgeekcashconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libgeekcashconsensus_la_LIBADD = $(LIBSECP256K1) $(BLS_LIBS)
-libgeekcashconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
-libgeekcashconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libblazeconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libblazeconsensus_la_LIBADD = $(LIBSECP256K1) $(BLS_LIBS)
+libblazeconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
+libblazeconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #
