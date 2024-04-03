@@ -9,7 +9,7 @@ Group=geekcash
 Type=forking
 PIDFile=/var/lib/geekcashd/geekcashd.pid
 ExecStart=/usr/bin/geekcashd -daemon -pid=/var/lib/geekcashd/geekcashd.pid \
--conf=/etc/geekcash/geekcash.conf -datadir=/var/lib/geekcashd -disablewallet
+-conf=/etc/blaze/blaze.conf -datadir=/var/lib/geekcashd -disablewallet
 
 Restart=always
 PrivateTmp=true

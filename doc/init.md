@@ -44,7 +44,7 @@ This allows for running geekcashd without having to do any manual configuration.
 relative to the data directory. `wallet` *only* supports relative paths.
 
 For an example configuration file that describes the configuration settings,
-see `contrib/debian/examples/geekcash.conf`.
+see `contrib/debian/examples/blaze.conf`.
 
 3. Paths
 ---------------------------------
@@ -54,7 +54,7 @@ see `contrib/debian/examples/geekcash.conf`.
 All three configurations assume several paths that might need to be adjusted.
 
 Binary:              `/usr/bin/geekcashd`  
-Configuration file:  `/etc/geekcash/geekcash.conf`  
+Configuration file:  `/etc/geekcash/blaze.conf`
 Data directory:      `/var/lib/geekcashd`  
 PID file:            `/var/run/geekcashd/geekcashd.pid` (OpenRC and Upstart) or `/var/lib/geekcashd/geekcashd.pid` (systemd)  
 Lock file:           `/var/lock/subsys/geekcashd` (CentOS)  
@@ -68,7 +68,7 @@ can then be controlled by group membership.
 3b) Mac OS X
 
 Binary:              `/usr/local/bin/geekcashd`  
-Configuration file:  `~/Library/Application Support/GeekCash/geekcash.conf`  
+Configuration file:  `~/Library/Application Support/GeekCash/blaze.conf`
 Data directory:      `~/Library/Application Support/GeekCash`
 Lock file:           `~/Library/Application Support/GeekCash/.lock`
 

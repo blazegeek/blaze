@@ -364,7 +364,7 @@ void gobject_vote_conf_help()
 {
     throw std::runtime_error(
                 "gobject vote-conf <governance-hash> <vote> <vote-outcome>\n"
-                "Vote on a governance object by masternode configured in geekcash.conf\n"
+                "Vote on a governance object by masternode configured in blaze.conf\n"
                 "\nArguments:\n"
                 "1. governance-hash   (string, required) hash of the governance object\n"
                 "2. vote              (string, required) vote, possible values: [funding|valid|delete|endorsed]\n"
@@ -420,7 +420,7 @@ UniValue gobject_vote_conf(const JSONRPCRequest& request)
         nFailed++;
         statusObj.push_back(Pair("result", "failed"));
         statusObj.push_back(Pair("errorMessage", "Can't find masternode by collateral output"));
-        resultsObj.push_back(Pair("geekcash.conf", statusObj));
+        resultsObj.push_back(Pair("blaze.conf", statusObj));
         returnObj.push_back(Pair("overall", strprintf("Voted successfully %d time(s) and failed %d time(s).", nSuccessful, nFailed)));
         returnObj.push_back(Pair("detail", resultsObj));
         return returnObj;
@@ -443,7 +443,7 @@ UniValue gobject_vote_conf(const JSONRPCRequest& request)
         nFailed++;
         statusObj.push_back(Pair("result", "failed"));
         statusObj.push_back(Pair("errorMessage", "Failure to sign."));
-        resultsObj.push_back(Pair("geekcash.conf", statusObj));
+        resultsObj.push_back(Pair("blaze.conf", statusObj));
         returnObj.push_back(Pair("overall", strprintf("Voted successfully %d time(s) and failed %d time(s).", nSuccessful, nFailed)));
         returnObj.push_back(Pair("detail", resultsObj));
         return returnObj;
@@ -459,7 +459,7 @@ UniValue gobject_vote_conf(const JSONRPCRequest& request)
         statusObj.push_back(Pair("errorMessage", exception.GetMessage()));
     }
 
-    resultsObj.push_back(Pair("geekcash.conf", statusObj));
+    resultsObj.push_back(Pair("blaze.conf", statusObj));
 
     returnObj.push_back(Pair("overall", strprintf("Voted successfully %d time(s) and failed %d time(s).", nSuccessful, nFailed)));
     returnObj.push_back(Pair("detail", resultsObj));
@@ -1026,7 +1026,7 @@ UniValue gobject_getcurrentvotes(const JSONRPCRequest& request)
             "  list               - List governance objects (can be filtered by signal and/or object type)\n"
             "  diff               - List differences since last diff\n"
             "  vote-alias         - Vote on a governance object by masternode alias (using masternode.conf setup)\n"
-            "  vote-conf          - Vote on a governance object by masternode configured in geekcash.conf\n"
+            "  vote-conf          - Vote on a governance object by masternode configured in blaze.conf\n"
             "  vote-many          - Vote on a governance object by all masternodes (using masternode.conf setup)\n"
             );
 }

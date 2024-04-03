@@ -1,7 +1,7 @@
 # /etc/conf.d/geekcashd: config file for /etc/init.d/geekcashd
 
 # Config file location
-#BITCOIND_CONFIGFILE="/etc/geekcash/geekcash.conf"
+#BITCOIND_CONFIGFILE="/etc/blaze/blaze.conf"
 
 # What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
 #BITCOIND_PIDDIR="/var/run/geekcashd"

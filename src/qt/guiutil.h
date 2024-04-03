@@ -114,7 +114,7 @@ namespace GUIUtil
     // Open debug.log
     void openDebugLogfile();
 	
-    // Open geekcash.conf
+    // Open blaze.conf
     void openConfigfile();	
 
     // Open masternode.conf

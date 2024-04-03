@@ -443,7 +443,7 @@ void openConfigfile()
 {
     boost::filesystem::path pathConfig = GetConfigFile(GetArg("-conf", BITCOIN_CONF_FILENAME));
 
-    /* Open geekcash.conf with the associated application */
+    /* Open blaze.conf with the associated application */
     if (boost::filesystem::exists(pathConfig))
         QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathConfig)));
 }

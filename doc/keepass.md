@@ -39,7 +39,7 @@ Sample initialization flow from _geekcash-qt_ console (this needs to be done onl
  - Type "_keepass init_" in geekcash-qt console
  - Keepass pops up and asks for an association id, fill that in, for example, "_mydrkwallet_"
  - You should get a response like this "_Association successful. Id: mydrkwalletgeekcash - Key: AgQkcs6cI7v9tlSYKjG/+s8wJrGALHl3jLosJpPLzUE=_"
- - Edit _geekcash.conf_ and fill in these values
+ - Edit _blaze.conf_ and fill in these values
 ```
 keepass=1
 keepasskey=AgQkcs6cI7v9tlSYKjG/+s8wJrGALHl3jLosJpPLzUE=

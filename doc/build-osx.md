@@ -39,7 +39,7 @@ Before running, it's recommended you create an RPC configuration file.
 
     echo -e "rpcuser=geekcashrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/GeekCash/geekcash.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/GeekCash/geekcash.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/Blaze/blaze.conf"
 
 The first time you run geekcashd, it will start downloading the blockchain. This process could take several hours.
 

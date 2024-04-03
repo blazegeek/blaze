@@ -74,7 +74,7 @@ bool AppInit(int argc, char* argv[])
     //
     // Parameters
     //
-    // If Qt is used, parameters/geekcash.conf are parsed in qt/geekcash.cpp's main()
+    // If Qt is used, parameters/blaze.conf are parsed in qt/geekcash.cpp's main()
     ParseParameters(argc, argv);
 
     // Process help and version before taking care about datadir

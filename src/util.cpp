@@ -122,7 +122,7 @@ bool fLiteMode = false;
 */
 int nWalletBackups = 10;
 
-const char * const BITCOIN_CONF_FILENAME = "geekcash.conf";
+const char * const BITCOIN_CONF_FILENAME = "blaze.conf";
 const char * const BITCOIN_PID_FILENAME = "geekcashd.pid";
 
 CCriticalSection cs_args;
@@ -654,7 +654,7 @@ void ReadConfigFile(const std::string& confPath)
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile(confPath));
     if (!streamConfig.good()){
-        // Create empty geekcash.conf if it does not excist
+        // Create empty blaze.conf if it does not excist
         FILE* configFile = fopen(GetConfigFile(confPath).string().c_str(), "a");
         if (configFile != NULL)
             fclose(configFile);
@@ -668,7 +668,7 @@ void ReadConfigFile(const std::string& confPath)
 
         for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it)
         {
-            // Don't overwrite existing settings so command line settings override geekcash.conf
+            // Don't overwrite existing settings so command line settings override blaze.conf
             std::string strKey = std::string("-") + it->string_key;
             std::string strValue = it->value[0];
             InterpretNegativeSetting(strKey, strValue);
