@@ -62,7 +62,7 @@ Lock file:           `/var/lock/subsys/geekcashd` (CentOS)
 The configuration file, PID directory (if applicable) and data directory
 should all be owned by the geekcash user and group.  It is advised for security
 reasons to make the configuration file and data directory only readable by the
-geekcash user and group.  Access to geekcash-cli and other geekcashd rpc clients
+geekcash user and group.  Access to blaze-cli and other geekcashd rpc clients
 can then be controlled by group membership.
 
 3b) Mac OS X

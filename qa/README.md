@@ -52,7 +52,7 @@ Possible options, which apply to each individual test run:
   -h, --help            show this help message and exit
   --nocleanup           Leave geekcashds and test.* datadir on exit or error
   --noshutdown          Don't stop geekcashds after the test execution
-  --srcdir=SRCDIR       Source directory containing geekcashd/geekcash-cli
+  --srcdir=SRCDIR       Source directory containing blazed/blaze-cli
                         (default: ../../src)
   --tmpdir=TMPDIR       Root directory for datadirs
   --tracerpc            Print out all RPC calls as they are made

@@ -87,7 +87,7 @@ If your remote server is not running, start your remote daemon as you normally w
 
 You can confirm that remote server is on the correct block by issuing
 
-```geekcash-cli getinfo```
+```blaze-cli getinfo```
 
 and comparing with the official explorer at https://explorer.blazegeek.com
 
@@ -116,7 +116,7 @@ Example ```masternode start-alias mn01```
 Issue command `masternode status`
 It should return you something like that:
 ```
-geekcash-cli masternode status
+blaze-cli masternode status
 {
     "outpoint" : "<collateral_output>-<collateral_output_index>",
     "service" : "<ipaddress>:<port>",

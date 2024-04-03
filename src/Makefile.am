@@ -31,7 +31,7 @@ BLS_LIBS=-lchiabls -lgmp
 LIBBITCOIN_SERVER=libgeekcash_server.a
 LIBBITCOIN_COMMON=libgeekcash_common.a
 LIBBITCOIN_CONSENSUS=libgeekcash_consensus.a
-LIBBITCOIN_CLI=libgeekcash_cli.a
+LIBBITCOIN_CLI=libblaze_cli.a
 LIBBITCOIN_UTIL=libgeekcash_util.a
 LIBBITCOIN_CRYPTO=crypto/libgeekcash_crypto.a
 LIBBITCOINQT=qt/libgeekcashqt.a
@@ -73,7 +73,7 @@ if BUILD_BITCOIND
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += geekcash-cli blaze-tx
+  bin_PROGRAMS += blaze-cli blaze-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -467,10 +467,10 @@ libgeekcash_util_a_SOURCES += compat/glibc_compat.cpp
 AM_LDFLAGS += -Wl,--wrap=log2f -Wl,--wrap=__divmoddi4
 endif
 
-# cli: shared between geekcash-cli and geekcash-qt
-libgeekcash_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-libgeekcash_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libgeekcash_cli_a_SOURCES = \
+# cli: shared between blaze-cli and geekcash-qt
+libblaze_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libblaze_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libblaze_cli_a_SOURCES = \
   rpc/client.cpp \
   $(BITCOIN_CORE_H)
 
@@ -502,22 +502,22 @@ geekcashd_LDADD = \
 
 geekcashd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(BLS_LIBS)
 
-# geekcash-cli binary #
-geekcash_cli_SOURCES = blaze-cli.cpp
-geekcash_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-geekcash_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-geekcash_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# blaze-cli binary #
+blaze_cli_SOURCES = blaze-cli.cpp
+blaze_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+blaze_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+blaze_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-geekcash_cli_SOURCES += blaze-cli-res.rc
+blaze_cli_SOURCES += blaze-cli-res.rc
 endif
 
-geekcash_cli_LDADD = \
+blaze_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
-geekcash_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS) $(BLS_LIBS)
+blaze_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS) $(BLS_LIBS)
 #
 
 # blaze-tx binary #

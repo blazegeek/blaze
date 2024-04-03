@@ -41,7 +41,7 @@ Description: peer-to-peer network based digital currency - daemon
  is the name of the open source software which enables the use of this currency.
  .
  This package provides the daemon, geekcashd, and the CLI tool
- geekcash-cli to interact with the daemon.
+ blaze-cli to interact with the daemon.
 
 Package: geekcash-qt
 Architecture: any

@@ -9,10 +9,10 @@ reset-files.bash
 *.exe
 src/geekcash
 src/geekcashd
-src/geekcash-cli
+src/blaze-cli
 src/blaze-tx
-src/test/test_geekcash
-src/qt/test/test_geekcash-qt
+src/test/blaze
+src/qt/test/test_blaze-qt
 src/bench/bench_geekcash
 
 # autoreconf
@@ -125,7 +125,7 @@ src/qt/geekcash-qt.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
-geekcash-cli
+blaze-cli
 geekcashd
 geekcash-qt
 make

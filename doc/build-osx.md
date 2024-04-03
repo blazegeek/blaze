@@ -51,8 +51,8 @@ Other commands:
 -------
 
     ./src/geekcashd -daemon # Starts the geekcash daemon.
-    ./src/geekcash-cli --help # Outputs a list of command-line options.
-    ./src/geekcash-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/blaze-cli --help # Outputs a list of command-line options.
+    ./src/blaze-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Using Qt Creator as IDE
 ------------------------
