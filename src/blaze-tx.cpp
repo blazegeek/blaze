@@ -54,10 +54,10 @@ static int AppInitRawTx(int argc, char* argv[])
     if (argc<2 || IsArgSet("-?") || IsArgSet("-h") || IsArgSet("-help"))
     {
         // First part of help message is specific to this utility
-        std::string strUsage = strprintf(_("%s geekcash-tx utility version"), _(PACKAGE_NAME)) + " " + FormatFullVersion() + "\n\n" +
+        std::string strUsage = strprintf(_("%s blaze-tx utility version"), _(PACKAGE_NAME)) + " " + FormatFullVersion() + "\n\n" +
             _("Usage:") + "\n" +
-              "  geekcash-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded geekcash transaction") + "\n" +
-              "  geekcash-tx [options] -create [commands]   " + _("Create hex-encoded geekcash transaction") + "\n" +
+              "  blaze-tx [options] <hex-tx> [commands]  " + _("Update hex-encoded geekcash transaction") + "\n" +
+              "  blaze-tx [options] -create [commands]   " + _("Create hex-encoded geekcash transaction") + "\n" +
               "\n";
 
         fprintf(stdout, "%s", strUsage.c_str());

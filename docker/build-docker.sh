@@ -12,9 +12,9 @@ rm docker/bin/*
 mkdir docker/bin
 cp $BUILD_DIR/src/geekcashd docker/bin/
 cp $BUILD_DIR/src/geekcash-cli docker/bin/
-cp $BUILD_DIR/src/geekcash-tx docker/bin/
+cp $BUILD_DIR/src/blaze-tx docker/bin/
 strip docker/bin/geekcashd
 strip docker/bin/geekcash-cli
-strip docker/bin/geekcash-tx
+strip docker/bin/blaze-tx
 
 docker build --pull -t $DOCKER_IMAGE:$DOCKER_TAG -f docker/Dockerfile docker

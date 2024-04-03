@@ -73,7 +73,7 @@ if BUILD_BITCOIND
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += geekcash-cli geekcash-tx
+  bin_PROGRAMS += geekcash-cli blaze-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -520,17 +520,17 @@ geekcash_cli_LDADD = \
 geekcash_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS) $(BLS_LIBS)
 #
 
-# geekcash-tx binary #
-geekcash_tx_SOURCES = blaze-tx.cpp
-geekcash_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-geekcash_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-geekcash_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# blaze-tx binary #
+blaze-tx_SOURCES = blaze-tx.cpp
+blaze-tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+blaze-tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+blaze-tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-geekcash_tx_SOURCES += blaze-tx-res.rc
+blaze-tx_SOURCES += blaze-tx-res.rc
 endif
 
-geekcash_tx_LDADD = \
+blaze-tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -538,7 +538,7 @@ geekcash_tx_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-geekcash_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS) $(BLS_LIBS)
+blaze-tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS) $(BLS_LIBS)
 #
 
 # blazeconsensus library #

@@ -10,7 +10,7 @@ reset-files.bash
 src/geekcash
 src/geekcashd
 src/geekcash-cli
-src/geekcash-tx
+src/blaze-tx
 src/test/test_geekcash
 src/qt/test/test_geekcash-qt
 src/bench/bench_geekcash

@@ -6,7 +6,7 @@ MANDIR=${MANDIR:-$TOPDIR/doc/man}
 
 BITCOIND=${BITCOIND:-$SRCDIR/geekcashd}
 BITCOINCLI=${BITCOINCLI:-$SRCDIR/geekcash-cli}
-BITCOINTX=${BITCOINTX:-$SRCDIR/geekcash-tx}
+BITCOINTX=${BITCOINTX:-$SRCDIR/blaze-tx}
 BITCOINQT=${BITCOINQT:-$SRCDIR/qt/geekcash-qt}
 
 [ ! -x $BITCOIND ] && echo "$BITCOIND not found or not executable." && exit 1

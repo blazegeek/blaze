@@ -1,15 +1,15 @@
-# bash programmable completion for geekcash-tx(1)
+# bash programmable completion for blaze-tx(1)
 # Copyright (c) 2016 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-_geekcash_tx() {
+_blaze-tx() {
     local cur prev words=() cword
-    local geekcash_tx
+    local blaze-tx
 
-    # save and use original argument to invoke geekcash-tx for -help
+    # save and use original argument to invoke blaze-tx for -help
     # it might not be in $PATH
-    geekcash_tx="$1"
+    blaze-tx="$1"
 
     COMPREPLY=()
     _get_comp_words_by_ref -n =: cur prev words cword
@@ -27,15 +27,15 @@ _geekcash_tx() {
 
     if [[ "$cword" == 1 || ( "$prev" != "-create" && "$prev" == -* ) ]]; then
         # only options (or an uncompletable hex-string) allowed
-        # parse geekcash-tx -help for options
+        # parse blaze-tx -help for options
         local helpopts
-        helpopts=$($geekcash_tx -help | sed -e '/^  -/ p' -e d )
+        helpopts=$($blaze-tx -help | sed -e '/^  -/ p' -e d )
         COMPREPLY=( $( compgen -W "$helpopts" -- "$cur" ) )
     else
         # only commands are allowed
         # parse -help for commands
         local helpcmds
-        helpcmds=$($geekcash_tx -help | sed -e '1,/Commands:/d' -e 's/=.*/=/' -e '/^  [a-z]/ p' -e d )
+        helpcmds=$($blaze-tx -help | sed -e '1,/Commands:/d' -e 's/=.*/=/' -e '/^  [a-z]/ p' -e d )
         COMPREPLY=( $( compgen -W "$helpcmds" -- "$cur" ) )
     fi
 
@@ -46,7 +46,7 @@ _geekcash_tx() {
 
     return 0
 } &&
-complete -F _geekcash_tx geekcash-tx
+complete -F _blaze_tx blaze-tx
 
 # Local variables:
 # mode: shell-script

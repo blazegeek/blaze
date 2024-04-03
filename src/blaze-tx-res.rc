@@ -17,13 +17,13 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "GeekCash"
-            VALUE "FileDescription",    "geekcash-tx (CLI GeekCash transaction editor utility)"
+            VALUE "FileDescription",    "blaze-tx (CLI GeekCash transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "geekcash-tx"
+            VALUE "InternalName",       "blaze-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "geekcash-tx.exe"
-            VALUE "ProductName",        "geekcash-tx"
+            VALUE "OriginalFilename",   "blaze-tx.exe"
+            VALUE "ProductName",        "blaze-tx"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END
