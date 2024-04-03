@@ -1,0 +1,3 @@
+usr/local/bin/geekcash-qt usr/bin
+debian/blaze-qt.desktop usr/share/applications
+debian/blaze-qt.protocol usr/share/kde4/services/

@@ -7,15 +7,15 @@ for Debian-based Linux systems. If you compile geekcashd/geekcash-qt yourself, t
 ## geekcash: URI support ##
 
 
-geekcash-qt.desktop  (Gnome / Open Desktop)
+blaze-qt.desktop  (Gnome / Open Desktop)
 To install:
 
-	sudo desktop-file-install geekcash-qt.desktop
+	sudo desktop-file-install blaze-qt.desktop
 	sudo update-desktop-database
 
 If you build yourself, you will either need to modify the paths in
 the .desktop file or copy or symlink your geekcash-qt binary to `/usr/bin`
 and the `../../share/pixmaps/geekcash128.png` to `/usr/share/pixmaps`
 
-geekcash-qt.protocol (KDE)
+blaze-qt.protocol (KDE)
 
