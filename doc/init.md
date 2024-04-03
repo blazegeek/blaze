@@ -4,11 +4,11 @@ Sample init scripts and service configuration for geekcashd
 Sample scripts and configuration files for systemd, Upstart and OpenRC
 can be found in the contrib/init folder.
 
-    contrib/init/geekcashd.service:    systemd service unit configuration
-    contrib/init/geekcashd.openrc:     OpenRC compatible SysV style init script
-    contrib/init/geekcashd.openrcconf: OpenRC conf.d file
-    contrib/init/geekcashd.conf:       Upstart service configuration file
-    contrib/init/geekcashd.init:       CentOS compatible SysV style init script
+    contrib/init/blazed.service:    systemd service unit configuration
+    contrib/init/blazedd.openrc:     OpenRC compatible SysV style init script
+    contrib/init/blazed.openrcconf: OpenRC conf.d file
+    contrib/init/blazed.conf:       Upstart service configuration file
+    contrib/init/blazedd.init:       CentOS compatible SysV style init script
 
 1. Service User
 ---------------------------------
@@ -86,7 +86,7 @@ To test, run `systemctl start geekcashd` and to enable for system startup run
 
 4b) OpenRC
 
-Rename geekcashd.openrc to geekcashd and drop it in /etc/init.d.  Double
+Rename blazed.openrc to geekcashd and drop it in /etc/init.d.  Double
 check ownership and permissions and make it executable.  Test it with
 `/etc/init.d/geekcashd start` and configure it to run on startup with
 `rc-update add geekcashd`
@@ -101,7 +101,7 @@ use old versions of Upstart and do not supply the start-stop-daemon utility.
 
 4d) CentOS
 
-Copy geekcashd.init to /etc/init.d/geekcashd. Test by running `service geekcashd start`.
+Copy blazed.init to /etc/init.d/geekcashd. Test by running `service geekcashd start`.
 
 Using this script, you can adjust the path and flags to the geekcashd program by
 setting the GEEKCASHD and FLAGS environment variables in the file
@@ -109,13 +109,13 @@ setting the GEEKCASHD and FLAGS environment variables in the file
 
 4e) Mac OS X
 
-Copy org.geekcash.geekcashd.plist into ~/Library/LaunchAgents. Load the launch agent by
-running `launchctl load ~/Library/LaunchAgents/org.geekcash.geekcashd.plist`.
+Copy org.blazegeek.blazed.plist into ~/Library/LaunchAgents. Load the launch agent by
+running `launchctl load ~/Library/LaunchAgents/org.blazegeek.blazed.plist`.
 
 This Launch Agent will cause geekcashd to start whenever the user logs in.
 
 NOTE: This approach is intended for those wanting to run geekcashd as the current user.
-You will need to modify org.geekcash.geekcashd.plist if you intend to use it as a
+You will need to modify org.blazegeek.blazed.plist if you intend to use it as a
 Launch Daemon with a dedicated geekcash user.
 
 5. Auto-respawn
