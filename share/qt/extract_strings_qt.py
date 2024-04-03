@@ -11,7 +11,7 @@ import operator
 import os
 import sys
 
-OUT_CPP="qt/geekcashstrings.cpp"
+OUT_CPP="qt/blazestrings.cpp"
 EMPTY=['""']
 
 def parse_po(text):

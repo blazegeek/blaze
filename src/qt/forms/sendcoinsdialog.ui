@@ -1353,7 +1353,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../geekcash.qrc"/>
+  <include location="../blaze.qrc"/>
  </resources>
  <connections/>
  <buttongroups>

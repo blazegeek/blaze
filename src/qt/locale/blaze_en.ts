@@ -312,7 +312,7 @@
 <context>
 	<name>BitcoinGUI</name>
 	<message>
-		<location filename="../geekcash.cpp" line="+558"/>
+		<location filename="../blaze.cpp" line="+558"/>
 		<source>A fatal error occurred. GeekCash can no longer continue safely and will quit.</source>
 		<translation>A fatal error occurred. GeekCash can no longer continue safely and will quit.</translation>
 	</message>
@@ -2589,7 +2589,7 @@ https://www.transifex.com/projects/p/geekcash/</translation>
 <context>
 	<name>QObject</name>
 	<message>
-		<location filename="../geekcash.cpp" line="+132"/>
+		<location filename="../blaze.cpp" line="+132"/>
 		<source>GeekCash</source>
 		<translation>GeekCash</translation>
 	</message>
@@ -2712,7 +2712,7 @@ https://www.transifex.com/projects/p/geekcash/</translation>
 <context>
 	<name>QObject::QObject</name>
 	<message>
-		<location filename="../geekcash.cpp" line="-41"/>
+		<location filename="../blaze.cpp" line="-41"/>
 		<source>Error: Specified data directory &quot;%1&quot; does not exist.</source>
 		<translation>Error: Specified data directory &quot;%1&quot; does not exist.</translation>
 	</message>
@@ -5044,7 +5044,7 @@ https://www.transifex.com/projects/p/geekcash/</translation>
 <context>
 	<name>geek-cash</name>
 	<message>
-		<location filename="../geekcashstrings.cpp" line="+36"/>
+		<location filename="../blazestrings.cpp" line="+36"/>
 		<source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
 		<translation>Bind to given address and always listen on it. Use [host]:port notation for IPv6</translation>
 	</message>

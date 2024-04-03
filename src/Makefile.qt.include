@@ -9,7 +9,7 @@ EXTRA_LIBRARIES += qt/libgeekcashqt.a
 
 # geekcash qt core #
 QT_TS = \
-  qt/locale/geekcash_en.ts
+  qt/locale/blaze_en.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -92,10 +92,10 @@ QT_MOC = \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_geekcash.cpp
-QT_QRC = qt/geekcash.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_geekcash_locale.cpp
-QT_QRC_LOCALE = qt/geekcash_locale.qrc
+QT_QRC_CPP = qt/qrc_blaze.cpp
+QT_QRC = qt/blaze.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_blaze_locale.cpp
+QT_QRC_LOCALE = qt/blaze_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
@@ -304,7 +304,7 @@ RES_CSS = \
 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
-BITCOIN_RC = qt/res/geekcash-qt-res.rc
+BITCOIN_RC = qt/res/blaze-qt-res.rc
 
 BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
@@ -337,7 +337,7 @@ qt_geekcash_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUD
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 qt_geekcash_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_geekcash_qt_SOURCES = qt/geekcash.cpp
+qt_geekcash_qt_SOURCES = qt/blaze.cpp
 if TARGET_DARWIN
   qt_geekcash_qt_SOURCES += $(BITCOIN_MM)
 endif
@@ -362,13 +362,13 @@ QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-$(srcdir)/qt/geekcashstrings.cpp: $(libgeekcash_server_a_SOURCES) $(libgeekcash_wallet_a_SOURCES) $(libgeekcash_common_a_SOURCES) $(libgeekcash_zmq_a_SOURCES) $(libgeekcash_consensus_a_SOURCES) $(libgeekcash_util_a_SOURCES)
+$(srcdir)/qt/blazestrings.cpp: $(libgeekcash_server_a_SOURCES) $(libgeekcash_wallet_a_SOURCES) $(libgeekcash_common_a_SOURCES) $(libgeekcash_zmq_a_SOURCES) $(libgeekcash_consensus_a_SOURCES) $(libgeekcash_util_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" COPYRIGHT_HOLDERS="$(COPYRIGHT_HOLDERS)" COPYRIGHT_HOLDERS_SUBSTITUTION="$(COPYRIGHT_HOLDERS_SUBSTITUTION)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: $(srcdir)/qt/geekcashstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/geekcash.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: $(srcdir)/qt/blazestrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_BASE_CPP) qt/blaze.cpp $(BITCOIN_QT_WINDOWS_CPP) $(BITCOIN_QT_WALLET_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/geekcash_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/blaze_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
