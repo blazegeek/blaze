@@ -1,6 +1,6 @@
 [Protocol]
-exec=geekcash-qt '%u'
-protocol=geekcash
+exec=blaze-qt '%u'
+protocol=blaze
 input=none
 output=none
 helper=true

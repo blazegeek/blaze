@@ -15,7 +15,7 @@ AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
 BITCOIN_DAEMON_NAME=geekcashd
-BITCOIN_GUI_NAME=geekcash-qt
+BITCOIN_GUI_NAME=blaze-qt
 BITCOIN_CLI_NAME=blaze-cli
 BITCOIN_TX_NAME=blaze-tx
 
@@ -1022,7 +1022,7 @@ if test x$bitcoin_enable_qt != xno; then
 		AC_MSG_WARN("xgettext is required to update qt translations")
 	fi
 
-	AC_MSG_CHECKING([whether to build test_geekcash-qt])
+	AC_MSG_CHECKING([whether to build test_blaze-qt])
 	if test x$use_gui_tests$bitcoin_enable_qt_test = xyesyes; then
 		AC_MSG_RESULT([yes])
 		BUILD_TEST_QT="yes"

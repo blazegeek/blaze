@@ -5,29 +5,29 @@ and tests weren't explicitly disabled.
 
 After configuring, they can be run with `make check`.
 
-To run the geekcashd tests manually, launch `src/test/test_geekcash`.
+To run the geekcashd tests manually, launch `src/test/test_blaze`.
 
 To add more geekcashd tests, add `BOOST_AUTO_TEST_CASE` functions to the existing
 .cpp files in the `test/` directory or add new .cpp files that
 implement new BOOST_AUTO_TEST_SUITE sections.
 
-To run the geekcash-qt tests manually, launch `src/qt/test/test_geekcash-qt`
+To run the blaze-qt tests manually, launch `src/qt/test/test_blaze-qt`
 
-To add more geekcash-qt tests, add them to the `src/qt/test/` directory and
+To add more blaze-qt tests, add them to the `src/qt/test/` directory and
 the `src/qt/test/test_main.cpp` file.
 
 ### Running individual tests
 
-test_geekcash has some built-in command-line arguments; for
+test_blaze has some built-in command-line arguments; for
 example, to run just the getarg_tests verbosely:
 
-    test_geekcash --log_level=all --run_test=getarg_tests
+    test_blaze --log_level=all --run_test=getarg_tests
 
 ... or to run just the doublegeekcash test:
 
-    test_geekcash --run_test=getarg_tests/doublegeekcash
+    test_blaze --run_test=getarg_tests/doublegeekcash
 
-Run `test_geekcash --help` for the full list.
+Run `test_blaze --help` for the full list.
 
 ### Note on adding test cases
 

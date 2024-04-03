@@ -82,12 +82,12 @@ libconftest.dylib*
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-geekcash-qt
-GeekCash-Qt.app
+blaze-qt
+Blaze-Qt.app
 
 # Unit-tests
 Makefile.test
-geekcash-qt_test
+blaze-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -121,13 +121,13 @@ qa/cache/*
 
 libblazeconsensus.pc
 contrib/devtools/split-debug.sh
-src/qt/geekcash-qt.bash
+src/qt/blaze-qt.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
 blaze-cli
 geekcashd
-geekcash-qt
+blaze-qt
 make
 
 /docker/bin

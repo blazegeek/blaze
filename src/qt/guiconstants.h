@@ -52,10 +52,10 @@ static const int MAX_URI_LENGTH = 255;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "GeekCash"
+#define QAPP_ORG_NAME "Blaze"
 #define QAPP_ORG_DOMAIN "blazegeek.com"
-#define QAPP_APP_NAME_DEFAULT "GeekCash-Qt"
-#define QAPP_APP_NAME_TESTNET "GeekCash-Qt-testnet"
-#define QAPP_APP_NAME_DEVNET "GeekCash-Qt-%s"
+#define QAPP_APP_NAME_DEFAULT "Blaze-Qt"
+#define QAPP_APP_NAME_TESTNET "Blaze-Qt-testnet"
+#define QAPP_APP_NAME_DEVNET "Blaze-Qt-%s"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

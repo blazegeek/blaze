@@ -43,7 +43,7 @@ Description: peer-to-peer network based digital currency - daemon
  This package provides the daemon, geekcashd, and the CLI tool
  blaze-cli to interact with the daemon.
 
-Package: geekcash-qt
+Package: blaze-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
@@ -53,7 +53,7 @@ Description: peer-to-peer network based digital currency - Qt GUI
  and issuing money are carried out collectively by the network. GeekCash
  is the name of the open source software which enables the use of this currency.
  .
- This package provides GeekCash-Qt, a GUI for GeekCash based on Qt.
+ This package provides Blaze-Qt, a GUI for Blaze based on Qt.
 
 Package: blaze-tx
 Architecture: any

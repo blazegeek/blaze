@@ -11,16 +11,16 @@ The following are some helpful notes on how to run GeekCash on your native platf
 
 Unpack the files into a directory and run:
 
-- `bin/geekcash-qt` (GUI) or
+- `bin/blaze-qt` (GUI) or
 - `bin/geekcashd` (headless)
 
 ### Windows
 
-Unpack the files into a directory, and then run geekcash-qt.exe.
+Unpack the files into a directory, and then run blaze-qt.exe.
 
 ### OS X
 
-Drag GeekCash-Qt to your applications folder, and then run GeekCash-Qt.
+Drag Blaze-Qt to your applications folder, and then run Blaze-Qt.
 
 ### Need Help?
 

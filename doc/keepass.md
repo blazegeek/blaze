@@ -16,7 +16,7 @@ Every connection to KeePassHTTP server is done via plain HTTP and even though pr
 
 ### What's new
 
-The following new options are available for geekcashd and geekcash-qt:
+The following new options are available for blazed and blaze-qt:
  - _-keepass_ Use KeePass 2 integration using KeePassHttp plugin (default: 0)
  - _-keepassport=_ Connect to KeePassHttp on port (default: 19455)
  - _-keepasskey=_ KeePassHttp key for AES encrypted communication with KeePass
@@ -31,12 +31,12 @@ The following rpc commands are available:
 
 ### How to setup
 
-Sample initialization flow from _geekcash-qt_ console (this needs to be done only once to set up the association):
+Sample initialization flow from _blaze-qt_ console (this needs to be done only once to set up the association):
 
  - Have KeePass running with an open database
- - Start _geekcash-qt_
+ - Start _blaze-qt_
  - Open console
- - Type "_keepass init_" in geekcash-qt console
+ - Type "_keepass init_" in blaze-qt console
  - Keepass pops up and asks for an association id, fill that in, for example, "_mydrkwallet_"
  - You should get a response like this "_Association successful. Id: mydrkwalletgeekcash - Key: AgQkcs6cI7v9tlSYKjG/+s8wJrGALHl3jLosJpPLzUE=_"
  - Edit _blaze.conf_ and fill in these values
@@ -46,7 +46,7 @@ keepasskey=AgQkcs6cI7v9tlSYKjG/+s8wJrGALHl3jLosJpPLzUE=
 keepassid=mydrkwallet
 keepassname=testwallet
 ```
- - Restart _geekcash-qt_
+ - Restart _blaze-qt_
 
 At this point, the association is made. The next action depends on your particular situation:
 

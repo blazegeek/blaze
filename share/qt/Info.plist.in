@@ -29,16 +29,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>GeekCash-Qt</string>
+  <string>Blaze-Qt</string>
 
   <key>CFBundleName</key>
-  <string>GeekCash-Qt</string>
+  <string>Blaze-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.geekcash.GeekCash-Qt</string>
+  <string>org.blazegeek.blaze-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
