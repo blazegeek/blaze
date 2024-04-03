@@ -478,13 +478,13 @@ nodist_libgeekcash_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # geekcashd binary #
-geekcashd_SOURCES = geekcashd.cpp
+geekcashd_SOURCES = blazed.cpp
 geekcashd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 geekcashd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 geekcashd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-geekcashd_SOURCES += geekcashd-res.rc
+geekcashd_SOURCES += blazed-res.rc
 endif
 
 geekcashd_LDADD = \
@@ -503,13 +503,13 @@ geekcashd_LDADD = \
 geekcashd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(BLS_LIBS)
 
 # geekcash-cli binary #
-geekcash_cli_SOURCES = geekcash-cli.cpp
+geekcash_cli_SOURCES = blaze-cli.cpp
 geekcash_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
 geekcash_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 geekcash_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-geekcash_cli_SOURCES += geekcash-cli-res.rc
+geekcash_cli_SOURCES += blaze-cli-res.rc
 endif
 
 geekcash_cli_LDADD = \
@@ -521,13 +521,13 @@ geekcash_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS) $(B
 #
 
 # geekcash-tx binary #
-geekcash_tx_SOURCES = geekcash-tx.cpp
+geekcash_tx_SOURCES = blaze-tx.cpp
 geekcash_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 geekcash_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 geekcash_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-geekcash_tx_SOURCES += geekcash-tx-res.rc
+geekcash_tx_SOURCES += blaze-tx-res.rc
 endif
 
 geekcash_tx_LDADD = \
