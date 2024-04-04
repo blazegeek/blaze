@@ -10,7 +10,7 @@
 
 /**
  * CBaseChainParams defines the base parameters (shared between blaze-cli and blazed)
- * of a given instance of the GeekCash system.
+ * of a given instance of the Blaze system.
  */
 class CBaseChainParams
 {
