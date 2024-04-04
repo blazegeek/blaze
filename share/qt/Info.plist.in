@@ -46,7 +46,7 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.geekcash.GeekCashPayment</string>
+      <string>org.geekcash.BlazePayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
         <string>geekcash</string>
@@ -60,7 +60,7 @@
       <key>UTTypeIdentifier</key>
       <string>org.geekcash.paymentrequest</string>
       <key>UTTypeDescription</key>
-      <string>GeekCash payment request</string>
+      <string>Blaze payment request</string>
       <key>UTTypeConformsTo</key>
       <array>
         <string>public.data</string>
