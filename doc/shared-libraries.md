@@ -3,7 +3,7 @@ Shared Libraries
 
 ## blazeconsensus
 
-The purpose of this library is to make the verification functionality that is critical to GeekCash's consensus available to other applications, e.g. to language bindings.
+The purpose of this library is to make the verification functionality that is critical to Blaze's consensus available to other applications, e.g. to language bindings.
 
 ### API
 

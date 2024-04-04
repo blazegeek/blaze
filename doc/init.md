@@ -68,9 +68,9 @@ can then be controlled by group membership.
 3b) Mac OS X
 
 Binary:              `/usr/local/bin/blazed`
-Configuration file:  `~/Library/Application Support/GeekCash/blaze.conf`
-Data directory:      `~/Library/Application Support/GeekCash`
-Lock file:           `~/Library/Application Support/GeekCash/.lock`
+Configuration file:  `~/Library/Application Support/Blaze/blaze.conf`
+Data directory:      `~/Library/Application Support/Blaze`
+Lock file:           `~/Library/Application Support/Blaze/.lock`
 
 4. Installing Service Configuration
 -----------------------------------

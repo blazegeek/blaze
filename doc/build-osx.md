@@ -33,7 +33,7 @@ Follow the instructions in [build-generic](build-generic.md)
 Running
 -------
 
-GeekCash is now available at `./src/blazed`
+Blaze is now available at `./src/blazed`
 
 Before running, it's recommended you create an RPC configuration file.
 
