@@ -36,8 +36,8 @@
 
 // Uncomment the following line to enable debugging messages
 // or enable on a per file basis prior to inclusion of util.h
-//#define ENABLE_GEEKCASH_DEBUG
-#ifdef ENABLE_GEEKCASH_DEBUG
+//#define ENABLE_BLAZE_DEBUG
+#ifdef ENABLE_BLAZE_DEBUG
 #define DBG( x ) x
 #else
 #define DBG( x ) 

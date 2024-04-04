@@ -6,7 +6,7 @@
 #ifndef GOVERNANCE_H
 #define GOVERNANCE_H
 
-//#define ENABLE_GEEKCASH_DEBUG
+//#define ENABLE_BLAZE_DEBUG
 
 #include "bloom.h"
 #include "cachemap.h"

@@ -21,9 +21,9 @@ BITCOIN_TX_NAME=blaze-tx
 
 AC_CANONICAL_HOST
 
-AH_TOP([#ifndef GEEKCASH_CONFIG_H])
-AH_TOP([#define GEEKCASH_CONFIG_H])
-AH_BOTTOM([#endif //GEEKCASH_CONFIG_H])
+AH_TOP([#ifndef BLAZE_CONFIG_H])
+AH_TOP([#define BLAZE_CONFIG_H])
+AH_BOTTOM([#endif //BLAZE_CONFIG_H])
 
 dnl faketime breaks configure and is only needed for make. Disable it here.
 unset FAKETIME

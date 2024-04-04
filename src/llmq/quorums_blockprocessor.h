@@ -3,8 +3,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GEEKCASH_QUORUMS_BLOCKPROCESSOR_H
-#define GEEKCASH_QUORUMS_BLOCKPROCESSOR_H
+#ifndef BLAZE_QUORUMS_BLOCKPROCESSOR_H
+#define BLAZE_QUORUMS_BLOCKPROCESSOR_H
 
 #include "llmq/quorums_commitment.h"
 
@@ -59,4 +59,4 @@ extern CQuorumBlockProcessor* quorumBlockProcessor;
 
 }
 
-#endif//GEEKCASH_QUORUMS_BLOCKPROCESSOR_H
+#endif//BLAZE_QUORUMS_BLOCKPROCESSOR_H
