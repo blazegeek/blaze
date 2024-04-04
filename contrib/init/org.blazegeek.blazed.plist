@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>org.geekcash.blazed</string>
+	<string>org.blaze.blazed</string>
 	<key>ProgramArguments</key>
 	<array>
 		<string>/usr/local/bin/blazed</string>

@@ -3,8 +3,8 @@ Description=Blaze's distributed currency daemon
 After=network.target
 
 [Service]
-User=geekcash
-Group=geekcash
+User=blaze
+Group=blaze
 
 Type=forking
 PIDFile=/var/lib/blazed/blazed.pid

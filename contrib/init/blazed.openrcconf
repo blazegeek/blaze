@@ -13,8 +13,8 @@
 #BITCOIND_DATADIR="/var/lib/blazed"
 
 # User and group to own blazed process
-#BITCOIND_USER="geekcash"
-#BITCOIND_GROUP="geekcash"
+#BITCOIND_USER="blaze"
+#BITCOIND_GROUP="blaze"
 
 # Path to blazed executable
 #BITCOIND_BIN="/usr/bin/blazed"

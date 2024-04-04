@@ -4,7 +4,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 # call $blaze-cli for RPC
-_geekcash_rpc() {
+_blaze_rpc() {
     # determine already specified args necessary for RPC
     local rpcargs=()
     for i in ${COMP_LINE}; do
@@ -18,9 +18,9 @@ _geekcash_rpc() {
 }
 
 # Add wallet accounts to COMPREPLY
-_geekcash_accounts() {
+_blaze_accounts() {
     local accounts
-    accounts=$(_geekcash_rpc listaccounts | awk -F '"' '{ print $2 }')
+    accounts=$(_blaze_rpc listaccounts | awk -F '"' '{ print $2 }')
     COMPREPLY=( "${COMPREPLY[@]}" $( compgen -W "$accounts" -- "$cur" ) )
 }
 
@@ -60,7 +60,7 @@ _blaze_cli() {
     if ((cword > 3)); then
         case ${words[cword-3]} in
             addmultisigaddress)
-                _geekcash_accounts
+                _blaze_accounts
                 return 0
                 ;;
             getbalance|gettxout|importaddress|importpubkey|importprivkey|listreceivedbyaccount|listreceivedbyaddress|listsinceblock)
@@ -85,7 +85,7 @@ _blaze_cli() {
                 return 0
                 ;;
             move|setaccount)
-                _geekcash_accounts
+                _blaze_accounts
                 return 0
                 ;;
         esac
@@ -101,7 +101,7 @@ _blaze_cli() {
             return 0
             ;;
         getaccountaddress|getaddressesbyaccount|getbalance|getnewaddress|getreceivedbyaccount|listtransactions|move|sendfrom|sendmany)
-            _geekcash_accounts
+            _blaze_accounts
             return 0
             ;;
     esac
@@ -130,7 +130,7 @@ _blaze_cli() {
 
             # only parse help if senseful
             if [[ -z "$cur" || "$cur" =~ ^[a-z] ]]; then
-                commands=$(_geekcash_rpc help 2>/dev/null | awk '$1 ~ /^[a-z]/ { print $1; }')
+                commands=$(_blaze_rpc help 2>/dev/null | awk '$1 ~ /^[a-z]/ { print $1; }')
             fi
 
             COMPREPLY=( $( compgen -W "$helpopts $commands" -- "$cur" ) )
