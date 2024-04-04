@@ -522,16 +522,16 @@ blaze_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS) $(BLS_
 #
 
 # blaze-tx binary #
-blaze-tx_SOURCES = blaze-tx.cpp
-blaze-tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-blaze-tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-blaze-tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+blaze_tx_SOURCES = blaze-tx.cpp
+blaze_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+blaze_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+blaze_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-blaze-tx_SOURCES += blaze-tx-res.rc
+blaze_tx_SOURCES += blaze-tx-res.rc
 endif
 
-blaze-tx_LDADD = \
+blaze_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -539,7 +539,7 @@ blaze-tx_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-blaze-tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS) $(BLS_LIBS)
+blaze_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS) $(BLS_LIBS)
 #
 
 # blazeconsensus library #
