@@ -10,7 +10,7 @@ define(_COPYRIGHT_HOLDERS,[The %s developers])
 define(_COPYRIGHT_HOLDERS_SUBSTITUTION,[[blazegeek]])
 AC_INIT([Blaze],[_CLIENT_VERSION_MAJOR._CLIENT_VERSION_MINOR._CLIENT_VERSION_REVISION._CLIENT_VERSION_BUILD],[https://github.com/blazegeek-com/blaze/issues],[geek],[https://www.blazegeek.com])
 AC_CONFIG_SRCDIR([src/validation.cpp])
-AC_CONFIG_HEADERS([src/config/geekcash-config.h])
+AC_CONFIG_HEADERS([src/config/blaze-config.h])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_MACRO_DIR([build-aux/m4])
 
@@ -444,7 +444,7 @@ AC_C_BIGENDIAN
 dnl Check for pthread compile/link requirements
 AX_PTHREAD
 
-# The following macro will add the necessary defines to geekcash-config.h, but
+# The following macro will add the necessary defines to blaze-config.h, but
 # they also need to be passed down to any subprojects. Pull the results out of
 # the cache and add them to CPPFLAGS.
 AC_SYS_LARGEFILE
@@ -1033,7 +1033,7 @@ fi
 
 AM_CONDITIONAL([ENABLE_ZMQ], [test "x$use_zmq" = "xyes"])
 
-AC_MSG_CHECKING([whether to build test_geekcash])
+AC_MSG_CHECKING([whether to build test_blaze])
 if test x$use_tests = xyes; then
 	AC_MSG_RESULT([yes])
 	BUILD_TEST="yes"
