@@ -269,7 +269,7 @@ public:
 		// Blaze MAINNET BIP32 prvkeys start with 'xprv' (Bitcoin defaults)
 		base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x88)(0xAD)(0xE4).convert_to_container<std::vector<unsigned char> >();
 
-		// GeekCash BIP44 coin type is '5'
+		// Blaze BIP44 coin type is '5'
 		nExtCoinType = 5;
 
 		vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
@@ -336,8 +336,8 @@ public:
 		consensus.BIP66Height = 1; // 0000002acdd29a14583540cb72e1c5cc83783560e38fa7081495d474fe1671f7
 		consensus.DIP0001Height = 10;
 		consensus.powLimit = uint256S("0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 20
-		consensus.nPowTargetTimespan = 24 * 60 * 60; // GeekCash: 1 day
-		consensus.nPowTargetSpacing = 2.5 * 60; // GeekCash: 2.5 minutes
+		consensus.nPowTargetTimespan = 24 * 60 * 60; // Blaze: 1 day
+		consensus.nPowTargetSpacing = 2.5 * 60; // Blaze: 2.5 minutes
 		consensus.fPowAllowMinDifficultyBlocks = true;
 		consensus.fPowNoRetargeting = false;
 		consensus.nPowKGWHeight = 1; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
@@ -416,7 +416,7 @@ public:
 		// Blaze TESTNET BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
 		base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-		// Testnet GeekCash BIP44 coin type is '1' (All coin's testnet default)
+		// Testnet Blaze BIP44 coin type is '1' (All coin's testnet default)
 		nExtCoinType = 1;
 
 		// long living quorum params
@@ -469,8 +469,8 @@ public:
 		consensus.BIP66Height = 1; // BIP66 activated immediately on devnet
 		consensus.DIP0001Height = 1; // DIP0001 activated immediately on devnet
 		consensus.powLimit = uint256S("0x7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-		consensus.nPowTargetTimespan = 24 * 60 * 60; // GeekCash: 1 day
-		consensus.nPowTargetSpacing = 2.5 * 60; // GeekCash: 2.5 minutes
+		consensus.nPowTargetTimespan = 24 * 60 * 60; // Blaze: 1 day
+		consensus.nPowTargetSpacing = 2.5 * 60; // Blaze: 2.5 minutes
 		consensus.fPowAllowMinDifficultyBlocks = true;
 		consensus.fPowNoRetargeting = false;
 		consensus.nPowKGWHeight = 1; // nPowKGWHeight >= nPowDGWHeight means "no KGW"
@@ -547,7 +547,7 @@ public:
 		// Blaze DEVNET BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
 		base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-		// Testnet GeekCash BIP44 coin type is '1' (All coin's testnet default)
+		// Testnet Blaze BIP44 coin type is '1' (All coin's testnet default)
 		nExtCoinType = 1;
 
 		// long living quorum params
@@ -607,8 +607,8 @@ public:
 		consensus.BIP66Height = 1; // BIP66 activated on regtest (Used in rpc activation tests)
 		consensus.DIP0001Height = 1;
 		consensus.powLimit = uint256S("0x7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff"); // ~uint256(0) >> 1
-		consensus.nPowTargetTimespan = 24 * 60 * 60; // GeekCash: 1 day
-		consensus.nPowTargetSpacing = 2.5 * 60; // GeekCash: 2.5 minutes
+		consensus.nPowTargetTimespan = 24 * 60 * 60; // Blaze: 1 day
+		consensus.nPowTargetSpacing = 2.5 * 60; // Blaze: 2.5 minutes
 		consensus.fPowAllowMinDifficultyBlocks = true;
 		consensus.fPowNoRetargeting = true;
 		consensus.nPowKGWHeight = 1; // same as mainnet
@@ -689,7 +689,7 @@ public:
 		// Blaze REGTEST BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
 		base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-		// Regtest GeekCash BIP44 coin type is '1' (All coin's testnet default)
+		// Regtest Blaze BIP44 coin type is '1' (All coin's testnet default)
 		nExtCoinType = 1;
 
 		// long living quorum params

@@ -61,7 +61,7 @@
 #include <boost/thread.hpp>
 
 #if defined(NDEBUG)
-# error "GeekCash cannot be compiled without assertions."
+# error "Blaze cannot be compiled without assertions."
 #endif
 
 /**
@@ -110,7 +110,7 @@ static void CheckBlockIndex(const Consensus::Params& consensusParams);
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const std::string strMessageMagic = "GeekCash Signed Message:\n";
+const std::string strMessageMagic = "Blaze Signed Message:\n";
 
 // Internal stuff
 namespace {
@@ -721,7 +721,7 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState& state, const C
                                         hash.ToString(), ptxConflicting->GetHash().ToString()),
                                 REJECT_INVALID, "txlockreq-tx-mempool-conflict");
             }
-            // Transaction conflicts with mempool and RBF doesn't exist in GeekCash
+            // Transaction conflicts with mempool and RBF doesn't exist in Blaze
             return state.Invalid(false, REJECT_CONFLICT, "txn-mempool-conflict");
         }
     }

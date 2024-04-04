@@ -44,7 +44,7 @@
 #define DBG( x ) 
 #endif
 
-//GeekCash only features
+//Blaze only features
 
 extern bool fMasternodeMode;
 extern bool fLiteMode;

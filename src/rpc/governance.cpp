@@ -1231,7 +1231,7 @@ UniValue getsuperblockbudget(const JSONRPCRequest& request)
 static const CRPCCommand commands[] =
 { //  category              name                      actor (function)         okSafe argNames
   //  --------------------- ------------------------  -----------------------  ------ ----------
-    /* GeekCash features */
+    /* Blaze features */
     { "geekcash",               "getgovernanceinfo",      &getgovernanceinfo,      true,  {} },
     { "geekcash",               "getsuperblockbudget",    &getsuperblockbudget,    true,  {"index"} },
     { "geekcash",               "gobject",                &gobject,                true,  {} },

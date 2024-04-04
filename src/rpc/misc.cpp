@@ -401,7 +401,7 @@ CScript _createmultisig_redeemScript(const UniValue& params)
     {
         const std::string& ks = keys[i].get_str();
 #ifdef ENABLE_WALLET
-        // Case 1: GeekCash address and we have full public key:
+        // Case 1: Blaze address and we have full public key:
         CBitcoinAddress address(ks);
         if (pwalletMain && address.IsValid())
         {
@@ -1152,7 +1152,7 @@ static const CRPCCommand commands[] =
     { "addressindex",       "getaddresstxids",        &getaddresstxids,        false, {"addresses"} },
     { "addressindex",       "getaddressbalance",      &getaddressbalance,      false, {"addresses"} },
 
-    /* GeekCash features */
+    /* Blaze features */
     { "geekcash",               "mnsync",                 &mnsync,                 true,  {} },
     { "geekcash",               "spork",                  &spork,                  true,  {"value"} },
 

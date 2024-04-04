@@ -35,8 +35,8 @@
  *
  * \section intro_sec Introduction
  *
- * This is the developer documentation of the reference client for an experimental new digital currency called GeekCash,
- * which enables instant payments to anyone, anywhere in the world. GeekCash uses peer-to-peer technology to operate
+ * This is the developer documentation of the reference client for an experimental new digital currency called Blaze,
+ * which enables instant payments to anyone, anywhere in the world. Blaze uses peer-to-peer technology to operate
  * with no central authority: managing transactions and issuing money are carried out collectively by the network.
  *
  * The software is a community-driven open source project, released under the MIT license.
@@ -168,7 +168,7 @@ bool AppInit(int argc, char* argv[])
         if (GetBoolArg("-daemon", false))
         {
 #if HAVE_DECL_DAEMON
-            fprintf(stdout, "GeekCash server starting\n");
+            fprintf(stdout, "Blaze server starting\n");
 
             // Daemonize
             if (daemon(1, 0)) { // don't chdir (1), do close FDs (0)

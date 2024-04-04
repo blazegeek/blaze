@@ -111,7 +111,7 @@ namespace boost {
 
 
 
-//GeekCash only features
+//Blaze only features
 bool fMasternodeMode = false;
 bool fLiteMode = false;
 /**
@@ -280,7 +280,7 @@ bool LogAcceptCategory(const char* category)
                 const std::vector<std::string>& categories = mapMultiArgs.at("-debug");
                 ptrCategory.reset(new std::set<std::string>(categories.begin(), categories.end()));
                 // thread_specific_ptr automatically deletes the set when the thread ends.
-                // "geekcash" is a composite category enabling all GeekCash-related debug output
+                // "geekcash" is a composite category enabling all Blaze-related debug output
                 if(ptrCategory->count(std::string("geekcash"))) {
                     ptrCategory->insert(std::string("privatesend"));
                     ptrCategory->insert(std::string("instantsend"));

@@ -341,7 +341,7 @@ QModelIndex AddressTableModel::index(int row, int column, const QModelIndex &par
 void AddressTableModel::updateEntry(const QString &address,
         const QString &label, bool isMine, const QString &purpose, int status)
 {
-    // Update address book model from GeekCash core
+    // Update address book model from Blaze core
     priv->updateEntry(address, label, isMine, purpose, status);
 }
 
