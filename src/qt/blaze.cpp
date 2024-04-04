@@ -6,7 +6,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/geekcash-config.h"
+#include "config/blaze-config.h"
 #endif
 
 #include "bitcoingui.h"
@@ -259,7 +259,7 @@ private:
     void startThread();
 };
 
-#include "geekcash.moc"
+#include "blaze.moc"
 
 BitcoinCore::BitcoinCore():
     QObject()
@@ -535,7 +535,7 @@ void BitcoinApplication::initializeResult(int retval)
 
 #ifdef ENABLE_WALLET
         // Now that initialization/startup is done, process any command-line
-        // geekcash: URIs or payment requests:
+        // blaze: URIs or payment requests:
         connect(paymentServer, SIGNAL(receivedPaymentRequest(SendCoinsRecipient)),
                          window, SLOT(handlePaymentRequest(SendCoinsRecipient)));
         connect(window, SIGNAL(receivedURI(QString)),
@@ -587,8 +587,8 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForCStrings(QTextCodec::codecForTr());
 #endif
 
-    Q_INIT_RESOURCE(geekcash);
-    Q_INIT_RESOURCE(geekcash_locale);
+    Q_INIT_RESOURCE(blaze);
+    Q_INIT_RESOURCE(blaze_locale);
 
     BitcoinApplication app(argc, argv);
 #if QT_VERSION > 0x050100
@@ -704,7 +704,7 @@ int main(int argc, char *argv[])
         exit(EXIT_SUCCESS);
 
     // Start up the payment server early, too, so impatient users that click on
-    // geekcash: links repeatedly have their payment requests routed to this process:
+    // blaze: links repeatedly have their payment requests routed to this process:
     app.createPaymentServer();
 #endif
 

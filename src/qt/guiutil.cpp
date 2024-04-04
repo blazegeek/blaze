@@ -154,8 +154,8 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no geekcash: URI
-    if(!uri.isValid() || uri.scheme() != QString("geekcash"))
+    // return if URI is not valid or is no blaze: URI
+    if(!uri.isValid() || uri.scheme() != QString("blaze"))
         return false;
 
     SendCoinsRecipient rv;
@@ -224,13 +224,13 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert geekcash:// to geekcash:
+    // Convert blaze:// to blaze:
     //
-    //    Cannot handle this later, because geekcash:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because blaze:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("geekcash://", Qt::CaseInsensitive))
+    if(uri.startsWith("blaze://", Qt::CaseInsensitive))
     {
-        uri.replace(0, 7, "geekcash:");
+        uri.replace(0, 7, "blaze:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -238,7 +238,7 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 
 QString formatBitcoinURI(const SendCoinsRecipient &info)
 {
-    QString ret = QString("geekcash:%1").arg(info.address);
+    QString ret = QString("blaze:%1").arg(info.address);
     int paramCount = 0;
 
     if (info.amount)
@@ -754,8 +754,8 @@ boost::filesystem::path static GetAutostartFilePath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetAutostartDir() / "geekcash.desktop";
-    return GetAutostartDir() / strprintf("geekcash-%s.lnk", chain);
+        return GetAutostartDir() / "blaze.desktop";
+    return GetAutostartDir() / strprintf("blaze-%s.lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -794,7 +794,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         if (!optionFile.good())
             return false;
         std::string chain = ChainNameFromCommandLine();
-        // Write a geekcash.desktop file to the autostart directory:
+        // Write a blaze.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)

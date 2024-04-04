@@ -6,7 +6,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/geekcash-config.h"
+#include "config/blaze-config.h"
 #endif
 
 #include "bitcoingui.h"
@@ -318,7 +318,7 @@ void BitcoinGUI::createActions()
     sendCoinsMenuAction->setToolTip(sendCoinsMenuAction->statusTip());
 
     receiveCoinsAction = new QAction(QIcon(":/icons/" + theme + "/receiving_addresses"), tr("&Receive"), this);
-    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and geekcash: URIs)"));
+    receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and blaze: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);
 #ifdef Q_OS_MAC
@@ -463,7 +463,7 @@ void BitcoinGUI::createActions()
 
     // openAction = new QAction(QApplication::style()->standardIcon(QStyle::SP_DirOpenIcon), tr("Open &URI..."), this);
     openAction = new QAction(tr("Open &URI..."), this);
-    openAction->setStatusTip(tr("Open a geekcash: URI or payment request"));
+    openAction->setStatusTip(tr("Open a blaze: URI or payment request"));
 
     // showHelpMessageAction = new QAction(QApplication::style()->standardIcon(QStyle::SP_MessageBoxInformation), tr("&Command-line options"), this);
     showHelpMessageAction = new QAction(tr("&Command-line options"), this);

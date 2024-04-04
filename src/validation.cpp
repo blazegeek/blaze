@@ -1775,7 +1775,7 @@ bool FindUndoPos(CValidationState &state, int nFile, CDiskBlockPos &pos, unsigne
 static CCheckQueue<CScriptCheck> scriptcheckqueue(128);
 
 void ThreadScriptCheck() {
-    RenameThread("geekcash-scriptch");
+    RenameThread("blaze-scriptch");
     scriptcheckqueue.Thread();
 }
 

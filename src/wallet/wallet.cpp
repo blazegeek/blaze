@@ -3582,7 +3582,7 @@ bool CWallet::CreateTransaction(const std::vector<CRecipient>& vecSend, CWalletT
 
                         // Fill a vout to ourself
                         // TODO: pass in scriptChange instead of reservekey so
-                        // change transaction isn't always pay-to-geekcash-address
+                        // change transaction isn't always pay-to-blaze-address
                         CScript scriptChange;
 
                         // coin control: send change to custom address

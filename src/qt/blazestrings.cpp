@@ -6,7 +6,7 @@
 #else
 #define UNUSED
 #endif
-static const char UNUSED *geekcash_strings[] = {
+static const char UNUSED *blaze_strings[] = {
 QT_TRANSLATE_NOOP("blaze", "Blaze"),
 QT_TRANSLATE_NOOP("blaze", "The %s developers"),
 QT_TRANSLATE_NOOP("blaze", ""

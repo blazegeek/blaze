@@ -21,7 +21,7 @@ static void ResetArgs(const std::string& strArg)
       boost::split(vecArg, strArg, boost::is_space(), boost::token_compress_on);
 
     // Insert dummy executable name:
-    vecArg.insert(vecArg.begin(), "testgeekcash");
+    vecArg.insert(vecArg.begin(), "testblaze");
 
     // Convert to char*:
     std::vector<const char*> vecChar;
@@ -126,7 +126,7 @@ BOOST_AUTO_TEST_CASE(intarg)
     BOOST_CHECK_EQUAL(GetArg("-bar", 11), 0);
 }
 
-BOOST_AUTO_TEST_CASE(doublegeekcash)
+BOOST_AUTO_TEST_CASE(doubleblaze)
 {
     ResetArgs("--foo");
     BOOST_CHECK_EQUAL(GetBoolArg("-foo", false), true);
