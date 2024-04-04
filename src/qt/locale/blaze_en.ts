@@ -5042,7 +5042,7 @@ https://www.transifex.com/projects/p/geekcash/</translation>
 	</message>
 </context>
 <context>
-	<name>geek-cash</name>
+	<name>blaze</name>
 	<message>
 		<location filename="../blazestrings.cpp" line="+36"/>
 		<source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
