@@ -75,7 +75,7 @@ f.write("""
 #define UNUSED
 #endif
 """)
-f.write('static const char UNUSED *geekcash_strings[] = {\n')
+f.write('static const char UNUSED *blaze_strings[] = {\n')
 f.write('QT_TRANSLATE_NOOP("blaze", "%s"),\n' % (os.getenv('PACKAGE_NAME'),))
 f.write('QT_TRANSLATE_NOOP("blaze", "%s"),\n' % (os.getenv('COPYRIGHT_HOLDERS'),))
 if os.getenv('COPYRIGHT_HOLDERS_SUBSTITUTION') != os.getenv('PACKAGE_NAME'):

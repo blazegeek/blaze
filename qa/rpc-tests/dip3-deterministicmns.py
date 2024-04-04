@@ -54,7 +54,7 @@ class DIP3Test(BitcoinTestFramework):
         print("funding controller node")
         while self.nodes[0].getbalance() < (self.num_initial_mn + 3) * 1000:
             self.nodes[0].generate(1) # generate enough for collaterals
-        print("controller node has {} geekcash".format(self.nodes[0].getbalance()))
+        print("controller node has {} blaze".format(self.nodes[0].getbalance()))
 
         # Make sure we're below block 143 (which activates dip3)
         print("testing rejection of ProTx before dip3 activation")

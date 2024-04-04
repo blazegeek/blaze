@@ -109,11 +109,11 @@ if ENABLE_ZMQ:
 
 testScripts = [
     # longest test should go first, to favor running tests in parallel
-    'dip3-deterministicmns.py', # NOTE: needs geekcash_hash to pass
+    'dip3-deterministicmns.py', # NOTE: needs blaze_hash to pass
     'wallet-hd.py',
     'walletbackup.py',
     # vv Tests less than 5m vv
-    'p2p-fullblocktest.py', # NOTE: needs geekcash_hash to pass
+    'p2p-fullblocktest.py', # NOTE: needs blaze_hash to pass
     'fundrawtransaction.py',
     'fundrawtransaction-hd.py',
     'p2p-autoinstantsend.py',
@@ -126,7 +126,7 @@ testScripts = [
     'listtransactions.py',
     'multikeysporks.py',
     # vv Tests less than 60s vv
-    'sendheaders.py', # NOTE: needs geekcash_hash to pass
+    'sendheaders.py', # NOTE: needs blaze_hash to pass
     'zapwallettxes.py',
     'importmulti.py',
     'mempool_limit.py',
@@ -159,8 +159,8 @@ testScripts = [
     'keypool-hd.py',
     'p2p-mempool.py',
     'prioritise_transaction.py',
-    'invalidblockrequest.py', # NOTE: needs geekcash_hash to pass
-    'invalidtxrequest.py', # NOTE: needs geekcash_hash to pass
+    'invalidblockrequest.py', # NOTE: needs blaze_hash to pass
+    'invalidtxrequest.py', # NOTE: needs blaze_hash to pass
     'p2p-versionbits-warning.py',
     'preciousblock.py',
     'importprunedfunds.py',
@@ -192,8 +192,8 @@ testScriptsExt = [
     'rpcbind_test.py',
     # vv Tests less than 30s vv
     'bip65-cltv.py',
-    'bip65-cltv-p2p.py', # NOTE: needs geekcash_hash to pass
-    'bipdersig-p2p.py', # NOTE: needs geekcash_hash to pass
+    'bip65-cltv-p2p.py', # NOTE: needs blaze_hash to pass
+    'bipdersig-p2p.py', # NOTE: needs blaze_hash to pass
     'bipdersig.py',
     'getblocktemplate_proposals.py',
     'txn_doublespend.py',
@@ -201,7 +201,7 @@ testScriptsExt = [
     'forknotify.py',
     'invalidateblock.py',
     'maxblocksinflight.py',
-    'p2p-acceptblock.py', # NOTE: needs geekcash_hash to pass
+    'p2p-acceptblock.py', # NOTE: needs blaze_hash to pass
 ]
 
 

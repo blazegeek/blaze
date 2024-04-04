@@ -11,12 +11,12 @@
 # This python code was modified from ArtForz' public domain  half-a-node, as
 # found in the mini-node branch of http://github.com/jgarzik/pynode.
 #
-# NodeConn: an object which manages p2p connectivity to a geekcash node
+# NodeConn: an object which manages p2p connectivity to a blaze node
 # NodeConnCB: a base class that describes the interface for receiving
 #             callbacks with network messages from a NodeConn
 # CBlock, CTransaction, CBlockHeader, CTxIn, CTxOut, etc....:
 #     data structures that should map to corresponding structures in
-#     geekcash/primitives
+#     blaze/primitives
 # msg_block, msg_tx, msg_headers, etc.:
 #     data structures that represent network messages
 # ser_*, deser_*: functions that handle serialization/deserialization
@@ -38,7 +38,7 @@ import logging
 import copy
 from test_framework.siphash import siphash256
 
-import geekcash_hash
+import blaze_hash
 
 BIP0031_VERSION = 60000
 MY_VERSION = 70210  # MIN_PEER_PROTO_VERSION
@@ -75,8 +75,8 @@ def sha256(s):
 def hash256(s):
     return sha256(sha256(s))
 
-def geekcashhash(s):
-    return geekcash_hash.getPoWHash(s)
+def blazehash(s):
+    return blaze_hash.getPoWHash(s)
 
 def ser_compact_size(l):
     r = b""
@@ -472,8 +472,8 @@ class CBlockHeader(object):
             r += struct.pack("<I", self.nTime)
             r += struct.pack("<I", self.nBits)
             r += struct.pack("<I", self.nNonce)
-            self.sha256 = uint256_from_str(geekcashhash(r))
-            self.hash = encode(geekcashhash(r)[::-1], 'hex_codec').decode('ascii')
+            self.sha256 = uint256_from_str(blazehash(r))
+            self.hash = encode(blazehash(r)[::-1], 'hex_codec').decode('ascii')
 
     def rehash(self):
         self.sha256 = None
