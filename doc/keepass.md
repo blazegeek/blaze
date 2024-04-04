@@ -38,7 +38,7 @@ Sample initialization flow from _blaze-qt_ console (this needs to be done only o
  - Open console
  - Type "_keepass init_" in blaze-qt console
  - Keepass pops up and asks for an association id, fill that in, for example, "_mydrkwallet_"
- - You should get a response like this "_Association successful. Id: mydrkwalletgeekcash - Key: AgQkcs6cI7v9tlSYKjG/+s8wJrGALHl3jLosJpPLzUE=_"
+ - You should get a response like this "_Association successful. Id: mydrkwalletblaze - Key: AgQkcs6cI7v9tlSYKjG/+s8wJrGALHl3jLosJpPLzUE=_"
  - Edit _blaze.conf_ and fill in these values
 ```
 keepass=1

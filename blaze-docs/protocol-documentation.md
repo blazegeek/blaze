@@ -254,10 +254,10 @@ Spork
 | ---------- | ---------- | ----------- | ----------- |
 | 10001 | 2 | INSTANTSEND_ENABLED | Turns on and off InstantSend network wide
 | 10002 | 3 | INSTANTSEND_BLOCK_FILTERING | Turns on and off InstantSend block filtering
-| 10004 | 5 | INSTANTSEND_MAX_VALUE | Controls the max value for an InstantSend transaction (currently 2000 geekcash)
+| 10004 | 5 | INSTANTSEND_MAX_VALUE | Controls the max value for an InstantSend transaction (currently 2000 blaze)
 | 10005 | 6 | NEW_SIGS | Turns on and off new signature format for Blaze-specific messages
 | 10007 | 8 | MASTERNODE_PAYMENT_ENFORCEMENT | Requires masternodes to be paid by miners when blocks are processed
-| 10008 | 9 | SUPERBLOCKS_ENABLED | Superblocks are enabled (the 10% comes to fund the geekcash treasury)
+| 10008 | 9 | SUPERBLOCKS_ENABLED | Superblocks are enabled (the 10% comes to fund the blaze treasury)
 | 10009 | 10 | MASTERNODE_PAY_UPDATED_NODES | Only current protocol version masternode's will be paid (not older nodes)
 | 10011 | 12 | RECONSIDER_BLOCKS | |
 | 10012 | 13 | OLD_SUPERBLOCK_FLAG | |

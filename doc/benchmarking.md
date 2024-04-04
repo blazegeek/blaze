@@ -5,7 +5,7 @@ Blaze has an internal benchmarking framework, with benchmarks
 for cryptographic algorithms such as SHA1, SHA256, SHA512 and RIPEMD160. As well as the rolling bloom filter.
 
 After compiling Blaze, the benchmarks can be run with:
-`src/bench/bench_geekcash`
+`src/bench/bench_blaze`
 
 The output will look similar to:
 ```

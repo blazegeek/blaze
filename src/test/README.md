@@ -23,9 +23,9 @@ example, to run just the getarg_tests verbosely:
 
     test_blaze --log_level=all --run_test=getarg_tests
 
-... or to run just the doublegeekcash test:
+... or to run just the doubleblaze test:
 
-    test_blaze --run_test=getarg_tests/doublegeekcash
+    test_blaze --run_test=getarg_tests/doubleblaze
 
 Run `test_blaze --help` for the full list.
 

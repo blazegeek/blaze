@@ -13,7 +13,7 @@ can be found in the contrib/init folder.
 1. Service User
 ---------------------------------
 
-All three Linux startup configurations assume the existence of a "geekcash" user
+All three Linux startup configurations assume the existence of a "blaze" user
 and group.  They must be created before attempting to use these scripts.
 The OS X configuration assumes blazed will be set up for the current user.
 
@@ -54,15 +54,15 @@ see `contrib/debian/examples/blaze.conf`.
 All three configurations assume several paths that might need to be adjusted.
 
 Binary:              `/usr/bin/blazed`
-Configuration file:  `/etc/geekcash/blaze.conf`
+Configuration file:  `/etc/blaze/blaze.conf`
 Data directory:      `/var/lib/blazed`
 PID file:            `/var/run/blazed/blazed.pid` (OpenRC and Upstart) or `/var/lib/blazed/blazed.pid` (systemd)
 Lock file:           `/var/lock/subsys/blazed` (CentOS)
 
 The configuration file, PID directory (if applicable) and data directory
-should all be owned by the geekcash user and group.  It is advised for security
+should all be owned by the blaze user and group.  It is advised for security
 reasons to make the configuration file and data directory only readable by the
-geekcash user and group.  Access to blaze-cli and other blazed rpc clients
+blaze user and group.  Access to blaze-cli and other blazed rpc clients
 can then be controlled by group membership.
 
 3b) Mac OS X
@@ -116,7 +116,7 @@ This Launch Agent will cause blazed to start whenever the user logs in.
 
 NOTE: This approach is intended for those wanting to run blazed as the current user.
 You will need to modify org.blazegeek.blazed.plist if you intend to use it as a
-Launch Daemon with a dedicated geekcash user.
+Launch Daemon with a dedicated blaze user.
 
 5. Auto-respawn
 -----------------------------------

@@ -37,7 +37,7 @@ Blaze is now available at `./src/blazed`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=geekcashrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Blaze/blaze.conf"
+    echo -e "rpcuser=blazerpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Blaze/blaze.conf"
 
     chmod 600 "/Users/${USER}/Library/Application Support/Blaze/blaze.conf"
 
@@ -50,13 +50,13 @@ You can monitor the download process by looking at the debug.log file:
 Other commands:
 -------
 
-    ./src/blazed -daemon # Starts the geekcash daemon.
+    ./src/blazed -daemon # Starts the blaze daemon.
     ./src/blaze-cli --help # Outputs a list of command-line options.
     ./src/blaze-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Using Qt Creator as IDE
 ------------------------
-You can use Qt Creator as an IDE, for geekcash development.
+You can use Qt Creator as an IDE, for blaze development.
 Download and install the community edition of [Qt Creator](https://www.qt.io/download/).
 Uncheck everything except Qt Creator during the installation process.
 

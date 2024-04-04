@@ -23,7 +23,7 @@ In this transaction we prepare collateral for "_cool-project_". This proposal wi
 
 **Warning: if you change any fields within this command, the collateral transaction will become invalid.**
 
-Format: ```mngovernance prepare proposal-name url payment-count block-start geekcash-address monthly-payment-geekcash```
+Format: ```mngovernance prepare proposal-name url payment-count block-start blaze-address monthly-payment-blaze```
 
 Example: ```mngovernance prepare cool-project http://www.cool-project/one.json 12 100000 y6R9oN12KnB9zydzTLc3LikD9cCjjQzYG7 1200 true```
 
@@ -36,7 +36,7 @@ This is the collateral hash, copy this output for the next step.
 
 Now we can submit our proposal to the network.
 
-Format: ```mngovernance submit proposal-name url payment-count block-start geekcash-address monthly-payment-geekcash fee-tx```
+Format: ```mngovernance submit proposal-name url payment-count block-start blaze-address monthly-payment-blaze fee-tx```
 
 Example: ```mngovernance submit cool-project http://www.cool-project/one.json 12 100000 y6R9oN12KnB9zydzTLc3LikD9cCjjQzYG7 1200 464a0eb70ea91c94295214df48c47baa72b3876cfb658744aaf863c7b5bf1ff0```
 
