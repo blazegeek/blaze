@@ -18,8 +18,8 @@ BITCOIND_BIN=${BITCOIND_BIN:-/usr/bin/blazed}
 BITCOIND_NICE=${BITCOIND_NICE:-${NICELEVEL:-0}}
 BITCOIND_OPTS="${BITCOIND_OPTS:-${BITCOIN_OPTS}}"
 
-name="GeekCash Daemon"
-description="GeekCash cryptocurrency P2P network daemon"
+name="Blaze Daemon"
+description="Blaze cryptocurrency P2P network daemon"
 
 command="/usr/bin/blazed"
 command_args="-pid=\"${BITCOIND_PIDFILE}\" \
@@ -84,7 +84,7 @@ checkconfig()
 		eerror "It is also recommended that you also set alertnotify so you are "
 		eerror "notified of problems:"
 		eerror ""
-		eerror "ie: alertnotify=echo %%s | mail -s \"GeekCash Alert\"" \
+		eerror "ie: alertnotify=echo %%s | mail -s \"Blaze Alert\"" \
 			"admin@foo.com"
 		eerror ""
 		return 1

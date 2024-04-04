@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  blazed The GeekCash server.
+#  blazed The Blaze server.
 #
 #
 # chkconfig: 345 80 20
