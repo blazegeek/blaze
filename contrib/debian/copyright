@@ -49,7 +49,7 @@ Files: src/qt/res/icons/connect*.png
        src/qt/res/icons/*/network_disabled.png
        src/qt/res/src/network_disabled.svg
 Copyright: Marco Falke
-           Luke GeekCashjr
+           Luke Blazejr
 License: Expat
 Comment: Inspired by Stephan Hutchings Typicons
 

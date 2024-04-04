@@ -34,10 +34,10 @@ Package: blazed
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - daemon
- GeekCash is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. GeekCash uses peer-to-peer
+ Blaze is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Blaze uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. GeekCash
+ and issuing money are carried out collectively by the network. Blaze
  is the name of the open source software which enables the use of this currency.
  .
  This package provides the daemon, blazed, and the CLI tool
@@ -47,10 +47,10 @@ Package: blaze-qt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer network based digital currency - Qt GUI
- GeekCash is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. GeekCash uses peer-to-peer
+ Blaze is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Blaze uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. GeekCash
+ and issuing money are carried out collectively by the network. Blaze
  is the name of the open source software which enables the use of this currency.
  .
  This package provides Blaze-Qt, a GUI for Blaze based on Qt.
@@ -59,10 +59,10 @@ Package: blaze-tx
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: peer-to-peer digital currency - standalone transaction tool
- GeekCash is an experimental new digital currency that enables anonymous, instant
- payments to anyone, anywhere in the world. GeekCash uses peer-to-peer
+ Blaze is an experimental new digital currency that enables anonymous, instant
+ payments to anyone, anywhere in the world. Blaze uses peer-to-peer
  technology to operate with no central authority: managing transactions
- and issuing money are carried out collectively by the network. GeekCash
+ and issuing money are carried out collectively by the network. Blaze
  is the name of the open source software which enables the use of this currency.
  .
  This package provides blaze-tx, a command-line transaction creation
