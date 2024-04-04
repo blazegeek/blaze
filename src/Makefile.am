@@ -343,7 +343,7 @@ crypto_libblaze_crypto_a_SOURCES = \
   crypto/sha512.cpp \
   crypto/sha512.h
 
-# x11, geek hash
+# x11, geek hash (aka blaze hash, based on geek, with further revisions to be implemented)
 crypto_libblaze_crypto_a_SOURCES += \
   crypto/blake.c \
   crypto/bmw.c \

@@ -27,8 +27,8 @@ Build-Depends: debhelper,
  libzmq3-dev
 Standards-Version: 3.9.2
 Homepage: https://www.blazegeek.com
-Vcs-Git: git://github.com/blazegeek/geek.git
-Vcs-Browser: https://github.com/blazegeek/geek
+Vcs-Git: git://github.com/blazegeek-com/blaze.git
+Vcs-Browser: https://github.com/blazegeek-com/blaze
 
 Package: blazed
 Architecture: any
