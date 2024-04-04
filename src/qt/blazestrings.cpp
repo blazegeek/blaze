@@ -135,7 +135,7 @@ QT_TRANSLATE_NOOP("geek-cash", ""
 "specified?"),
 QT_TRANSLATE_NOOP("geek-cash", ""
 "InstantSend doesn't support sending values that high yet. Transactions are "
-"currently limited to %1 GEEK."),
+"currently limited to %1 BLZ."),
 QT_TRANSLATE_NOOP("geek-cash", ""
 "InstantSend requires inputs with at least %d confirmations, you might need "
 "to wait a few minutes and try again."),
@@ -453,7 +453,7 @@ QT_TRANSLATE_NOOP("geek-cash", "Invalid script detected."),
 QT_TRANSLATE_NOOP("geek-cash", "Invalid spork address specified with -sporkaddr"),
 QT_TRANSLATE_NOOP("geek-cash", "KeePassHttp id for the established association"),
 QT_TRANSLATE_NOOP("geek-cash", "KeePassHttp key for AES encrypted communication with KeePass"),
-QT_TRANSLATE_NOOP("geek-cash", "Keep N GEEK anonymized (%u-%u, default: %u)"),
+QT_TRANSLATE_NOOP("geek-cash", "Keep N BLZ anonymized (%u-%u, default: %u)"),
 QT_TRANSLATE_NOOP("geek-cash", "Keep at most <n> unconnectable transactions in memory (default: %u)"),
 QT_TRANSLATE_NOOP("geek-cash", "Keep the transaction memory pool below <n> megabytes (default: %u)"),
 QT_TRANSLATE_NOOP("geek-cash", "Keypool ran out, please call keypoolrefill first"),

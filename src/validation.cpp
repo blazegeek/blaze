@@ -1976,7 +1976,7 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
         }
     }
 
-    /// GEEK: Check superblock start
+    /// BLZ: Check superblock start
 
     // make sure old budget is the real one
     if (pindex->nHeight == chainparams.GetConsensus().nSuperblockStartBlock &&
@@ -1985,7 +1985,7 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
             return state.DoS(100, error("ConnectBlock(): invalid superblock start"),
                              REJECT_INVALID, "bad-sb-start");
 
-    /// END GEEK
+    /// END BLZ
 
     // BIP16 didn't become active until Apr 1 2012
     int64_t nBIP16SwitchTime = 1333238400;
@@ -2176,7 +2176,7 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
                      pindex->GetBlockHash().ToString(), FormatStateMessage(state));
     }
 
-    // GEEK : MODIFIED TO CHECK MASTERNODE PAYMENTS AND SUPERBLOCKS
+    // BLZ : MODIFIED TO CHECK MASTERNODE PAYMENTS AND SUPERBLOCKS
 
     // It's possible that we simply don't have enough data and this could fail
     // (i.e. block itself could be a correct one and we need to store it),
@@ -2187,15 +2187,15 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
     CAmount blockReward = nFees + GetBlockSubsidy(pindex->pprev->nBits, pindex->pprev->nHeight, chainparams.GetConsensus());
     std::string strError = "";
     if (!IsBlockValueValid(block, pindex->nHeight, blockReward, strError)) {
-        return state.DoS(0, error("ConnectBlock(GEEK): %s", strError), REJECT_INVALID, "bad-cb-amount");
+        return state.DoS(0, error("ConnectBlock(BLZ): %s", strError), REJECT_INVALID, "bad-cb-amount");
     }
 
     if (!IsBlockPayeeValid(*block.vtx[0], pindex->nHeight, blockReward)) {
         mapRejectedBlocks.insert(std::make_pair(block.GetHash(), GetTime()));
-        return state.DoS(0, error("ConnectBlock(GEEK): couldn't find masternode or superblock payments"),
+        return state.DoS(0, error("ConnectBlock(BLZ): couldn't find masternode or superblock payments"),
                                 REJECT_INVALID, "bad-cb-payee");
     }
-    // END GEEK
+    // END BLZ
 
     if (!control.Wait())
         return state.DoS(100, false);
@@ -3227,7 +3227,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, const Consensus::P
             return state.DoS(100, false, REJECT_INVALID, "bad-cb-multiple", false, "more than one coinbase");
 
 
-    // GEEK : CHECK TRANSACTIONS FOR INSTANTSEND
+    // BLZ : CHECK TRANSACTIONS FOR INSTANTSEND
 
     if(sporkManager.IsSporkActive(SPORK_3_INSTANTSEND_BLOCK_FILTERING)) {
         // We should never accept block which conflicts with completed transaction lock,
@@ -3250,10 +3250,10 @@ bool CheckBlock(const CBlock& block, CValidationState& state, const Consensus::P
             }
         }
     } else {
-        LogPrintf("CheckBlock(GEEK): spork is off, skipping transaction locking checks\n");
+        LogPrintf("CheckBlock(BLZ): spork is off, skipping transaction locking checks\n");
     }
 
-    // END GEEK
+    // END BLZ
 
     // Check transactions
     for (const auto& tx : block.vtx)

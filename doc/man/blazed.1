@@ -304,17 +304,17 @@ Set key pool size to <n> (default: 1000)
 .HP
 \fB\-fallbackfee=\fR<amt>
 .IP
-A fee rate (in GEEK/kB) that will be used when fee estimation has
+A fee rate (in BLZ/kB) that will be used when fee estimation has
 insufficient data (default: 0.00001)
 .HP
 \fB\-mintxfee=\fR<amt>
 .IP
-Fees (in GEEK/kB) smaller than this are considered zero fee for
+Fees (in BLZ/kB) smaller than this are considered zero fee for
 transaction creation (default: 0.00001)
 .HP
 \fB\-paytxfee=\fR<amt>
 .IP
-Fee (in GEEK/kB) to add to transactions you send (default: 0.00)
+Fee (in BLZ/kB) to add to transactions you send (default: 0.00)
 .HP
 \fB\-rescan\fR
 .IP
@@ -481,12 +481,12 @@ Prepend debug output with timestamp (default: 1)
 .HP
 \fB\-minrelaytxfee=\fR<amt>
 .IP
-Fees (in GEEK/kB) smaller than this are considered zero fee for
+Fees (in BLZ/kB) smaller than this are considered zero fee for
 relaying, mining and transaction creation (default: 0.00001)
 .HP
 \fB\-maxtxfee=\fR<amt>
 .IP
-Maximum total fees (in GEEK) to use in a single wallet transaction or
+Maximum total fees (in BLZ) to use in a single wallet transaction or
 raw transaction; setting this too low may abort large
 transactions (default: 0.10)
 .HP
@@ -569,7 +569,7 @@ Use N separate masternodes for each denominated input to mix funds
 .HP
 \fB\-privatesendamount=\fR<n>
 .IP
-Keep N GEEK anonymized (2\-21000000, default: 1000)
+Keep N BLZ anonymized (2\-21000000, default: 1000)
 .HP
 \fB\-liquidityprovider=\fR<n>
 .IP
@@ -617,7 +617,7 @@ Set maximum size of high\-priority/low\-fee transactions in bytes
 .HP
 \fB\-blockmintxfee=\fR<amt>
 .IP
-Set lowest fee rate (in GEEK/kB) for transactions to be included in
+Set lowest fee rate (in BLZ/kB) for transactions to be included in
 block creation. (default: 0.00001)
 .PP
 RPC server options:

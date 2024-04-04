@@ -1,4 +1,4 @@
-TOR SUPPORT IN GEEK CORE
+TOR SUPPORT IN BLZ CORE
 =======================
 
 It is possible to run GeekCash as a Tor hidden service, and connect to such services.

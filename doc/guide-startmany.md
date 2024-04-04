@@ -16,9 +16,9 @@ Create a new wallet address for each Masternode.
 
 Close your QT Wallet.
 
-### Send 100K GEEK to New Addresses
+### Send 100K BLZ to New Addresses
 
-Send exactly 100K GEEK to each new address created above.
+Send exactly 100K BLZ to each new address created above.
 
 ### Create New Masternode Private Keys
 
@@ -38,9 +38,9 @@ Remember... this is local. Make sure your QT is not running.
 
 Create the `masternode.conf` file in the same directory as your `wallet.dat`.
 
-Copy the masternode private key and correspondig collateral output transaction that holds the 100K GEEK.
+Copy the masternode private key and correspondig collateral output transaction that holds the 100K BLZ.
 
-*Note: The masternode priviate key is **not** the same as a wallet private key. **Never** put your wallet private key in the masternode.conf file. That is almost equivalent to putting your 100K GEEK on the remote server and defeats the purpose of a hot/cold setup.*
+*Note: The masternode priviate key is **not** the same as a wallet private key. **Never** put your wallet private key in the masternode.conf file. That is almost equivalent to putting your 100K BLZ on the remote server and defeats the purpose of a hot/cold setup.*
 
 ### Get the collateral output
 
@@ -120,7 +120,7 @@ blaze-cli masternode status
 {
     "outpoint" : "<collateral_output>-<collateral_output_index>",
     "service" : "<ipaddress>:<port>",
-    "pubkey" : "<100K GEEK address>",
+    "pubkey" : "<100K BLZ address>",
     "status" : "Masternode successfully started"
 }
 ```

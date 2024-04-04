@@ -58,9 +58,9 @@ public:
      */
     enum Unit
     {
-        GEEK,
-        mGEEK,
-        uGEEK,
+        BLZ,
+        mBLZ,
+        uBLZ,
         duffs
     };
 

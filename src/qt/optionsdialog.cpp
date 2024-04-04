@@ -92,7 +92,7 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     }
     
     /* Theme selector */
-    ui->theme->addItem(QString("GEEK-default"), QVariant("light"));
+    ui->theme->addItem(QString("blaze-default"), QVariant("light"));
     
     /* Language selector */
     QDir translations(":translations");

@@ -20,9 +20,9 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(GEEK);
-    unitlist.append(mGEEK);
-    unitlist.append(uGEEK);
+    unitlist.append(BLZ);
+    unitlist.append(mBLZ);
+    unitlist.append(uBLZ);
     unitlist.append(duffs);
     return unitlist;
 }
@@ -31,9 +31,9 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case GEEK:
-    case mGEEK:
-    case uGEEK:
+    case BLZ:
+    case mBLZ:
+    case uBLZ:
     case duffs:
         return true;
     default:
@@ -47,9 +47,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case GEEK: return QString("GEEK");
-            case mGEEK: return QString("mGEEK");
-            case uGEEK: return QString::fromUtf8("μGEEK");
+            case BLZ: return QString("BLZ");
+            case mBLZ: return QString("mBLZ");
+            case uBLZ: return QString::fromUtf8("μBLZ");
             case duffs: return QString("duffs");
             default: return QString("???");
         }
@@ -58,9 +58,9 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case GEEK: return QString("tGEEK");
-            case mGEEK: return QString("mtGEEK");
-            case uGEEK: return QString::fromUtf8("μtGEEK");
+            case BLZ: return QString("tBLZ");
+            case mBLZ: return QString("mtBLZ");
+            case uBLZ: return QString::fromUtf8("μtBLZ");
             case duffs: return QString("tduffs");
             default: return QString("???");
         }
@@ -73,9 +73,9 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case GEEK: return QString("GeekCash");
-            case mGEEK: return QString("Milli-GeekCash (1 / 1" THIN_SP_UTF8 "000)");
-            case uGEEK: return QString("Micro-GeekCash (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case BLZ: return QString("GeekCash");
+            case mBLZ: return QString("Milli-GeekCash (1 / 1" THIN_SP_UTF8 "000)");
+            case uBLZ: return QString("Micro-GeekCash (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             case duffs: return QString("Ten Nano-GeekCash (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
@@ -84,9 +84,9 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case GEEK: return QString("TestGeekCashs");
-            case mGEEK: return QString("Milli-TestGeekCash (1 / 1" THIN_SP_UTF8 "000)");
-            case uGEEK: return QString("Micro-TestGeekCash (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case BLZ: return QString("TestGeekCashs");
+            case mBLZ: return QString("Milli-TestGeekCash (1 / 1" THIN_SP_UTF8 "000)");
+            case uBLZ: return QString("Micro-TestGeekCash (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             case duffs: return QString("Ten Nano-TestGeekCash (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
             default: return QString("???");
         }
@@ -97,9 +97,9 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case GEEK:  return 100000000;
-    case mGEEK: return 100000;
-    case uGEEK: return 100;
+    case BLZ:  return 100000000;
+    case mBLZ: return 100000;
+    case uBLZ: return 100;
     case duffs: return 1;
     default:   return 100000000;
     }
@@ -109,9 +109,9 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case GEEK: return 8;
-    case mGEEK: return 5;
-    case uGEEK: return 2;
+    case BLZ: return 8;
+    case mBLZ: return 5;
+    case uBLZ: return 2;
     case duffs: return 0;
     default: return 0;
     }
