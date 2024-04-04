@@ -358,8 +358,8 @@
 	</message>
 	<message>
 		<location line="+1"/>
-		<source>Request payments (generates QR codes and geekcash: URIs)</source>
-		<translation>Request payments (generates QR codes and geekcash: URIs)</translation>
+		<source>Request payments (generates QR codes and blaze: URIs)</source>
+		<translation>Request payments (generates QR codes and blaze: URIs)</translation>
 	</message>
 	<message>
 		<location line="+14"/>
@@ -603,8 +603,8 @@
 	</message>
 	<message>
 		<location line="+1"/>
-		<source>Open a geekcash: URI or payment request</source>
-		<translation>Open a geekcash: URI or payment request</translation>
+		<source>Open a blaze: URI or payment request</source>
+		<translation>Open a blaze: URI or payment request</translation>
 	</message>
 	<message>
 		<location line="+2"/>
@@ -1986,9 +1986,9 @@
 	<message>
 		<location line="+21"/>
 		<source>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/geekcash/</source>
+https://www.transifex.com/projects/p/blaze/</source>
 		<translation>Language missing or translation incomplete? Help contributing translations here:
-https://www.transifex.com/projects/p/geekcash/</translation>
+https://www.transifex.com/projects/p/blaze/</translation>
 	</message>
 	<message>
 		<location line="+19"/>
@@ -2451,8 +2451,8 @@ https://www.transifex.com/projects/p/geekcash/</translation>
 	</message>
 	<message>
 		<location line="-402"/>
-		<source>Cannot start geekcash: click-to-pay handler</source>
-		<translation>Cannot start geekcash: click-to-pay handler</translation>
+		<source>Cannot start blaze: click-to-pay handler</source>
+		<translation>Cannot start blaze: click-to-pay handler</translation>
 	</message>
 	<message>
 		<location line="+103"/>
@@ -3665,8 +3665,8 @@ https://www.transifex.com/projects/p/geekcash/</translation>
 	<message>
 		<location line="+33"/>
 		<location line="+13"/>
-		<source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for geekcash transactions than the network can process.</source>
-		<translation>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for geekcash transactions than the network can process.</translation>
+		<source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for blaze transactions than the network can process.</source>
+		<translation>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for blaze transactions than the network can process.</translation>
 	</message>
 	<message>
 		<location line="-59"/>
@@ -4014,8 +4014,8 @@ https://www.transifex.com/projects/p/geekcash/</translation>
 	</message>
 	<message>
 		<location line="+10"/>
-		<source>A message that was attached to the geekcash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Blaze network.</source>
-		<translation>A message that was attached to the geekcash: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Blaze network.</translation>
+		<source>A message that was attached to the blaze: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Blaze network.</source>
+		<translation>A message that was attached to the blaze: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Blaze network.</translation>
 	</message>
 	<message>
 		<location line="+433"/>
