@@ -37,7 +37,7 @@ GeekCash is now available at `./src/blazed`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=geekcashrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/GeekCash/geekcash.conf"
+    echo -e "rpcuser=geekcashrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Blaze/blaze.conf"
 
     chmod 600 "/Users/${USER}/Library/Application Support/Blaze/blaze.conf"
 
@@ -45,7 +45,7 @@ The first time you run blazed, it will start downloading the blockchain. This pr
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/GeekCash/debug.log
+    tail -f $HOME/Library/Application\ Support/Blaze/debug.log
 
 Other commands:
 -------
