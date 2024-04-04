@@ -6,7 +6,7 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #
-# mininode.py - GeekCash P2P network half-a-node
+# mininode.py - Blaze P2P network half-a-node
 #
 # This python code was modified from ArtForz' public domain  half-a-node, as
 # found in the mini-node branch of http://github.com/jgarzik/pynode.
@@ -1489,7 +1489,7 @@ class NodeConn(asyncore.dispatcher):
             vt.addrFrom.port = 0
             self.send_message(vt, True)
 
-        print('MiniNode: Connecting to GeekCash Node IP # ' + dstaddr + ':' \
+        print('MiniNode: Connecting to Blaze Node IP # ' + dstaddr + ':' \
             + str(dstport))
 
         try:
