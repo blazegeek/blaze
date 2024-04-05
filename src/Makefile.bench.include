@@ -5,7 +5,7 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += bench/blaze
+bin_PROGRAMS += bench/bench_blaze
 BENCH_SRCDIR = bench
 BENCH_BINARY = bench/bench_blaze$(EXEEXT)
 
