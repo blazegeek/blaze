@@ -1,10 +1,11 @@
 // Copyright (c) 2018 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2024			 The blazegeek developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GEEKCASH_QUORUMS_UTILS_H
-#define GEEKCASH_QUORUMS_UTILS_H
+#ifndef BLAZE_QUORUMS_UTILS_H
+#define BLAZE_QUORUMS_UTILS_H
 
 #include "consensus/params.h"
 
@@ -26,4 +27,4 @@ public:
 
 }
 
-#endif//GEEKCASH_QUORUMS_UTILS_H
+#endif//BLAZE_QUORUMS_UTILS_H

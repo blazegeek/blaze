@@ -1,6 +1,7 @@
 // Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2024			 The blazegeek developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -135,7 +136,7 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a GeekCash address (e.g. %1)").arg(
+    widget->setPlaceholderText(QObject::tr("Enter a Blaze address (e.g. %1)").arg(
         QString::fromStdString(DummyAddress(Params()))));
 #endif
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
@@ -153,8 +154,8 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // return if URI is not valid or is no geekcash: URI
-    if(!uri.isValid() || uri.scheme() != QString("geekcash"))
+    // return if URI is not valid or is no blaze: URI
+    if(!uri.isValid() || uri.scheme() != QString("blaze"))
         return false;
 
     SendCoinsRecipient rv;
@@ -203,7 +204,7 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
         {
             if(!i->second.isEmpty())
             {
-                if(!BitcoinUnits::parse(BitcoinUnits::GEEK, i->second, &rv.amount))
+                if(!BitcoinUnits::parse(BitcoinUnits::BLZ, i->second, &rv.amount))
                 {
                     return false;
                 }
@@ -223,13 +224,13 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert geekcash:// to geekcash:
+    // Convert blaze:// to blaze:
     //
-    //    Cannot handle this later, because geekcash:// will cause Qt to see the part after // as host,
+    //    Cannot handle this later, because blaze:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("geekcash://", Qt::CaseInsensitive))
+    if(uri.startsWith("blaze://", Qt::CaseInsensitive))
     {
-        uri.replace(0, 7, "geekcash:");
+        uri.replace(0, 7, "blaze:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -237,12 +238,12 @@ bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 
 QString formatBitcoinURI(const SendCoinsRecipient &info)
 {
-    QString ret = QString("geekcash:%1").arg(info.address);
+    QString ret = QString("blaze:%1").arg(info.address);
     int paramCount = 0;
 
     if (info.amount)
     {
-        ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::GEEK, info.amount, false, BitcoinUnits::separatorNever));
+        ret += QString("?amount=%1").arg(BitcoinUnits::format(BitcoinUnits::BLZ, info.amount, false, BitcoinUnits::separatorNever));
         paramCount++;
     }
 
@@ -443,7 +444,7 @@ void openConfigfile()
 {
     boost::filesystem::path pathConfig = GetConfigFile(GetArg("-conf", BITCOIN_CONF_FILENAME));
 
-    /* Open geekcash.conf with the associated application */
+    /* Open blaze.conf with the associated application */
     if (boost::filesystem::exists(pathConfig))
         QDesktopServices::openUrl(QUrl::fromLocalFile(boostPathToQString(pathConfig)));
 }
@@ -653,15 +654,15 @@ boost::filesystem::path static StartupShortcutPath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "GeekCash.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Blaze.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "GeekCash (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("GeekCash (%s).lnk", chain);
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Blaze (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Blaze (%s).lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
 {
-    // check for "GeekCash*.lnk"
+    // check for "Blaze*.lnk"
     return boost::filesystem::exists(StartupShortcutPath());
 }
 
@@ -753,8 +754,8 @@ boost::filesystem::path static GetAutostartFilePath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetAutostartDir() / "geekcash.desktop";
-    return GetAutostartDir() / strprintf("geekcash-%s.lnk", chain);
+        return GetAutostartDir() / "blaze.desktop";
+    return GetAutostartDir() / strprintf("blaze-%s.lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -793,13 +794,13 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         if (!optionFile.good())
             return false;
         std::string chain = ChainNameFromCommandLine();
-        // Write a geekcash.desktop file to the autostart directory:
+        // Write a blaze.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
-            optionFile << "Name=GeekCash\n";
+            optionFile << "Name=Blaze\n";
         else
-            optionFile << strprintf("Name=GeekCash (%s)\n", chain);
+            optionFile << strprintf("Name=Blaze (%s)\n", chain);
         optionFile << "Exec=" << pszExePath << strprintf(" -min -testnet=%d -regtest=%d\n", GetBoolArg("-testnet", false), GetBoolArg("-regtest", false));
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -820,7 +821,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl);
 LSSharedFileListItemRef findStartupItemInList(LSSharedFileListRef list, CFURLRef findUrl)
 {
-    // loop through the list of startup items and try to find the GeekCash app
+    // loop through the list of startup items and try to find the Blaze app
     CFArrayRef listSnapshot = LSSharedFileListCopySnapshot(list, NULL);
     for(int i = 0; i < CFArrayGetCount(listSnapshot); i++) {
         LSSharedFileListItemRef item = (LSSharedFileListItemRef)CFArrayGetValueAtIndex(listSnapshot, i);
@@ -865,7 +866,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
     LSSharedFileListItemRef foundItem = findStartupItemInList(loginItems, bitcoinAppUrl);
 
     if(fAutoStart && !foundItem) {
-        // add GeekCash app to startup item list
+        // add Blaze app to startup item list
         LSSharedFileListInsertItemURL(loginItems, kLSSharedFileListItemBeforeFirst, NULL, NULL, bitcoinAppUrl, NULL, NULL);
     }
     else if(!fAutoStart && foundItem) {

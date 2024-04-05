@@ -1259,15 +1259,15 @@ QDialog#RPCConsole QTextEdit#messagesWidget {
 
 /* HELP MENU */
 
-/* About GeekCash Dialog */
+/* About Blaze Dialog */
 
 QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 {
-    /* About GeekCash Contents */
+    /* About Blaze Contents */
     margin-left: 10px;
 }
 
 QDialog#AboutDialog QLabel#label_2 {
-    /* Margin for About GeekCash text */
+    /* Margin for About Blaze text */
     margin-right: 10px;
 }
 

@@ -5,7 +5,7 @@
 #ifndef GOVERNANCE_CLASSES_H
 #define GOVERNANCE_CLASSES_H
 
-//#define ENABLE_GEEKCASH_DEBUG
+//#define ENABLE_BLAZE_DEBUG
 
 #include "base58.h"
 #include "governance.h"

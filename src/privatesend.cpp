@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2018 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2024			 The blazegeek developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -451,10 +452,10 @@ int CPrivateSend::GetDenominations(const std::vector<CTxOut>& vecTxOut, bool fSi
 bool CPrivateSend::GetDenominationsBits(int nDenom, std::vector<int>& vecBitsRet)
 {
     // ( bit on if present, 4 denominations example )
-    // bit 0 - 100GEEK+1
-    // bit 1 - 10GEEK+1
-    // bit 2 - 1GEEK+1
-    // bit 3 - .1GEEK+1
+    // bit 0 - 100BLZ+1
+    // bit 1 - 10BLZ+1
+    // bit 2 - 1BLZ+1
+    // bit 3 - .1BLZ+1
 
     int nMaxDenoms = vecStandardDenominations.size();
 

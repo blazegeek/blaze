@@ -1,10 +1,11 @@
 // Copyright (c) 2018 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2024			 The blazegeek developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GEEKCASH_CRYPTO_BLS_WORKER_H
-#define GEEKCASH_CRYPTO_BLS_WORKER_H
+#ifndef BLAZE_CRYPTO_BLS_WORKER_H
+#define BLAZE_CRYPTO_BLS_WORKER_H
 
 #include "bls.h"
 
@@ -202,4 +203,4 @@ private:
     }
 };
 
-#endif //GEEKCASH_CRYPTO_BLS_WORKER_H
+#endif //BLAZE_CRYPTO_BLS_WORKER_H

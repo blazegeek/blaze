@@ -10,10 +10,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both geekcashd and geekcash-qt, to make it harder for attackers to
+ * for both blazed and blaze-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("GeekCash");
+const std::string CLIENT_NAME("BlazeGeek");
 
 /**
  * Client version number

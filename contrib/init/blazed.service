@@ -1,0 +1,22 @@
+[Unit]
+Description=Blaze's distributed currency daemon
+After=network.target
+
+[Service]
+User=blaze
+Group=blaze
+
+Type=forking
+PIDFile=/var/lib/blazed/blazed.pid
+ExecStart=/usr/bin/blazed -daemon -pid=/var/lib/blazed/blazed.pid \
+-conf=/etc/blaze/blaze.conf -datadir=/var/lib/blazed -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

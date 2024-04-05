@@ -83,7 +83,7 @@ protected:
     void SetData(const std::vector<unsigned char> &vchVersionIn, const unsigned char *pbegin, const unsigned char *pend);
 
 public:
-    bool SetString(const char* psz, unsigned int nVersionBytes = 1);
+    bool SetString(const char* psz, unsigned int nVersionBytes = 4);
     bool SetString(const std::string& str);
     std::string ToString() const;
     int CompareTo(const CBase58Data& b58) const;
@@ -95,7 +95,7 @@ public:
     bool operator> (const CBase58Data& b58) const { return CompareTo(b58) >  0; }
 };
 
-/** base58-encoded GeekCash addresses.
+/** base58-encoded Blaze addresses.
  * Public-key-hash-addresses have version 76 (or 140 testnet).
  * The data vector contains RIPEMD160(SHA256(pubkey)), where pubkey is the serialized public key.
  * Script-hash-addresses have version 16 (or 19 testnet).

@@ -143,7 +143,7 @@ public:
 };
 
 /**
- * GeekCash RPC command dispatcher.
+ * Blaze RPC command dispatcher.
  */
 class CRPCTable
 {
