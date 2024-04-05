@@ -79,7 +79,7 @@ static CBlock CreateDevNetGenesisBlock(const uint256 &prevBlockHash, const std::
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-	const char* pszTimestamp = "Dive in and BLZ!";
+	const char* pszTimestamp = "Dive in and GEEK!";
 	const CScript genesisOutputScript = CScript() << ParseHex("04523d49d8413248c959eb3518a86fa6cc189ca5508b102dc5f882de30ecc38b6abcbbed7901834c8cbc68cd4c739af6f7857b066a56cbd8b1e59929d350cd5f5b") << OP_CHECKSIG;
 	return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
