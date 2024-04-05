@@ -2,11 +2,12 @@
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2024			 The blazegeek developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/geekcash-config.h"
+#include "config/blaze-config.h"
 #endif
 
 #include "util.h"
@@ -110,7 +111,7 @@ namespace boost {
 
 
 
-//GeekCash only features
+//Blaze only features
 bool fMasternodeMode = false;
 bool fLiteMode = false;
 /**
@@ -122,8 +123,8 @@ bool fLiteMode = false;
 */
 int nWalletBackups = 10;
 
-const char * const BITCOIN_CONF_FILENAME = "geekcash.conf";
-const char * const BITCOIN_PID_FILENAME = "geekcashd.pid";
+const char * const BITCOIN_CONF_FILENAME = "blaze.conf";
+const char * const BITCOIN_PID_FILENAME = "blazed.pid";
 
 CCriticalSection cs_args;
 std::map<std::string, std::string> mapArgs;
@@ -279,8 +280,8 @@ bool LogAcceptCategory(const char* category)
                 const std::vector<std::string>& categories = mapMultiArgs.at("-debug");
                 ptrCategory.reset(new std::set<std::string>(categories.begin(), categories.end()));
                 // thread_specific_ptr automatically deletes the set when the thread ends.
-                // "geekcash" is a composite category enabling all GeekCash-related debug output
-                if(ptrCategory->count(std::string("geekcash"))) {
+                // "blaze" is a composite category enabling all Blaze-related debug output
+                if(ptrCategory->count(std::string("blaze"))) {
                     ptrCategory->insert(std::string("privatesend"));
                     ptrCategory->insert(std::string("instantsend"));
                     ptrCategory->insert(std::string("masternode"));
@@ -537,7 +538,7 @@ static std::string FormatException(const std::exception* pex, const char* pszThr
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "geekcash";
+    const char* pszModule = "blaze";
 #endif
     if (pex)
         return strprintf(
@@ -654,7 +655,7 @@ void ReadConfigFile(const std::string& confPath)
 {
     boost::filesystem::ifstream streamConfig(GetConfigFile(confPath));
     if (!streamConfig.good()){
-        // Create empty geekcash.conf if it does not excist
+        // Create empty blaze.conf if it does not excist
         FILE* configFile = fopen(GetConfigFile(confPath).string().c_str(), "a");
         if (configFile != NULL)
             fclose(configFile);
@@ -668,7 +669,7 @@ void ReadConfigFile(const std::string& confPath)
 
         for (boost::program_options::detail::config_file_iterator it(streamConfig, setOptions), end; it != end; ++it)
         {
-            // Don't overwrite existing settings so command line settings override geekcash.conf
+            // Don't overwrite existing settings so command line settings override blaze.conf
             std::string strKey = std::string("-") + it->string_key;
             std::string strValue = it->value[0];
             InterpretNegativeSetting(strKey, strValue);

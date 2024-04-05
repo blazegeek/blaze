@@ -1,10 +1,11 @@
 // Copyright (c) 2018 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2024			 The blazegeek developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GEEKCASH_CRYPTO_BLS_H
-#define GEEKCASH_CRYPTO_BLS_H
+#ifndef BLAZE_CRYPTO_BLS_H
+#define BLAZE_CRYPTO_BLS_H
 
 #include "hash.h"
 #include "serialize.h"
@@ -310,4 +311,4 @@ typedef std::shared_ptr<BLSSignatureVector> BLSSignatureVectorPtr;
 
 bool BLSInit();
 
-#endif // GEEKCASH_CRYPTO_BLS_H
+#endif // BLAZE_CRYPTO_BLS_H

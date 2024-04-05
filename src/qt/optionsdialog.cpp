@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/geekcash-config.h"
+#include "config/blaze-config.h"
 #endif
 
 #include "optionsdialog.h"
@@ -92,7 +92,7 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     }
     
     /* Theme selector */
-    ui->theme->addItem(QString("GEEK-default"), QVariant("light"));
+    ui->theme->addItem(QString("blaze-default"), QVariant("light"));
     
     /* Language selector */
     QDir translations(":translations");

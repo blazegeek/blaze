@@ -1,8 +1,9 @@
 // Copyright (c) 2014-2017 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2024			 The blazegeek developers
 // Distributed under the MIT software license, see the accompanying
-#ifndef GEEKCASH_HDCHAIN_H
-#define GEEKCASH_HDCHAIN_H
+#ifndef BLAZE_HDCHAIN_H
+#define BLAZE_HDCHAIN_H
 
 #include "key.h"
 #include "sync.h"
@@ -148,4 +149,4 @@ public:
     std::string GetKeyPath() const;
 };
 
-#endif // GEEKCASH_HDCHAIN_H
+#endif // BLAZE_HDCHAIN_H

@@ -7,7 +7,7 @@ if [ -d "$1" ]; then
   cd "$1"
 else
   echo "Usage: $0 <datadir>" >&2
-  echo "Removes obsolete GeekCash database files" >&2
+  echo "Removes obsolete Blaze database files" >&2
   exit 1
 fi
 
@@ -19,22 +19,22 @@ if [ -f wallet.dat -a -f peers.dat -a -f chainstate/CURRENT -a -f blocks/index/C
 
 case $LEVEL in
   0)
-    echo "Error: no GeekCash datadir detected."
+    echo "Error: no Blaze datadir detected."
     exit 1
     ;;
   1)
-    echo "Detected old GeekCash datadir (before 0.7)."
+    echo "Detected old Blaze datadir (before 0.7)."
     echo "Nothing to do."
     exit 0
     ;;
   2)
-    echo "Detected GeekCash 0.7 datadir."
+    echo "Detected Blaze 0.7 datadir."
     ;;
   3)
-    echo "Detected GeekCash pre-0.8 datadir."
+    echo "Detected Blaze pre-0.8 datadir."
     ;;
   4)
-    echo "Detected GeekCash 0.8 datadir."
+    echo "Detected Blaze 0.8 datadir."
     ;;
 esac
 

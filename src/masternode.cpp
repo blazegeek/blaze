@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2017 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2024			 The blazegeek developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -227,7 +228,7 @@ void CMasternode::Check(bool fForce)
             return;
         }
 
-        // part 1: expire based on geekcashd ping
+        // part 1: expire based on blazed ping
         bool fSentinelPingActive = masternodeSync.IsSynced() && mnodeman.IsSentinelPingActive();
         bool fSentinelPingExpired = fSentinelPingActive && !IsPingedWithin(MASTERNODE_SENTINEL_PING_MAX_SECONDS);
         LogPrint("masternode", "CMasternode::Check -- outpoint=%s, GetAdjustedTime()=%d, fSentinelPingExpired=%d\n",
@@ -579,7 +580,7 @@ bool CMasternodeBroadcast::CheckOutpoint(int& nDos)
     }
 
     if (err == COLLATERAL_INVALID_AMOUNT) {
-        LogPrint("masternode", "CMasternodeBroadcast::CheckOutpoint -- Masternode UTXO should have 100K GEEK, masternode=%s\n", outpoint.ToStringShort());
+        LogPrint("masternode", "CMasternodeBroadcast::CheckOutpoint -- Masternode UTXO should have 100K BLZ, masternode=%s\n", outpoint.ToStringShort());
         nDos = 33;
         return false;
     }

@@ -1,0 +1,33 @@
+# /etc/conf.d/blazed: config file for /etc/init.d/blazed
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/blaze/blaze.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/blazed"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/blazed.pid"
+
+# Where to write blazed data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/blazed"
+
+# User and group to own blazed process
+#BITCOIND_USER="blaze"
+#BITCOIND_GROUP="blaze"
+
+# Path to blazed executable
+#BITCOIND_BIN="/usr/bin/blazed"
+
+# Nice value to run blazed under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+#BITCOIND_OPTS=""
+
+# The timeout in seconds OpenRC will wait for bitcoind to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+BITCOIND_SIGTERM_TIMEOUT=60

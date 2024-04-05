@@ -4,7 +4,7 @@
 
 #include "data/tx_invalid.json.h"
 #include "data/tx_valid.json.h"
-#include "test/test_geekcash.h"
+#include "test/test_blaze.h"
 
 #include "clientversion.h"
 #include "consensus/validation.h"

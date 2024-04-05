@@ -46,9 +46,9 @@ Var StartMenuGroup
 # Installer attributes
 OutFile @abs_top_srcdir@/@PACKAGE_TARNAME@-${VERSION}-win@WINDOWS_BITS@-setup.exe
 !if "@WINDOWS_BITS@" == "64"
-InstallDir $PROGRAMFILES64\GeekCash
+InstallDir $PROGRAMFILES64\Blaze
 !else
-InstallDir $PROGRAMFILES\GeekCash
+InstallDir $PROGRAMFILES\Blaze
 !endif
 CRCCheck on
 XPStyle on
@@ -100,13 +100,13 @@ Section -post SEC0001
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoModify 1
     WriteRegDWORD HKCU "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\$(^Name)" NoRepair 1
     WriteRegStr HKCR "@PACKAGE_TARNAME@" "URL Protocol" ""
-    WriteRegStr HKCR "@PACKAGE_TARNAME@" "" "URL:GeekCash"
+    WriteRegStr HKCR "@PACKAGE_TARNAME@" "" "URL:Blaze"
     WriteRegStr HKCR "@PACKAGE_TARNAME@\DefaultIcon" "" $INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@
     WriteRegStr HKCR "@PACKAGE_TARNAME@\shell\open\command" "" '"$INSTDIR\@BITCOIN_GUI_NAME@@EXEEXT@" "%1"'
 
-    # Delete old key (before we switched to PACKAGE_TARNAME, which is set to 'geekcash' now, we had 'geekcash' hardcoded)
+    # Delete old key (before we switched to PACKAGE_TARNAME, which is set to 'blaze' now, we had 'blaze' hardcoded)
     # TODO remove this line sometime later
-    DeleteRegKey HKCR "geekcash"
+    DeleteRegKey HKCR "blaze"
 SectionEnd
 
 # Macro for selecting uninstaller sections
@@ -137,7 +137,7 @@ Section -un.post UNSEC0001
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\Uninstall $(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\$(^Name).lnk"
     Delete /REBOOTOK "$SMPROGRAMS\$StartMenuGroup\@PACKAGE_NAME@ (testnet, @WINDOWS_BITS@-bit).lnk"
-    Delete /REBOOTOK "$SMSTARTUP\GeekCash.lnk"
+    Delete /REBOOTOK "$SMSTARTUP\Blaze.lnk"
     Delete /REBOOTOK $INSTDIR\uninstall.exe
     Delete /REBOOTOK $INSTDIR\debug.log
     Delete /REBOOTOK $INSTDIR\db.log
@@ -146,9 +146,9 @@ Section -un.post UNSEC0001
     DeleteRegKey /IfEmpty HKCU "${REGKEY}\Components"
     DeleteRegKey /IfEmpty HKCU "${REGKEY}"
     DeleteRegKey HKCR "@PACKAGE_TARNAME@"
-    # Delete old key (before we switched to PACKAGE_TARNAME, which is set to 'geekcash' now, we had 'geekcash' hardcoded)
+    # Delete old key (before we switched to PACKAGE_TARNAME, which is set to 'blaze' now, we had 'blaze' hardcoded)
     # TODO remove this line sometime later
-    DeleteRegKey HKCR "geekcash"
+    DeleteRegKey HKCR "blaze"
     RmDir /REBOOTOK $SMPROGRAMS\$StartMenuGroup
     RmDir /REBOOTOK $INSTDIR
     Push $R0

@@ -1,10 +1,11 @@
 // Copyright (c) 2017-2018 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2024			 The blazegeek developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GEEKCASH_CBTX_H
-#define GEEKCASH_CBTX_H
+#ifndef BLAZE_CBTX_H
+#define BLAZE_CBTX_H
 
 #include "consensus/validation.h"
 #include "primitives/transaction.h"
@@ -44,4 +45,4 @@ bool CheckCbTx(const CTransaction& tx, const CBlockIndex* pindexPrev, CValidatio
 bool CheckCbTxMerkleRootMNList(const CBlock& block, const CBlockIndex* pindex, CValidationState& state);
 bool CalcCbTxMerkleRootMNList(const CBlock& block, const CBlockIndex* pindexPrev, uint256& merkleRootRet, CValidationState& state);
 
-#endif //GEEKCASH_CBTX_H
+#endif //BLAZE_CBTX_H

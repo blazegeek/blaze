@@ -1,6 +1,7 @@
 # Copyright (c) 2013-2016 The Bitcoin Core developers
 # Copyright (c) 2014-2018 The Dash Core developers
 # Copyright (c) 2018-2019 The GeekCash developers
+# Copyright (c) 2024			The blazegeek developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -28,23 +29,23 @@ BITCOIN_INCLUDES += $(UNIVALUE_CFLAGS)
 
 BLS_LIBS=-lchiabls -lgmp
 
-LIBBITCOIN_SERVER=libgeekcash_server.a
-LIBBITCOIN_COMMON=libgeekcash_common.a
-LIBBITCOIN_CONSENSUS=libgeekcash_consensus.a
-LIBBITCOIN_CLI=libgeekcash_cli.a
-LIBBITCOIN_UTIL=libgeekcash_util.a
-LIBBITCOIN_CRYPTO=crypto/libgeekcash_crypto.a
-LIBBITCOINQT=qt/libgeekcashqt.a
+LIBBITCOIN_SERVER=libblaze_server.a
+LIBBITCOIN_COMMON=libblaze_common.a
+LIBBITCOIN_CONSENSUS=libblaze_consensus.a
+LIBBITCOIN_CLI=libblaze_cli.a
+LIBBITCOIN_UTIL=libblaze_util.a
+LIBBITCOIN_CRYPTO=crypto/libblaze_crypto.a
+LIBBITCOINQT=qt/libblazeqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
 
 if ENABLE_ZMQ
-LIBBITCOIN_ZMQ=libgeekcash_zmq.a
+LIBBITCOIN_ZMQ=libblaze_zmq.a
 endif
 if BUILD_BITCOIN_LIBS
-LIBBITCOINCONSENSUS=libgeekcashconsensus.la
+LIBBITCOINCONSENSUS=libblazeconsensus.la
 endif
 if ENABLE_WALLET
-LIBBITCOIN_WALLET=libgeekcash_wallet.a
+LIBBITCOIN_WALLET=libblaze_wallet.a
 endif
 
 $(LIBSECP256K1): $(wildcard secp256k1/src/*) $(wildcard secp256k1/include/*)
@@ -69,15 +70,15 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += geekcashd
+  bin_PROGRAMS += blazed
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += geekcash-cli geekcash-tx
+  bin_PROGRAMS += blaze-cli blaze-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
-# geekcash core #
+# blaze core #
 BITCOIN_CORE_H = \
   addrdb.h \
   activemasternode.h \
@@ -217,12 +218,12 @@ obj/build.h: FORCE
 	@$(MKDIR_P) $(builddir)/obj
 	@$(top_srcdir)/share/genbuild.sh $(abs_top_builddir)/src/obj/build.h \
 	  $(abs_top_srcdir)
-libgeekcash_util_a-clientversion.$(OBJEXT): obj/build.h
+libblaze_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between geekcashd and geekcash-qt
-libgeekcash_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
-libgeekcash_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libgeekcash_server_a_SOURCES = \
+# server: shared between blazed and blaze-qt
+libblaze_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
+libblaze_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libblaze_server_a_SOURCES = \
   activemasternode.cpp \
   addrman.cpp \
   addrdb.cpp \
@@ -296,20 +297,20 @@ libgeekcash_server_a_SOURCES = \
   $(BITCOIN_CORE_H)
 
 if ENABLE_ZMQ
-libgeekcash_zmq_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(ZMQ_CFLAGS)
-libgeekcash_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libgeekcash_zmq_a_SOURCES = \
+libblaze_zmq_a_CPPFLAGS = $(BITCOIN_INCLUDES) $(ZMQ_CFLAGS)
+libblaze_zmq_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libblaze_zmq_a_SOURCES = \
   zmq/zmqabstractnotifier.cpp \
   zmq/zmqnotificationinterface.cpp \
   zmq/zmqpublishnotifier.cpp
 endif
 
 
-# wallet: shared between geekcashd and geekcash-qt, but only linked
+# wallet: shared between blazed and blaze-qt, but only linked
 # when wallet enabled
-libgeekcash_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-libgeekcash_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libgeekcash_wallet_a_SOURCES = \
+libblaze_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libblaze_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libblaze_wallet_a_SOURCES = \
   keepass.cpp \
   privatesend-client.cpp \
   privatesend-util.cpp \
@@ -322,9 +323,9 @@ libgeekcash_wallet_a_SOURCES = \
   $(BITCOIN_CORE_H)
 
 # crypto primitives library
-crypto_libgeekcash_crypto_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_CONFIG_INCLUDES) $(PIC_FLAGS)
-crypto_libgeekcash_crypto_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) $(PIC_FLAGS)
-crypto_libgeekcash_crypto_a_SOURCES = \
+crypto_libblaze_crypto_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_CONFIG_INCLUDES) $(PIC_FLAGS)
+crypto_libblaze_crypto_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS) $(PIC_FLAGS)
+crypto_libblaze_crypto_a_SOURCES = \
   crypto/aes.cpp \
   crypto/aes.h \
   crypto/common.h \
@@ -342,8 +343,8 @@ crypto_libgeekcash_crypto_a_SOURCES = \
   crypto/sha512.cpp \
   crypto/sha512.h
 
-# x11, geek hash
-crypto_libgeekcash_crypto_a_SOURCES += \
+# x11, geek hash (aka blaze hash, based on geek, with further revisions to be implemented)
+crypto_libblaze_crypto_a_SOURCES += \
   crypto/blake.c \
   crypto/bmw.c \
   crypto/cubehash.c \
@@ -374,9 +375,9 @@ crypto_libgeekcash_crypto_a_SOURCES += \
   crypto/sph_types.h
 
 # consensus: shared between all executables that validate any consensus rules.
-libgeekcash_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-libgeekcash_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libgeekcash_consensus_a_SOURCES = \
+libblaze_consensus_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libblaze_consensus_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libblaze_consensus_a_SOURCES = \
   amount.h \
   arith_uint256.cpp \
   arith_uint256.h \
@@ -395,7 +396,7 @@ libgeekcash_consensus_a_SOURCES = \
   primitives/transaction.h \
   pubkey.cpp \
   pubkey.h \
-  script/geekcashconsensus.cpp \
+  script/blazeconsensus.cpp \
   script/interpreter.cpp \
   script/interpreter.h \
   script/script.cpp \
@@ -411,10 +412,10 @@ libgeekcash_consensus_a_SOURCES = \
   utilstrencodings.h \
   version.h
 
-# common: shared between geekcashd, and geekcash-qt and non-server tools
-libgeekcash_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-libgeekcash_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libgeekcash_common_a_SOURCES = \
+# common: shared between blazed, and blaze-qt and non-server tools
+libblaze_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libblaze_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libblaze_common_a_SOURCES = \
   amount.cpp \
   base58.cpp \
   bip39.cpp \
@@ -438,9 +439,9 @@ libgeekcash_common_a_SOURCES = \
 # util: shared between all executables.
 # This library *must* be included to make sure that the glibc
 # backward-compatibility objects and their sanity checks are linked.
-libgeekcash_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-libgeekcash_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libgeekcash_util_a_SOURCES = \
+libblaze_util_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libblaze_util_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libblaze_util_a_SOURCES = \
   bls/bls_ies.cpp \
   bls/bls_ies.h \
   bls/bls_worker.cpp \
@@ -463,31 +464,31 @@ libgeekcash_util_a_SOURCES = \
   $(BITCOIN_CORE_H)
 
 if GLIBC_BACK_COMPAT
-libgeekcash_util_a_SOURCES += compat/glibc_compat.cpp
+libblaze_util_a_SOURCES += compat/glibc_compat.cpp
 AM_LDFLAGS += -Wl,--wrap=log2f -Wl,--wrap=__divmoddi4
 endif
 
-# cli: shared between geekcash-cli and geekcash-qt
-libgeekcash_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-libgeekcash_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-libgeekcash_cli_a_SOURCES = \
+# cli: shared between blaze-cli and blaze-qt
+libblaze_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+libblaze_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libblaze_cli_a_SOURCES = \
   rpc/client.cpp \
   $(BITCOIN_CORE_H)
 
-nodist_libgeekcash_util_a_SOURCES = $(srcdir)/obj/build.h
+nodist_libblaze_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# geekcashd binary #
-geekcashd_SOURCES = geekcashd.cpp
-geekcashd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-geekcashd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-geekcashd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# blazed binary #
+blazed_SOURCES = blazed.cpp
+blazed_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+blazed_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+blazed_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-geekcashd_SOURCES += geekcashd-res.rc
+blazed_SOURCES += blazed-res.rc
 endif
 
-geekcashd_LDADD = \
+blazed_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -500,37 +501,37 @@ geekcashd_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-geekcashd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(BLS_LIBS)
+blazed_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(BLS_LIBS)
 
-# geekcash-cli binary #
-geekcash_cli_SOURCES = geekcash-cli.cpp
-geekcash_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-geekcash_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-geekcash_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# blaze-cli binary #
+blaze_cli_SOURCES = blaze-cli.cpp
+blaze_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+blaze_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+blaze_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-geekcash_cli_SOURCES += geekcash-cli-res.rc
+blaze_cli_SOURCES += blaze-cli-res.rc
 endif
 
-geekcash_cli_LDADD = \
+blaze_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
-geekcash_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS) $(BLS_LIBS)
+blaze_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS) $(BLS_LIBS)
 #
 
-# geekcash-tx binary #
-geekcash_tx_SOURCES = geekcash-tx.cpp
-geekcash_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-geekcash_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-geekcash_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# blaze-tx binary #
+blaze_tx_SOURCES = blaze-tx.cpp
+blaze_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+blaze_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+blaze_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-geekcash_tx_SOURCES += geekcash-tx-res.rc
+blaze_tx_SOURCES += blaze-tx-res.rc
 endif
 
-geekcash_tx_LDADD = \
+blaze_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -538,22 +539,22 @@ geekcash_tx_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-geekcash_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS) $(BLS_LIBS)
+blaze_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS) $(BLS_LIBS)
 #
 
-# geekcashconsensus library #
+# blazeconsensus library #
 if BUILD_BITCOIN_LIBS
-include_HEADERS = script/geekcashconsensus.h
-libgeekcashconsensus_la_SOURCES = $(crypto_libgeekcash_crypto_a_SOURCES) $(libgeekcash_consensus_a_SOURCES)
+include_HEADERS = script/blazeconsensus.h
+libblazeconsensus_la_SOURCES = $(crypto_libblaze_crypto_a_SOURCES) $(libblaze_consensus_a_SOURCES)
 
 if GLIBC_BACK_COMPAT
-  libgeekcashconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libblazeconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libgeekcashconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libgeekcashconsensus_la_LIBADD = $(LIBSECP256K1) $(BLS_LIBS)
-libgeekcashconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
-libgeekcashconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libblazeconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libblazeconsensus_la_LIBADD = $(LIBSECP256K1) $(BLS_LIBS)
+libblazeconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_BITCOIN_INTERNAL
+libblazeconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #
@@ -587,12 +588,12 @@ EXTRA_DIST = $(CTAES_DIST)
 EXTRA_DIST += $(IMMER_DIST)
 
 
-config/geekcash-config.h: config/stamp-h1
+config/blaze-config.h: config/stamp-h1
 	@$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-config/stamp-h1: $(top_srcdir)/$(subdir)/config/geekcash-config.h.in $(top_builddir)/config.status
+config/stamp-h1: $(top_srcdir)/$(subdir)/config/blaze-config.h.in $(top_builddir)/config.status
 	$(AM_V_at)$(MAKE) -C $(top_builddir) $(subdir)/$(@)
-$(top_srcdir)/$(subdir)/config/geekcash-config.h.in:  $(am__configure_deps)
-	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/geekcash-config.h.in
+$(top_srcdir)/$(subdir)/config/blaze-config.h.in:  $(am__configure_deps)
+	$(AM_V_at)$(MAKE) -C $(top_srcdir) $(subdir)/config/blaze-config.h.in
 
 clean-local:
 	-$(MAKE) -C secp256k1 clean

@@ -33,37 +33,37 @@ Follow the instructions in [build-generic](build-generic.md)
 Running
 -------
 
-GeekCash is now available at `./src/geekcashd`
+Blaze is now available at `./src/blazed`
 
 Before running, it's recommended you create an RPC configuration file.
 
-    echo -e "rpcuser=geekcashrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/GeekCash/geekcash.conf"
+    echo -e "rpcuser=blazerpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > "/Users/${USER}/Library/Application Support/Blaze/blaze.conf"
 
-    chmod 600 "/Users/${USER}/Library/Application Support/GeekCash/geekcash.conf"
+    chmod 600 "/Users/${USER}/Library/Application Support/Blaze/blaze.conf"
 
-The first time you run geekcashd, it will start downloading the blockchain. This process could take several hours.
+The first time you run blazed, it will start downloading the blockchain. This process could take several hours.
 
 You can monitor the download process by looking at the debug.log file:
 
-    tail -f $HOME/Library/Application\ Support/GeekCash/debug.log
+    tail -f $HOME/Library/Application\ Support/Blaze/debug.log
 
 Other commands:
 -------
 
-    ./src/geekcashd -daemon # Starts the geekcash daemon.
-    ./src/geekcash-cli --help # Outputs a list of command-line options.
-    ./src/geekcash-cli help # Outputs a list of RPC commands when the daemon is running.
+    ./src/blazed -daemon # Starts the blaze daemon.
+    ./src/blaze-cli --help # Outputs a list of command-line options.
+    ./src/blaze-cli help # Outputs a list of RPC commands when the daemon is running.
 
 Using Qt Creator as IDE
 ------------------------
-You can use Qt Creator as an IDE, for geekcash development.
+You can use Qt Creator as an IDE, for blaze development.
 Download and install the community edition of [Qt Creator](https://www.qt.io/download/).
 Uncheck everything except Qt Creator during the installation process.
 
 1. Make sure you installed everything through Homebrew mentioned above
 2. Do a proper ./configure --enable-debug
 3. In Qt Creator do "New Project" -> Import Project -> Import Existing Project
-4. Enter "geekcash-qt" as project name, enter src/qt as location
+4. Enter "blaze-qt" as project name, enter src/qt as location
 5. Leave the file selection as it is
 6. Confirm the "summary page"
 7. In the "Projects" tab select "Manage Kits..."

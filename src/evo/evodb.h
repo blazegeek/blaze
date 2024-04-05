@@ -1,10 +1,11 @@
 // Copyright (c) 2018 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2024			 The blazegeek developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef GEEKCASH_EVODB_H
-#define GEEKCASH_EVODB_H
+#ifndef BLAZE_EVODB_H
+#define BLAZE_EVODB_H
 
 #include "dbwrapper.h"
 #include "sync.h"
@@ -68,4 +69,4 @@ public:
 
 extern CEvoDB* evoDb;
 
-#endif //GEEKCASH_EVODB_H
+#endif //BLAZE_EVODB_H
