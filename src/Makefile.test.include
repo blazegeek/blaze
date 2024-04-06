@@ -1,13 +1,14 @@
 # Copyright (c) 2013-2016 The Bitcoin Core developers
 # Copyright (c) 2014-2018 The Dash Core developers
 # Copyright (c) 2018-2019 The GeekCash developers
+# Copyright (c) 2024			The blazegeek developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-TESTS += test/test_geekcash
-bin_PROGRAMS += test/test_geekcash
+TESTS += test/test_blaze
+bin_PROGRAMS += test/test_blaze
 TEST_SRCDIR = test
-TEST_BINARY=test/test_geekcash$(EXEEXT)
+TEST_BINARY=test/test_blaze$(EXEEXT)
 
 
 EXTRA_DIST += \
@@ -126,8 +127,8 @@ BITCOIN_TESTS =\
   test/skiplist_tests.cpp \
   test/streams_tests.cpp \
   test/subsidy_tests.cpp \
-  test/test_geekcash.cpp \
-  test/test_geekcash.h \
+  test/test_blaze.cpp \
+  test/test_blaze.h \
   test/test_random.h \
   test/testutil.cpp \
   test/testutil.h \
@@ -148,23 +149,23 @@ BITCOIN_TESTS += \
   wallet/test/crypto_tests.cpp
 endif
 
-test_test_geekcash_SOURCES = $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
-test_test_geekcash_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -I$(builddir)/test/ $(TESTDEFS) $(EVENT_CFLAGS)
-test_test_geekcash_LDADD = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
+test_test_blaze_SOURCES = $(BITCOIN_TESTS) $(JSON_TEST_FILES) $(RAW_TEST_FILES)
+test_test_blaze_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) -I$(builddir)/test/ $(TESTDEFS) $(EVENT_CFLAGS)
+test_test_blaze_LDADD = $(LIBBITCOIN_SERVER) $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
   $(BOOST_LIBS) $(BOOST_UNIT_TEST_FRAMEWORK_LIB) $(LIBSECP256K1) $(EVENT_LIBS)
-test_test_geekcash_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+test_test_blaze_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 if ENABLE_WALLET
-test_test_geekcash_LDADD += $(LIBBITCOIN_WALLET)
+test_test_blaze_LDADD += $(LIBBITCOIN_WALLET)
 endif
 
-test_test_geekcash_LDADD += $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(BLS_LIBS)
-test_test_geekcash_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) -static
+test_test_blaze_LDADD += $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(BLS_LIBS)
+test_test_blaze_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) -static
 
 if ENABLE_ZMQ
-test_test_geekcash_LDADD += $(ZMQ_LIBS)
+test_test_blaze_LDADD += $(ZMQ_LIBS)
 endif
 
-nodist_test_test_geekcash_SOURCES = $(GENERATED_TEST_FILES)
+nodist_test_test_blaze_SOURCES = $(GENERATED_TEST_FILES)
 
 $(BITCOIN_TESTS): $(GENERATED_TEST_FILES)
 
@@ -175,13 +176,13 @@ CLEANFILES += $(CLEAN_BITCOIN_TEST)
 # This file is problematic for out-of-tree builds if it exists.
 DISTCLEANFILES += test/buildenv.pyc
 
-geekcash_test: $(TEST_BINARY)
+blaze_test: $(TEST_BINARY)
 
-geekcash_test_check: $(TEST_BINARY) FORCE
+blaze_test_check: $(TEST_BINARY) FORCE
 	$(MAKE) check-TESTS TESTS=$^
 
-geekcash_test_clean : FORCE
-	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_geekcash_OBJECTS) $(TEST_BINARY)
+blaze_test_clean : FORCE
+	rm -f $(CLEAN_BITCOIN_TEST) $(test_test_blaze_OBJECTS) $(TEST_BINARY)
 
 check-local:
 	@echo "Running test/bitcoin-util-test.py..."

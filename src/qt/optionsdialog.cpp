@@ -3,7 +3,7 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #if defined(HAVE_CONFIG_H)
-#include "config/geekcash-config.h"
+#include "config/blaze-config.h"
 #endif
 
 #include "optionsdialog.h"
@@ -92,14 +92,7 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     }
     
     /* Theme selector */
-    ui->theme->addItem(QString("GEEK-default"), QVariant("light"));
-    // ui->theme->addItem(QString("GEEK-light"), QVariant("light"));
-    // ui->theme->addItem(QString("GEEK-light-hires"), QVariant("light-hires"));
-    // ui->theme->addItem(QString("GEEK-light-retro"), QVariant("light-retro"));
-    // ui->theme->addItem(QString("GEEK-light-hires-retro"), QVariant("light-hires-retro"));
-    // ui->theme->addItem(QString("GEEK-blue"), QVariant("drkblue"));
-    // ui->theme->addItem(QString("GEEK-Crownium"), QVariant("crownium"));
-    // ui->theme->addItem(QString("GEEK-traditional"), QVariant("trad"));
+    ui->theme->addItem(QString("blaze-default"), QVariant("light"));
     
     /* Language selector */
     QDir translations(":translations");

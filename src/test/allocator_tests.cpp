@@ -5,7 +5,7 @@
 #include "util.h"
 
 #include "support/allocators/secure.h"
-#include "test/test_geekcash.h"
+#include "test/test_blaze.h"
 
 #include <boost/test/unit_test.hpp>
 

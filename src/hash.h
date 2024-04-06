@@ -2,6 +2,7 @@
 // Copyright (c) 2009-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2024			 The blazegeek developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -119,7 +120,7 @@ inline uint256 Hash(const T1 p1begin, const T1 p1end,
     return result;
 }
 
-/** Compute the 256-bit hash of the concatenation of three objects. */
+/** Compute the 256-bit hash of the concatenation of four objects. */
 template<typename T1, typename T2, typename T3, typename T4>
 inline uint256 Hash(const T1 p1begin, const T1 p1end,
                     const T2 p2begin, const T2 p2end,
@@ -135,7 +136,7 @@ inline uint256 Hash(const T1 p1begin, const T1 p1end,
     return result;
 }
 
-/** Compute the 256-bit hash of the concatenation of three objects. */
+/** Compute the 256-bit hash of the concatenation of five objects. */
 template<typename T1, typename T2, typename T3, typename T4, typename T5>
 inline uint256 Hash(const T1 p1begin, const T1 p1end,
                     const T2 p2begin, const T2 p2end,
@@ -153,7 +154,7 @@ inline uint256 Hash(const T1 p1begin, const T1 p1end,
     return result;
 }
 
-/** Compute the 256-bit hash of the concatenation of three objects. */
+/** Compute the 256-bit hash of the concatenation of six objects. */
 template<typename T1, typename T2, typename T3, typename T4, typename T5, typename T6>
 inline uint256 Hash(const T1 p1begin, const T1 p1end,
                     const T2 p2begin, const T2 p2end,
@@ -314,7 +315,7 @@ public:
 uint64_t SipHashUint256(uint64_t k0, uint64_t k1, const uint256& val);
 uint64_t SipHashUint256Extra(uint64_t k0, uint64_t k1, const uint256& val, uint32_t extra);
 
-/* ----------- GeekCash Hash ------------------------------------------------ */
+/* ----------- Blaze Hash ------------------------------------------------ */
 template<typename T1>
 inline uint256 HashX11(const T1 pbegin, const T1 pend)
 

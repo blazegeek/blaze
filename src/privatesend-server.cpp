@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2018 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2024			 The blazegeek developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -22,7 +23,7 @@ CPrivateSendServer privateSendServer;
 void CPrivateSendServer::ProcessMessage(CNode* pfrom, const std::string& strCommand, CDataStream& vRecv, CConnman& connman)
 {
     if (!fMasternodeMode) return;
-    if (fLiteMode) return; // ignore all GeekCash related functionality
+    if (fLiteMode) return; // ignore all Blaze related functionality
     if (!masternodeSync.IsBlockchainSynced()) return;
 
     if (strCommand == NetMsgType::DSACCEPT) {
@@ -462,7 +463,7 @@ void CPrivateSendServer::ChargeFees(CConnman& connman)
 
     Being that mixing has "no fees" we need to have some kind of cost associated
     with using it to stop abuse. Otherwise it could serve as an attack vector and
-    allow endless transaction that would bloat GeekCash and make it unusable. To
+    allow endless transaction that would bloat Blaze and make it unusable. To
     stop these kinds of attacks 1 in 10 successful transactions are charged. This
     adds up to a cost of 0.001DRK per transaction on average.
 */
@@ -869,7 +870,7 @@ void CPrivateSendServer::SetState(PoolState nStateNew)
 
 void CPrivateSendServer::DoMaintenance(CConnman& connman)
 {
-    if (fLiteMode) return;        // disable all GeekCash specific functionality
+    if (fLiteMode) return;        // disable all Blaze specific functionality
     if (!fMasternodeMode) return; // only run on masternodes
 
     if (!masternodeSync.IsBlockchainSynced() || ShutdownRequested())

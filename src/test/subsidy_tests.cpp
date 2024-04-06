@@ -1,12 +1,13 @@
 // Copyright (c) 2014-2018 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2024			 The blazegeek developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "chainparams.h"
 #include "validation.h"
 
-#include "test/test_geekcash.h"
+#include "test/test_blaze.h"
 
 #include <boost/test/unit_test.hpp>
 

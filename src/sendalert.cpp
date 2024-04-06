@@ -12,8 +12,8 @@ If you need to broadcast an alert, here's what to do:
 1. Modify alert parameters below, see alert.* and comments in the code
    for what does what.
 
-2. run geekcashd with -printalert or -sendalert like this:
-   /path/to/geekcashd -printalert
+2. run blazed with -printalert or -sendalert like this:
+   /path/to/blazed -printalert
 
 One minute after starting up the alert will be broadcast. It is then
 flooded through the network until the nRelayUntil time, and will be
@@ -60,7 +60,7 @@ void ThreadSendAlert(CConnman& connman)
     alert.strStatusBar  = "URGENT: Upgrade required";
 
     // Set specific client version/versions here. If setSubVer is empty, no filtering on subver is done:
-    // alert.setSubVer.insert(std::string("/GeekCash:0.12.0.58/"));
+    // alert.setSubVer.insert(std::string("/Blaze:0.12.0.58/"));
 
     // Sign
     if(!alert.Sign())

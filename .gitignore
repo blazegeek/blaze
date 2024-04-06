@@ -7,13 +7,13 @@ reset-files.bash
 *.zip
 
 *.exe
-src/geekcash
-src/geekcashd
-src/geekcash-cli
-src/geekcash-tx
-src/test/test_geekcash
-src/qt/test/test_geekcash-qt
-src/bench/bench_geekcash
+src/blaze
+src/blazed
+src/blaze-cli
+src/blaze-tx
+src/test/blaze
+src/qt/test/test_blaze-qt
+src/bench/bench_blaze
 
 # autoreconf
 Makefile.in
@@ -36,8 +36,8 @@ config.log
 config.status
 configure
 libtool
-src/config/geekcash-config.h
-src/config/geekcash-config.h.in
+src/config/blaze-config.h
+src/config/blaze-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -82,12 +82,12 @@ libconftest.dylib*
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-geekcash-qt
-GeekCash-Qt.app
+blaze-qt
+Blaze-Qt.app
 
 # Unit-tests
 Makefile.test
-geekcash-qt_test
+blaze-qt_test
 src/test/buildenv.py
 
 # Resources cpp
@@ -101,7 +101,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_geekcash.coverage/
+test_blaze.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -119,15 +119,15 @@ qa/cache/*
 .autotools
 /doc/doxygen/
 
-libgeekcashconsensus.pc
+libblazeconsensus.pc
 contrib/devtools/split-debug.sh
-src/qt/geekcash-qt.bash
+src/qt/blaze-qt.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
-geekcash-cli
-geekcashd
-geekcash-qt
+blaze-cli
+blazed
+blaze-qt
 make
 
 /docker/bin

@@ -4,7 +4,7 @@
 
 #include "compressor.h"
 #include "util.h"
-#include "test/test_geekcash.h"
+#include "test/test_blaze.h"
 
 #include <stdint.h>
 

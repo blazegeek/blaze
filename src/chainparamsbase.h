@@ -9,8 +9,8 @@
 #include <vector>
 
 /**
- * CBaseChainParams defines the base parameters (shared between geekcash-cli and geekcashd)
- * of a given instance of the GeekCash system.
+ * CBaseChainParams defines the base parameters (shared between blaze-cli and blazed)
+ * of a given instance of the Blaze system.
  */
 class CBaseChainParams
 {

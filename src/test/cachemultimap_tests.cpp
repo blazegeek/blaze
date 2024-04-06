@@ -1,9 +1,10 @@
 // Copyright (c) 2014-2017 The Dash Core developers
 // Copyright (c) 2018-2019 The GeekCash developers
+// Copyright (c) 2024			 The blazegeek developers
 
 #include "cachemultimap.h"
 
-#include "test/test_geekcash.h"
+#include "test/test_blaze.h"
 
 #include <algorithm>
 #include <iostream>

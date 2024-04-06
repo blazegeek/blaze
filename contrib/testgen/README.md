@@ -1,6 +1,6 @@
 ### TestGen ###
 
-Utilities to generate test vectors for the data-driven GeekCash tests.
+Utilities to generate test vectors for the data-driven Blaze tests.
 
 Usage: 
 
