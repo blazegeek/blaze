@@ -1,4 +1,4 @@
-Protocol Documentation - 0.0.2.0
+Protocol Documentation - 0.0.2.7
 =====================================
 
 This document describes the protocol extensions for all additional functionality build into the Blaze protocol. This doesn't include any of the Bitcoin protocol, which has been left intact in the Blaze project. For more information about the core protocol, please see https://en.bitcoin.it/w/index.php?title#Protocol_documentation&action#edit
