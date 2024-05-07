@@ -1,6 +1,6 @@
-Blaze 0.0.2.0
+Blaze 0.0.2.7
 ==========================
 
-0.0.2.0
+0.0.2.7
 
-* Renames GeekCash to Blaze
+* Removes unused graphics
