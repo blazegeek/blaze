@@ -21,9 +21,9 @@ a{
 }
 
 WalletFrame {
-    /* border-image: url(':/images/light/drkblue_walletFrame_bg') 0 0 0 0 stretch stretch;   */
+    /* border-image: url(':/images/light/walletFrame_bg') 0 0 0 0 stretch stretch;   */
    
-    background-image: url(':/images/light/drkblue_walletFrame_bg');
+    background-image: url(':/images/light/walletFrame_bg');
     background-position: bottom right;
     background-origin: content;
     background-clip: padding;
@@ -217,7 +217,7 @@ QComboBox::drop-down {
 }
 
 QComboBox::down-arrow {
-    border-image: url(':/images/light/drkblue_downArrow') 0 0 0 0 stretch stretch;
+    border-image: url(':/images/light/downArrow') 0 0 0 0 stretch stretch;
 }
 
 QComboBox QListView {
@@ -278,11 +278,11 @@ QAbstractSpinBox::down-arrow, QAbstractSpinBox::up-arrow {
 }
 
 QAbstractSpinBox::up-arrow {
-    image: url(':/images/light/drkblue_upArrow_small');
+    image: url(':/images/light/upArrow_small');
 }
 
 QAbstractSpinBox::down-arrow {
-    image: url(':/images/light/drkblue_downArrow_small');
+    image: url(':/images/light/downArrow_small');
 }
 
 /* -------------------Table--------------------- */
@@ -310,11 +310,11 @@ QHeaderView::down-arrow, QHeaderView::up-arrow {
 }
 
 QHeaderView::down-arrow {
-    image: url(':/images/light/drkblue_downArrow_small');
+    image: url(':/images/light/downArrow_small');
 }
 
 QHeaderView::up-arrow {
-    image: url(':/images/light/drkblue_upArrow_small');
+    image: url(':/images/light/upArrow_small');
 }
 
 .QTableView, QTableWidget {
@@ -420,16 +420,16 @@ QScrollBar:up-arrow, QScrollBar:down-arrow, QScrollBar:left-arrow, QScrollBar:ri
 
 /*  
  QScrollBar:up-arrow {
-     image: url(':/images/light/drkblue_upArrow_small');
+     image: url(':/images/light/upArrow_small');
  }
  QScrollBar:down-arrow {
-     image: url(':/images/light/drkblue_downArrow_small');
+     image: url(':/images/light/downArrow_small');
  }
  QScrollBar:left-arrow {
-     image: url(':/images/light/drkblue_leftArrow_small');
+     image: url(':/images/light/leftArrow_small');
  }
  QScrollBar:right-arrow {
-     image: url(':/images/light/drkblue_rightArrow_small');
+     image: url(':/images/light/rightArrow_small');
  } */
 
 /* -------------------Tab--------------------- */

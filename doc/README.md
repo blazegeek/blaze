@@ -1,4 +1,4 @@
-Blaze 0.0.2.7
+Blaze 0.0.2.8
 =====================
 
 This is the un-official reference wallet for Blaze digital currency and comprises the backbone of the Blaze peer-to-peer network. You can [build it yourself](#building) using the guides below.
