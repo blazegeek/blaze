@@ -45,10 +45,10 @@
         <file alias="key">res/icons/light/key.png</file>
         <file alias="filesave">res/icons/light/filesave.png</file>
         <file alias="debugwindow">res/icons/light/debugwindow.png</file>
-        <file alias="drkblue_editpaste">res/icons/light/drkblue_editpaste.png</file>
-        <file alias="drkblue_address-book">res/icons/light/drkblue_address-book.png</file>
-        <file alias="drkblue_editcopy">res/icons/light/drkblue_editcopy.png</file>
-        <file alias="drkblue_remove">res/icons/light/drkblue_remove.png</file>
+        <file alias="editpaste">res/icons/light/editpaste.png</file>
+        <file alias="address-book">res/icons/light/address-book.png</file>
+        <file alias="editcopy">res/icons/light/editcopy.png</file>
+        <file alias="remove">res/icons/light/remove.png</file>
         <file alias="browse">res/icons/light/browse.png</file>
         <file alias="about">res/icons/light/about.png</file>
         <file alias="about_qt">res/icons/light/about_qt.png</file>
@@ -67,13 +67,13 @@
         <file alias="about">res/images/light/about.png</file>
         <file alias="unchecked">res/images/light/unchecked.png</file>
         <file alias="checked">res/images/light/checked.png</file>
-        <file alias="drkblue_downArrow">res/images/light/drkblue_downArrow.png</file>
-        <file alias="drkblue_downArrow_small">res/images/light/drkblue_downArrow_small.png</file>
-        <file alias="drkblue_upArrow_small">res/images/light/drkblue_upArrow_small.png</file>
-        <file alias="drkblue_leftArrow_small">res/images/light/drkblue_leftArrow_small.png</file>
-        <file alias="drkblue_rightArrow_small">res/images/light/drkblue_rightArrow_small.png</file>
-        <file alias="drkblue_qtreeview_selected">res/images/light/drkblue_qtreeview_selected.png</file>
-        <file alias="drkblue_walletFrame_bg">res/images/light/drkblue_walletFrame_bg.png</file>
+        <file alias="downArrow">res/images/light/downArrow.png</file>
+        <file alias="downArrow_small">res/images/light/downArrow_small.png</file>
+        <file alias="upArrow_small">res/images/light/upArrow_small.png</file>
+        <file alias="leftArrow_small">res/images/light/leftArrow_small.png</file>
+        <file alias="rightArrow_small">res/images/light/rightArrow_small.png</file>
+        <file alias="qtreeview_selected">res/images/light/qtreeview_selected.png</file>
+        <file alias="walletFrame_bg">res/images/light/walletFrame_bg.png</file>
         <file alias="splash">res/images/light/splash.png</file>
         <file alias="splash_testnet">res/images/light/splash_testnet.png</file>
     </qresource>
