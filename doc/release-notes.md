@@ -1,5 +1,10 @@
-Blaze 0.0.2.8
+Blaze 0.0.2.9
 ==========================
+
+0.0.2.9
+
+* updates qt/res/icons/ (.ico; .icns; .png) [EXCLUDES files in qt/res/icons/light/]
+
 
 0.0.2.8
 
