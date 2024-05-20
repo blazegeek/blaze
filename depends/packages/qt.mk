@@ -1,7 +1,7 @@
 PACKAGE=qt
 $(package)_version=5.7.1a
 # https://github.com/blazegeek/qtbase-5.7.1a/releases/download/v5.7.1a/qtbase-5.7.1a.tar.gz
-$(package)_download_path=https://github.com/blazegeek/qtbase-$($package)_version/releases/download/v$($package)_version
+$(package)_download_path=https://github.com/blazegeek/qtbase-$($(package)_version)/releases/download/v$($(package)_version)
 $(package)_suffix=$($(package)_version).tar.gz
 $(package)_file_name=qtbase-$($(package)_suffix)
 $(package)_sha256_hash=5445a490f88e2b6a81e8b0c406a79e858b306229ae00ac89bfc942ccb95f4efa
