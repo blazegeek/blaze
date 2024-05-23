@@ -1,10 +1,10 @@
 PACKAGE=qt
-$(package)_version=5.7.1a
-# https://github.com/blazegeek/qtbase-5.7.1a/releases/download/v5.7.1a/qtbase-5.7.1a.tar.gz
+$(package)_version=5.7.1.1
+# https://github.com/blazegeek/qtbase-5.7.1.1/releases/download/v5.7.1.1/qtbase-5.7.1.1.tar.gz
 $(package)_download_path=https://github.com/blazegeek/qtbase-$($(package)_version)/releases/download/v$($(package)_version)
 $(package)_suffix=$($(package)_version).tar.gz
 $(package)_file_name=qtbase-$($(package)_suffix)
-$(package)_sha256_hash=5445a490f88e2b6a81e8b0c406a79e858b306229ae00ac89bfc942ccb95f4efa
+$(package)_sha256_hash=5a8fc2f719b849622fc9096497520d0acf0aaf97b3c7cf1dafb821668f2a4e8e
 $(package)_dependencies=openssl zlib
 $(package)_linux_dependencies=freetype fontconfig libxcb libX11 xproto libXext
 $(package)_build_subdir=qtbase
@@ -15,11 +15,11 @@ $(package)_patches+=fix_qt_configure.patch fix_qt_pkgconfig.patch fix-cocoahelpe
 # Remove it after bumping $(package)_version to 5.8+.
 
 $(package)_qttranslations_file_name=qttranslations-$($(package)_suffix)
-$(package)_qttranslations_sha256_hash=3a15aebd523c6d89fb97b2d3df866c94149653a26d27a00aac9b6d3020bc5a1d
+$(package)_qttranslations_sha256_hash=d69350f3e03e51f6b5f4394a57c2ae8d8d28a0a8dafdc3af873027dfdd5a5b11
 
 
 $(package)_qttools_file_name=qttools-$($(package)_suffix)
-$(package)_qttools_sha256_hash=22d67de915cb8cd93e16fdd38fa006224ad9170bd217c2be1e53045a8dd02f0f
+$(package)_qttools_sha256_hash=b97231607c356c4ca1b90179305bc8dd0fa1be852bae9001438144ae1fd2fc58
 
 $(package)_extra_sources  = $($(package)_qttranslations_file_name)
 $(package)_extra_sources += $($(package)_qttools_file_name)
